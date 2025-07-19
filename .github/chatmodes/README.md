@@ -6,7 +6,7 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 
 > 🦄 If things start to feel a little wild, just remember: it’s not quite The Pitt—but we do like to keep you on your toes.
 
-***
+---
 
 ## 📄 Current Chat Modes
 
@@ -14,7 +14,7 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 | - | :-: | - | - |
 | [`hlbpa`](./hlbpa.chatmode.md) (High-Level Big-Picture Architect) | ![Status: Draft (yellow badge)](https://img.shields.io/badge/status-draft-yellow.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
 
-***
+---
 
 ## ✨ HLBPA Chat Mode
 
@@ -34,13 +34,13 @@ Chat modes are currently a preview feature in VS Code—think of it like Squid 
 
 ### What HLBPA Does (And Doesn’t)
 
-* **Produces high-level docs**, architecture diagrams, gap scans, and test coverage analyses
-* Defaults to documenting the *entire system* from a birds eye view, unless you specify (can target subsystems, folders, or files)
-* **Never writes code or tests** - documentation only (readonly mode outside `/docs`)
-* Always *inserts placeholders for missing context* and provides a checklist of questions at the end (answer all in one go to minimize premium usage)
-* **Outputs GFM (Markdown)** by default, can also output Confluence format, if specified
-* Diagrams include *accessibility tags*
-* **Will not stop until complete** - will surface what’s missing at the end and ask for feedback before finishing
+- **Produces high-level docs**, architecture diagrams, gap scans, and test coverage analyses
+- Defaults to documenting the _entire system_ from a birds eye view, unless you specify (can target subsystems, folders, or files)
+- **Never writes code or tests** - documentation only (readonly mode outside `/docs`)
+- Always _inserts placeholders for missing context_ and provides a checklist of questions at the end (answer all in one go to minimize premium usage)
+- **Outputs GFM (Markdown)** by default, can also output Confluence format, if specified
+- Diagrams include _accessibility tags_
+- **Will not stop until complete** - will surface what’s missing at the end and ask for feedback before finishing
 
 ## How to Use HLBPA
 
@@ -101,12 +101,12 @@ You can override the defaults by specifying additional parameters in your prompt
 Please generate a subsystem architecture diagram for the `payments` module with the `forest` theme.
 ```
 
-***
+---
 
 > 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
 
 > ⭐️ If you tried a chat mode and it helped you out, leave a star! Check back soon for updates.
 
-***
+---
 
 <small>Generated with the help of ChatGPT as directed by Ashley Childress</small>
