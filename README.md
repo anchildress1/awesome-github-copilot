@@ -2,7 +2,14 @@
 
 🚧 WIP: My AI prompts, chat modes & instructions - curated by me (and ChatGPT). Updates often!
 
-Welcome to my collection of Custom Insturctions, Prompts and Chat Modes - your go-to ER for uniquely crafted GitHub Copilot personalities, all designed for creative chaos, workflow upgrades, and occasional code emergencies. Every mode here is handpicked by me (with ChatGPT running triage in the background).
+> [!IMPORTANT]
+> 🦄 Hack Time Update: Contest Mode Activated!
+>
+> I’m off chasing glory in a coding contest through the end of September, 2025, so this repo’s usual hustle is on a quick coffee break. I’ll ninja-drop updates whenever I can between rounds, but please hang tight while I duke it out on the leaderboard.
+>
+> Thanks for your patience - and may your builds always pass! 🏅✨
+
+Welcome to my collection of Custom Instructions, Prompts and Chat Modes - your go-to ER for uniquely crafted GitHub Copilot personalities, all designed for creative chaos, workflow upgrades, and occasional code emergencies. Every mode here is handpicked by me (with ChatGPT running triage in the background).
 
 Each one is clearly labeled by status, so you’ll know if you’re about to deploy a seasoned attending... or an intern who thinks “merge conflict” is a new diagnosis.
 
@@ -22,7 +29,7 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 
 Refer to the [HLBPA Chat Mode README](.github/chatmodes/hlbpa.chatmode.md) for detailed insights and instructions on how to use this chat mode.
 
-> 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
+> 🦄 Request several artifacts in one go to maximize each run. It may take longer to execute, but you'll save on premium requests.
 
 ### 💡 Key Highlights
 

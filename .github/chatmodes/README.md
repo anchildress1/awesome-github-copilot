@@ -93,6 +93,8 @@ Please review all existing test cases for this repo using the provided HLBPA cha
 
 At least one document and corresponding `.mmd` file will be generated, based on the prompt. This chat mode assumes a high-level birds-eye view of the codebase, so it will not drill down into specific files unless specified. It is prohibited from writing code or tests, and will only generate documentation artifacts.
 
+> 🦄 I coded in a preview of external `.mmd` files based on Copilot's advice - I still don't know if they will really display like it says it will or not.
+
 #### Overriding Defaults
 
 You can override the defaults by specifying additional parameters in your prompt. For example, to generate a subsystem diagram with a specific theme:
