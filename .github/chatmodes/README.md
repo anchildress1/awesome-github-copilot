@@ -12,7 +12,7 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](./hlbpa.chatmode.md) (High-Level Big-Picture Architect) | ![Status: Draft (yellow badge)](https://img.shields.io/badge/status-draft-yellow.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`hlbpa`](./hlbpa.chatmode.md) (High-Level Big-Picture Architect) | ![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
 
 ---
 
@@ -38,9 +38,9 @@ Chat modes are currently a preview feature in VS Code—think of it like Squid 
 - Defaults to documenting the _entire system_ from a birds eye view, unless you specify (can target subsystems, folders, or files)
 - **Never writes code or tests** - documentation only (readonly mode outside `/docs`)
 - Always _inserts placeholders for missing context_ and provides a checklist of questions at the end (answer all in one go to minimize premium usage)
-- **Outputs GFM (Markdown)** by default, can also output Confluence format, if specified
+- **Outputs GFM (Markdown)** _only_ by design - any other format (e.g. Confluence) is a GFM document generated to look like a Confluence template
 - Diagrams include _accessibility tags_
-- **Will not stop until complete** - will surface what’s missing at the end and ask for feedback before finishing
+- **Will not stop until complete** - will surface what’s missing at the end and ask for feedback before finishing - this may take awhile, but it's designed to do as much work as possible in one pass (saving you premium requests)
 
 ## How to Use HLBPA
 
@@ -51,7 +51,7 @@ Chat modes are currently a preview feature in VS Code—think of it like Squid 
 | Your Name | For the RAI footer (uses a placeholder if missing) | May define permanently in user-instructions in GitHub |
 | Target | `#codebase` by default if a repo is in context, but you can be more specific | |
 | Artifact Type | e.g. doc (overview), entity (relationships), gapscan (list of gaps in logic), usecases (bullets of user journeys), systems, history (git commits) | |
-| Output Format | Markdown (default) or Confluence (untested) | |
+| Output Format | Markdown (GFM) with Mermaid inline (default), Markdown (GFM) with supporting Mermaid (external) | |
 | Output Directory | defaults to `/docs` but can be overridden | |
 | depth | Default: overview; Specify for subsystem, interface, or deep dive | |
 | diagram theme | Pick a diagram [style/theme](https://mermaid.js.org/config/theming.html#available-themes) | `forest` |
@@ -91,16 +91,16 @@ Please review all existing test cases for this repo using the provided HLBPA cha
 
 ### 📈 Output
 
-At least one document and corresponding `.mmd` file will be generated, based on the prompt. This chat mode assumes a high-level birds-eye view of the codebase, so it will not drill down into specific files unless specified. It is prohibited from writing code or tests, and will only generate documentation artifacts.
+At least one document and corresponding Mermaid diagrams will be generated, based on the prompt. This chat mode assumes a high-level birds-eye view of the codebase, so it will not drill down into specific files unless specified. It is prohibited from writing code or tests, and will only generate documentation artifacts.
 
-> 🦄 I coded in a preview of external `.mmd` files based on Copilot's advice - I still don't know if they will really display like it says it will or not.
+> 🦄 I coded in a preview of external `.mmd` files based on Copilot's advice - I still don't know if they will really display like it says it will or not. Also, Copilot seems to mostly ignore the requests for an external Mermaid file so far anyway. 🤷‍♀️
 
 #### Overriding Defaults
 
 You can override the defaults by specifying additional parameters in your prompt. For example, to generate a subsystem diagram with a specific theme:
 
 ```markdown copy
-Please generate a subsystem architecture diagram for the `payments` module with the `forest` theme.
+Please generate a subsystem architecture diagram for the `#payments` module with the `forest` theme.
 ```
 
 ---

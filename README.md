@@ -3,6 +3,7 @@
 🚧 WIP: My AI prompts, chat modes & instructions - curated by me (and ChatGPT). Updates often!
 
 > [!IMPORTANT]
+>
 > 🦄 Hack Time Update: Contest Mode Activated!
 >
 > I’m off chasing glory in a coding contest through the end of September, 2025, so this repo’s usual hustle is on a quick coffee break. I’ll ninja-drop updates whenever I can between rounds, but please hang tight while I duke it out on the leaderboard.
@@ -21,7 +22,7 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](.github/chatmodes/hlbpa.chatmode.md) (High-Level Big-Picture Architect) | ![Status: Draft (yellow badge)](https://img.shields.io/badge/status-draft-yellow.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`hlbpa`](./.github/chatmodes/hlbpa.chatmode.md) (High-Level Big-Picture Architect) | ![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
 
 ---
 

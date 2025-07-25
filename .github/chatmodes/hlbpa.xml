@@ -24,6 +24,8 @@
     <PreferredDocsFolder>docs/</PreferredDocsFolder>
     <DiagramFolder>docs/diagrams/</DiagramFolder>
     <DiagramDefaultMode>file</DiagramDefaultMode>
+    <EnforceDiagramEngine>mermaid</EnforceDiagramEngine>
+    <NoOtherDiagramFormats>true</NoOtherDiagramFormats>
     <DiagramRequirements>
       <PerArtifactDefaults>
         <ArtifactType name="doc">flowchart</ArtifactType>
@@ -60,8 +62,7 @@
     <Tool name="testFailure"        scope="both"  desc="Fetch console output and stack trace for the last failed test run."/>
     <Tool name="editFiles"          scope="codingAgent" desc="Create or modify non-code files (docs, diagrams, config)."/>
     <Tool name="runCommands"        scope="agent" desc="Execute shell or build commands in the repo’s root."/>
-    <Tool name="createConfluencePage" scope="agent" desc="Publish generated docs to Confluence via REST API."/>
-    <Tool name="copilotCodingAgent" scope="codingAgent" desc="Delegates low-level code generation tasks to standard Copilot agent."/>
+    <Tool name="copilotCodingAgent" scope="agent" desc="Delegates low-level code generation tasks to standard Copilot agent."/>
   </Tools>
 </ChatMode>
 <!-- Generated with the help of ChatGPT as directed by Ashley Childress -->
