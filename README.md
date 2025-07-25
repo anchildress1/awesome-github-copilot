@@ -17,12 +17,37 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 > 🦄 If things start to feel a little wild, just remember: it’s not quite The Pitt - but we do like to keep you on your toes.
 
 ---
+---
+
+## 💥 Sparked It. Shaped It. Shoutouts.
+
+> 🦄 This project isn’t fully baked yet - it’s somewhere between “I might be onto something” and “what if I made it do _this_ too?”
+> But from the beginning, a few people showed up, encouraged the madness, and gave me room to run wild just to test a theory.
+>
+> **Thank you** for your ideas, your encouragement, your feedback, and your willingness to let it get weird. These shoutouts are for you.
+
+---
+
+### 🕹️ Courtney
+
+For jumping into early testing with zero hesitation, breaking everything in sight (in the best way), and somehow still being excited to tell others about it. I appreciate the feedback, the encouragement, and your willingness to _poke the bear_ to make things better.
+Your early involvement helps shape what this will become - **thank you** for being part of the chaos.
+
+---
+
+### 🧨 Vijaya
+
+**Thank you** for planting the original idea that I immediately ran with, rewired, and reimagined into something you probably don’t even recognize - but it's still firmly rooted in your vision of what _useful_ actually looks like.
+Your influence, clarity, and push for building things that scale across teams lit the fuse. This entire project is built on that spark and simply wouldn’t exist without you.
+
+---
+---
 
 ## 📄 Current Chat Modes
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](./.github/chatmodes/hlbpa.chatmode.md) (High-Level Big-Picture Architect) | ![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`hlbpa`](#-hlbpa-chat-mode) (High-Level Big-Picture Architect) | ![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
 
 ---
 
@@ -32,9 +57,9 @@ Refer to the [HLBPA Chat Mode README](.github/chatmodes/hlbpa.chatmode.md) for d
 
 > 🦄 Request several artifacts in one go to maximize each run. It may take longer to execute, but you'll save on premium requests.
 
-### 💡 Key Highlights
+### 💡 Highlights
 
-- ✅ **Designed for cost efficiency**: Feed the XML or MD file directly to your Copilot Coding Agent and prompt as needed - skip long prompts!
+- ✅ **Designed for cost efficiency**: Feed the XML file directly to your Copilot Coding Agent or use the MD file as an Agent Chat Mode, and then prompt as needed.
 - ✅ **Optimized for Copilot Coding Agent** (tested with Claude Sonnet 4)
 - ✅ Diagrams use **standard Mermaid syntax**; alternative artifact types supported (table/test/gapscan)
 - ✅ **Still iterating!** Not all workflows are fully tested yet, but core documentation/diagramming works well

@@ -22,7 +22,7 @@
   "scripts": {
     "check": "npx remark . -f -q",
     "format": "npx remark . -o",
-    "commitlint": "npx commitlint --edit $1"
+    "commitlint": "npx commitlint --verbose --edit"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "19.8.1",

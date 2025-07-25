@@ -1,4 +1,4 @@
-# ✨ Status Lifecycle & Badges
+# 🌈 Status Lifecycle & Badges
 
 Each mode, prompt, or instruction earns a status badge (find the badge legend right here—and at the top of each README):
 

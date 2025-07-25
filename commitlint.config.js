@@ -9,7 +9,7 @@ export default {
     'scope-empty': [2, 'never'],
     'scope-case': [2, 'always', 'lower-case'],
     'scope-enum': [2, 'always', [
-      'config', 'docs', 'instructions', 'prompts', 'chatmodes', 'build', 'deps'
+      'config', 'instructions', 'prompts', 'chatmodes', 'build', 'deps', 'tooling', 'readme'
     ]],
     'subject-case': [2, 'always', ['sentence-case']],
     'subject-empty': [2, 'never'],
@@ -20,7 +20,7 @@ export default {
     'body-leading-blank': [2, 'always'],
     'body-empty': [2, 'never'],
     'body-max-line-length': [2, 'always', 100],
-    'footer-leading-blank': [2, 'always', ],
+    'footer-leading-blank': [2, 'always',],
     'footer-max-line-length': [2, 'always', 100],
     'header-max-length': [2, 'always', 72],
     'signed-off-by': [2, 'always'],
