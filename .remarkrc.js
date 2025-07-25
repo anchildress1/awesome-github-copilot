@@ -1,4 +1,7 @@
 export default {
+  presets: [
+    ['remark-preset-github', { repository: "anchildress1/awesome-github-copilot" }]
+  ],
   settings: {
     emphasis: '_',
     bullet: '-',
@@ -10,9 +13,6 @@ export default {
     firstHeadingLevel: 1,
   },
   plugins: [
-    ['remark-lint-no-unneeded-full-reference-link', false],
     ['remark-frontmatter', { type: 'yaml', marker: '-' }],
-    ['remark-github', { repository: "anchildress1/awesome-github-copilot" }],
-    ['remark-gfm', { tablePipeAlign: false }]
   ],
 };
