@@ -2,7 +2,7 @@
 
 Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitHub Copilot personalities, all designed for creative chaos, workflow upgrades, and occasional code emergencies. Every mode here is handpicked by me (with ChatGPT running triage in the background).
 
-Each one is clearly labeled by status, so you’ll know if you’re about to deploy a seasoned attending... or an intern who thinks “merge conflict” is a new diagnosis.
+Each one is clearly labeled by status (see [Status Lifecycle & Badges](../../docs/status-badge-lifecycle.md)), so you’ll know if you’re about to deploy a seasoned attending... or an intern who thinks “merge conflict” is a new diagnosis.
 
 > 🦄 If things start to feel a little wild, just remember: it’s not quite The Pitt—but we do like to keep you on your toes.
 
@@ -16,7 +16,7 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 
 ---
 
-## ✨ HLBPA Chat Mode
+## ✨ HLBPA Chat Mode (High-Level Big-Picture Architect)
 
 [![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)](#-hlbpa-chat-mode)
 

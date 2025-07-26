@@ -45,15 +45,51 @@ Your influence, clarity, and push for building things that scale across teams li
 
 ---
 
+## 📋 Instructions
+
+AI-powered Copilot guidelines for common tasks. Manually pull a task into context, or use the corresponding glob pattern to auto-apply it in your workflow.
+
+| File | Status | Purpose | Notes |
+| - | :-: | - | - |
+| [`generate-commit-message`](#-generate-commit-message) | ![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg) | Generate conventional commit messages with validation | Contains RAI trailers |
+
+---
+
+## ✨ Generate Commit Message
+
+![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)
+
+Refer to [`generate-commit-message.instructions.md`](.github/instructions/generate-commit-message.instructions.md) for the full expert workflow.
+
+### 💡 Highlights
+
+- ✅ **Ensures conventional commits**: Follows Conventional Commits 1.0.0 spec and your repo's commitlint config
+- ✅ **Assumption-free**: Never guesses "why" - uses `(TBD)` and aggregates questions for user review
+- ✅ **Validation built-in**: Will not stop until a valid, linted commit message is produced
+- ✅ **Outputs to file**: Creates `commit.tmp` for easy validation and reuse
+
+### ⛔️ Constraints
+
+- Never guesses "why" - uses `(TBD)` and aggregates questions for user at end
+- Only outputs raw commit message (no explanations)
+- Will not stop until a valid, linted commit message is produced
+
+### 📟 Example Minimal Prompt
+
+```markdown
+Please generate a conventional commit message for all staged changes using the instructions in `.github/instructions/commit-message.instructions.md`.
+```
+
+---
+
 ## 📄 Current Chat Modes
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](#-hlbpa-chat-mode) (High-Level Big-Picture Architect) | ![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`hlbpa`](#-hlbpa-high-level-big-picture-architect-chat-mode) (High-Level Big-Picture Architect) | ![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
 
----
 
-## ✨ HLBPA Chat Mode
+## ✨ HLBPA (High-Level Big-Picture Architect) Chat Mode
 
 Refer to the [HLBPA Chat Mode README](.github/chatmodes/hlbpa.chatmode.md) for detailed insights and instructions on how to use this chat mode.
 
