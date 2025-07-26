@@ -1,0 +1,6 @@
+# This file specifies the code owners for each file or directory.
+# Each line should be in the format: "path/to/file <owner> <owner>"
+# where <owner> can be a GitHub username or team name.
+
+# All files in the repository require review from Ashley Childress (it is her bot).
+* @anchildress1

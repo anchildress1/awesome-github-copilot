@@ -17,6 +17,7 @@ Each one is clearly labeled by status, so you’ll know if you’re about to dep
 > 🦄 If things start to feel a little wild, just remember: it’s not quite The Pitt - but we do like to keep you on your toes.
 
 ---
+
 ---
 
 ## 💥 Sparked It. Shaped It. Shoutouts.
@@ -41,6 +42,7 @@ Your early involvement helps shape what this will become - **thank you** for bei
 Your influence, clarity, and push for building things that scale across teams lit the fuse. This entire project is built on that spark and simply wouldn’t exist without you.
 
 ---
+
 ---
 
 ## 📄 Current Chat Modes
