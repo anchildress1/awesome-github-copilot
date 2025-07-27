@@ -1,9 +1,12 @@
 # 🤹 Custom Instructions
 
-Welcome to the Instructions directory - your source for AI-powered Copilot prompts and automation flows. Each instruction is labeled by lifecycle status (see [Status Lifecycle & Badges](../../docs/status-badge-lifecycle.md)).
+This is where the magic lives — reusable, testable, sometimes over-engineered instructions for GitHub Copilot and other AI agents. These aren’t prompts you paste once and forget — they’re designed to behave like little command-line utilities for your agent.
+
+Every instruction is labeled by lifecycle status (see [Status Lifecycle & Badges](../../docs/status-badge-lifecycle.md)), so you’ll know exactly what kind of chaos you’re invoking: draft, refining, validating, or final.
 
 > [!INFO]
-> In VS Code, you can enable custom instructions for Copilot by setting the `copilot.customInstructions` setting in your user or workspace settings. This allows you to tailor Copilot's behavior with your own prompts and automation flows.
+>
+> If you're using VS Code, you can enable custom instructions for Copilot by setting the `copilot.customInstructions`field in your settings. If you're _not_ using VS Code... well, you probably know what you're doing and I trust you to handle it.
 
 ---
 
@@ -11,71 +14,113 @@ Welcome to the Instructions directory - your source for AI-powered Copilot promp
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`/generate-commit-message`](generate-commit-message.instructions.md) | [![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)](#-generate-commit-message) | Generate conventional commit messages | Split from its original version |
+| [`format-conventional-commit`](#-format-conventional-commit-bobby-nash-edition) | [![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)](#-format-conventional-commit-bobby-nash-edition) | Converts staged changes into a conventional commit message | Utilizes companion [diff analysis instruction](./analyze-git-diff.instructions.md) |
+| [`analyze-git-diff`](#-analyze-git-diff-athena-grant-edition) | [![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)](#-analyze-git-diff-athena-grant-edition) | Analyze git diff and generate explanations | Best used before commit generation for better results |
 
 ---
 
-## ✨ Generate Commit Message
+## ✨ Format Conventional Commit (Bobby Nash Edition)
 
-[![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)](#-generate-commit-message)
+[![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)](#-generate-commit-message-bobby-nash-edition)
 
-Generate a conventional commit message for all staged changes using GitHub Copilot and includes my personal RAI trailers for AI. Check out my [blog post](https://dev.to/anchildress1/is-github-copilot-safe-the-fun-and-hard-truth-about-responsible-ai-3b95) that explains the reasoning behind this instruction.
-
-Refer to [`generate-commit-message.instructions.md`](./generate-commit-message.instructions.md) for the full expert workflow.
+This instruction brings Bobby Nash energy: calm, dependable, and always prepared. It reads your staged changes and produces a clean, conventional commit message — lintable, readable, and responsibly documented. No shortcuts. No excuses.
+See [`format-conventional-commit.instructions.md`](./format-conventional-commit.instructions.md) for the full expert workflow.
 
 > [!TIP]
-> By default, Copilot uses the signed-in user information for personalization. You can override this by setting a custom user instruction in your settings.
+>
+> This instruction quietly calls on `analyze-git-diff` (Athena) to get the full story before committing. You don’t have to ask — Bobby’s already got backup on the way.
 
-### Installation & Usage
+### 🛠️ Installation & Usage
 
 1. Stage your changes in git.
-2. Use the Copilot agent to run the commit message instructions.
+2. Run the Copilot agent with this instruction.
 3. The agent will:
-   - Analyze staged changes
-   - Generate a conventional commit message
-   - Output to `commit.tmp` (if edit permission exists) and a copy-paste block in chat
-4. Validate with:
-   ```bash
+   - Analyze all staged changes with full context
+   - Generate a commit message that meets Conventional Commits + commitlint
+   - Output to `commit.tmp` and/or in the chat window
+4. Validate the result (optional):
+   ```bash copy
    npm run commitlint -- commit.tmp
    ```
 
-### Why Use This Instruction?
+### ✅ Why Use This Instruction?
 
-- Ensures every commit message is meaningful, assumption-free, and passes lint
-- Follows Conventional Commits 1.0.0 spec and your repo’s commitlint config
-- Surfaces all missing context/questions at the end for one-pass review
+- Delivers structured, assumption-free messages
+- Highlights breaking changes and unresolved questions
+- Makes your repo easier to maintain — now _and_ six months from now
 
-### Constraints
+### ⛔ Constraints
 
-- Never guesses “why” - uses `(TBD)` and aggregates questions for user at end
-- Only outputs raw commit message (no explanations)
-- Will not stop until a valid, linted commit message is produced
+- No made-up reasons — uses `(TBD)` when logic is unclear
+- Output is a raw commit message only — no summary or sidebar
+- Refuses to complete until a valid, lint-passing message is produced
 
-### Example Minimal Prompt
+### 📟 Example Minimal Prompt
 
-```markdown
-Please generate a conventional commit message for all staged changes using the instructions in `#./generate-commit-message.instructions.md`.
+```markdown copy
+Generate a commit message for staged changes using `#./.github/instructions/format-conventional-commit.instructions.md`.
 ```
 
-### Alternate Example: Using VS Code
+### 📟 Alternate: Using VS Code
 
-If you use VS Code, you can run the Copilot agent directly from the Command Palette:
+Want this to run automatically from the Command Palette? Add the following to your settings:
 
-1. Stage your changes in the Source Control panel.
-2. Open the Command Palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows/Linux).
-3. Type and select `Copilot: Generate Commit Message`.
-4. The agent will analyze staged changes and output the commit message to `commit.tmp`.
-5. Validate with:
-   ```bash
-   npm run commitlint -- commit.tmp
-   ```
+```json copy
+"github.copilot.chat.commitMessageGeneration.instructions": [
+  {
+    "file": ".github/instructions/format-conventional-commit.instructions.md"
+  }
+]
+```
+
+Then:
+
+1. Stage your changes.
+2. Open Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`).
+3. Run `Copilot: Generate Commit Message`.
 
 ---
 
+## ✨ Analyze Git Diff (Athena Grant Edition)
+
+[![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)](#-analyze-git-diff-athena-grant-edition)
+
+This instruction is Athena. It shows up first, surveys the entire scene, and calmly reports exactly what happened — no guesswork, no drama, just facts. Feed it a `git diff`, and it will return a structured, objective breakdown you can trust.
+See [`analyze-git-diff.instructions.md`](./analyze-git-diff.instructions.md) for more.
+
+> [!TIP]
+>
+> You don’t need to run this directly unless you want to. It’s already built into Bobby’s workflow — but Athena’s always on call if you need her to take point.
+
+### 🛠️ Installation & Usage
+
+1. Run the agent with this instruction or pass in a saved diff file (e.g., `diff.tmp`).
+2. The agent will:
+   - Analyze the full diff and chat context
+   - Output a markdown bullet list (≤100 chars/line)
+   - Use `(TBD)` for missing rationale and group questions at the end
+
+### ✅ Why Use This Instruction?
+
+- Cuts straight to the facts — no filler, no hand-waving
+- Flags unclear reasoning and prompts you to investigate
+- Highlights breaking changes clearly and calmly
+
+### ⛔ Constraints
+
+- Never invents rationale — it marks ambiguity with `(TBD)`
+- Only outputs a bulleted markdown list
+- No line exceeds 100 characters
+- Won’t stop until the entire diff is explained or flagged
+
+### 📟 Example Minimal Prompt
+
+```markdown copy
+Analyze `#diff.tmp` using `#./.github/instructions/analyze-git-diff.instructions.md`.
+```
+
+> 🦄 If Athena helped you bring order to your chaos, leave a star. You know she’s not asking for it — but she earned it.
+
 ---
 
-> 🦄 If you found this instruction useful, leave a star! Check back for updates.
-
----
-
-<small>Generated with the help of GitHub Copilot as directed by Ashley Childress</small>
+<small>Written by Ashley Childress. Powered by GitHub Copilot and ChatGPT. Backed by Bobby Nash and Athena Grant.</small>

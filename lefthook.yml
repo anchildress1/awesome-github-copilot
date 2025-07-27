@@ -1,11 +1,13 @@
- pre-commit:
+pre-commit:
   parallel: true
   commands:
     format:
       run: |
-        STAGED_FILES=$(git diff --cached --name-only)
-        npm run format
-        echo "$STAGED_FILES" | xargs git add
+        STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+        if [ -n "$STAGED_FILES" ]; then
+          echo "$STAGED_FILES" | xargs -r npm run format
+          echo "$STAGED_FILES" | xargs -r git add
+        fi
 
 commit-msg:
   parallel: true
