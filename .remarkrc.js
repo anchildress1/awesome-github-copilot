@@ -1,7 +1,7 @@
+import remarkGfm from 'remark-gfm';
+import remarkFrontmatter from 'remark-frontmatter';
+
 export default {
-  presets: [
-    ['remark-preset-github', { repository: "anchildress1/awesome-github-copilot" }]
-  ],
   settings: {
     emphasis: '_',
     bullet: '-',
@@ -13,6 +13,7 @@ export default {
     firstHeadingLevel: 1,
   },
   plugins: [
-    ['remark-frontmatter', { type: 'yaml', marker: '-' }],
+    [remarkFrontmatter, { type: 'yaml', marker: '-' }],
+    [remarkGfm, { singleTilde: false, tablePipeAlign: false }],
   ],
 };

@@ -1,8 +1,6 @@
-
 # 🤹 Custom Instructions
 
 Welcome to the Instructions directory - your source for AI-powered Copilot prompts and automation flows. Each instruction is labeled by lifecycle status (see [Status Lifecycle & Badges](../../docs/status-badge-lifecycle.md)).
-
 
 > [!INFO]
 > In VS Code, you can enable custom instructions for Copilot by setting the `copilot.customInstructions` setting in your user or workspace settings. This allows you to tailor Copilot's behavior with your own prompts and automation flows.
@@ -33,13 +31,13 @@ Refer to [`generate-commit-message.instructions.md`](./generate-commit-message.i
 1. Stage your changes in git.
 2. Use the Copilot agent to run the commit message instructions.
 3. The agent will:
-	- Analyze staged changes
-	- Generate a conventional commit message
-	- Output to `commit.tmp` (if edit permission exists) and a copy-paste block in chat
+   - Analyze staged changes
+   - Generate a conventional commit message
+   - Output to `commit.tmp` (if edit permission exists) and a copy-paste block in chat
 4. Validate with:
-	```bash
-	npm run commitlint -- commit.tmp
-	```
+   ```bash
+   npm run commitlint -- commit.tmp
+   ```
 
 ### Why Use This Instruction?
 
@@ -68,9 +66,10 @@ If you use VS Code, you can run the Copilot agent directly from the Command Pale
 3. Type and select `Copilot: Generate Commit Message`.
 4. The agent will analyze staged changes and output the commit message to `commit.tmp`.
 5. Validate with:
-	```bash
-	npm run commitlint -- commit.tmp
-	```
+   ```bash
+   npm run commitlint -- commit.tmp
+   ```
+
 ---
 
 ---

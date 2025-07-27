@@ -21,14 +21,16 @@
   "type": "module",
   "scripts": {
     "check": "npx remark . -f -q",
-    "format": "npx remark . -o",
+    "format": "npx remark . -o && node scripts/fix-github-alerts.js",
     "commitlint": "npx commitlint --verbose --edit"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "19.8.1",
+    "glob": "11.0.3",
+    "ignore": "7.0.5",
     "lefthook": "1.12.2",
     "remark-cli": "12.0.1",
     "remark-frontmatter": "5.0.0",
-    "remark-preset-github": "4.0.4"
+    "remark-gfm": "4.0.1"
   }
 }
