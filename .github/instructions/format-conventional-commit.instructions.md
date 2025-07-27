@@ -1,3 +1,11 @@
+---
+status: Validating
+title: Format Conventional Commit
+description: |
+  Generate a perfectly formatted conventional commit message that passes validation.
+  This instruction is designed to ensure your commit messages are clear, structured, and compliant with Conventional Commits 1.0.0 specification.
+---
+
 <!-- This prompt was adapted from https://github.com/theorib/git-commit-message-ai-prompt/blob/main/prompts/conventional-commit-with-gitmoji-ai-prompt.md -->
 
 <instructions id="format-conventional-commit">

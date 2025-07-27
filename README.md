@@ -56,7 +56,7 @@ If you’re using VS Code, these load automatically when your file matches the `
 | File | Status | Purpose | Notes |
 | - | :-: | - | - |
 | [`format-conventional-commit`](#-format-conventional-commit) | [![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)]() | Turns your ordinary commit into beautifully conventional git poetry | Contains RAI trailers |
-| [`analyze-git-diff`](#-analyze-git-diff) | [![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-800080.svg)]() | Parses the git diff and generates a clean, contextual explanation designed for use in the commit message body — because “fixed stuff” isn’t enough. | |
+| [`analyze-git-diff`](#-analyze-git-diff) | [![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)]() | Parses the git diff and generates a clean, contextual explanation designed for use in the commit message body — because “fixed stuff” isn’t enough. | |
 
 ---
 
@@ -94,7 +94,7 @@ Generate a commit message for changes defined in `#diff-report.tmp` using instru
 
 ### ✨ Analyze Git Diff
 
-[![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-800080.svg)]()
+[![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)]()
 
 This instruction powers the commit message body generator inside [`format-conventional-commit`](#-format-conventional-commit), but it’s just as handy on its own. Feed it any `git diff` and it’ll return a clean, no-nonsense breakdown of what changed. For the full expert workflow, see [`analyze-git-diff.instructions.md`](.github/instructions/analyze-git-diff.instructions.md).
 
@@ -123,6 +123,54 @@ Please analyze the following git diff using the instructions in `.github/instruc
 > You’ll need to generate your own diff file with:
 > `git diff --staged > diff.tmp`
 > Then reference it manually in your prompt as `#diff.tmp`.
+
+---
+
+---
+
+## 🎼 Prompts
+
+Hand-crafted prompt templates for directing the AI symphony. These aren’t instructions or personas — they’re conductors: fully orchestrated workflows that tell Copilot when to call in the specialists (like the 🧠 Commit Surgeon or 🎩 Diff Philosopher).
+
+Each one uses `agent` mode and is designed to act as a lead prompt that orchestrates other instructions behind the scenes.
+
+| Name | Status | Purpose | Notes |
+| - | :-: | - | - |
+| [`generate-commit-message`](#-generate-commit-message) | [![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)]() | Directs Copilot to generate and validate a Conventional Commit using diff analysis and formatting experts | Uses Maestro persona to coordinate two instruction layers |
+
+---
+
+### 🎼 Generate Commit Message
+
+[![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)]()
+
+Think of this as the AI version of a pit conductor — not writing the music, but cueing every section at just the right time. This agent-mode prompt coordinates two separate instruction files: one to explain the `git diff`, and one to craft the final commit message. It validates the result using `commitlint` and saves the output to `commit.tmp`.
+
+#### 💡 Highlights
+
+- ✅ **Agent Mode**: Designed for tools like GitHub Copilot Agent or compatible AI extensions
+- ✅ **Delegates with purpose**: Relies on `analyze-git-diff` and `format-conventional-commit` to do the heavy lifting
+- ✅ **Validates output**: Ensures the final commit passes `commitlint` before saving or displaying
+- ✅ **Flexible input**: Works with provided `diff` or auto-generates one using `#changes` if available
+
+#### ⛔️ Constraints
+
+- Doesn’t do analysis or formatting itself — it just conducts
+- Requires `commitlint` validation to succeed before completing
+- Only produces the final commit message — no commentary, no helper text
+
+#### 📟 Example Minimal Prompt
+
+```markdown copy
+/generate-coommit-message for all staged changes
+```
+
+> [!TIP]
+> This works best in Agent Mode, where `#changes`, `#runInTerminal`, and `#editFiles` are available. If you’re flying manual, generate your own diff using:
+>
+> `git diff --staged > diff.tmp`
+>
+> Then reference it in the prompt as `#diff.tmp`.
 
 ---
 
