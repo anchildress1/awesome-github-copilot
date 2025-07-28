@@ -1,0 +1,16 @@
+{
+  // All other Copilot settings are typically turned on by default
+	"github.copilot.chat.commitMessageGeneration.instructions": [
+		{
+			"file": ".github/instructions/generate-commit-message.instructions.md"
+		}
+  ],
+  // Extension for markdown formatting
+  "remark.requireConfig": true,
+  // You can uncomment this to set a default formatter for markdown files
+  // Personally, I relay on the command line CLI tool `remark` for formatting,
+  // but this can be useful if you'd rather handle it in the editor.
+  // "[markdown]": {
+  //   "editor.defaultFormatter": "unifiedjs.vscode-remark"
+  // }
+}

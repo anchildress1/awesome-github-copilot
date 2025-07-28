@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+     // Required for Copilot features
+    "github.copilot",
+    "github.copilot-chat",
+    // By far the best Markdown preview extension - supports GFM + Mermaid + more out of the box
+    "shd101wyy.markdown-preview-enhanced",
+    // Give editor support to match the `.remarkrc.js` configuration
+    "unifiedjs.vscode-remark",
+    // Add a handy task explorer to the sidebar under the existing "Timeline" view
+    "spmeesseman.vscode-taskexplorer",
+    // Enable "Hey Code!" voice commands to interact with Copilot
+    "ms-vscode.vscode-speech"
+  ]
+}

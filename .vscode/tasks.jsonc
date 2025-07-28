@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // Used by the get-current-timestamp Copilot prompt
+    {
+      "label": "current-timestamp",
+      "type": "shell",
+      "command": "echo $(date) \\($(date +%s)\\)"
+    }
+  ]
+}

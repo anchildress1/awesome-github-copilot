@@ -165,7 +165,8 @@ Each one uses `agent` mode and is designed to act as a lead prompt that orchestr
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`generate-commit-message`](#-generate-commit-message) | [![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)]() | Directs Copilot to generate and validate a Conventional Commit using diff analysis and formatting experts | Uses Maestro persona to coordinate two instruction layers |
+| [`generate-commit-message`](#-generate-commit-message) | [![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)](#-generate-commit-message) | Directs Copilot to generate and validate a Conventional Commit using diff analysis and formatting experts | Uses Maestro persona to coordinate two instruction layers |
+| [`get-current-timestamp`](#-get-current-timestamp) | [![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)](#-get-current-timestamp) | Defines the exact timestamp format and process for report generation. |   |
 
 ---
 
@@ -174,6 +175,8 @@ Each one uses `agent` mode and is designed to act as a lead prompt that orchestr
 [![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)]()
 
 Think of this as the AI version of a pit conductor — not writing the music, but cueing every section at just the right time. This agent-mode prompt coordinates two separate instruction files: one to explain the `git diff`, and one to craft the final commit message. It validates the result using `commitlint` and saves the output to `commit.tmp`.
+
+See [`generate-commit-message.prompt.md`](.github/prompts/generate-commit-message.prompt.md) for the full details.
 
 #### 💡 Highlights
 
@@ -200,6 +203,48 @@ Think of this as the AI version of a pit conductor — not writing the music, bu
 > `git diff --staged > diff.tmp`
 >
 > Then reference it in the prompt as `#diff.tmp`.
+
+---
+
+### ✨ Get Current Timestamp
+
+[![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)](#-get-current-timestamp)
+
+When you need timestamps that are 100% consistent, timezone-stamped, and reliably human+machine readable, this is your go-to. It enforces a strict format and forbids ad-libbing — even AI can’t mess it up.
+
+See [`get-current-timestamp.prompt.md`](.github/prompts/get-current-timestamp.prompt.md) for the full details.
+
+#### 💡 Highlights
+
+- ✅ Designed to be called from other prompts, chat modes, or instructions
+- ✅ Uses `#runTasks` to generate real-time, traceable timestamps
+- ✅ Includes both human-readable and Unix formats
+- ✅ Enforces immutability — no reformatting allowed
+- ✅ Validates correct structure with examples
+
+#### ⛔️ Constraints
+
+- Manual timestamps are banned — use `#runTasks` or bust (Copilot can't tell time on it's own!)
+- Format cannot be altered, translated, or trimmed
+
+Only valid if the output looks exactly like this (but easy enough to change on your own):
+
+```markdown
+Thu Jun 8 09:34:00 EDT 2023 (1686233640)
+```
+
+#### 📟 Example Minimal Prompt
+
+This prompt is designed to be executed from other prompts or instructions. It's set up with VS Tasks, so you can just as easily run it yourself (the recommended Task Explorer makes it super simple).
+
+However, if you _really_ want to execute this as a standalone prompt, you can use:
+
+```markdown
+/get-current-timestamp
+```
+
+> [!INFO]
+> Note that this prompt is designed to provide a timestamp for the start or end of a Copilot-generated report. Those are all contained in separate prompts that are coming soon, so stay tuned!
 
 ---
 
