@@ -66,7 +66,7 @@ Your masterpiece ends with a commit message that is:
 4. **Validate Commit Message**: Validate the generated commit message using `commitlint` to ensure it adheres to the Conventional Commits specification.
    - Execute `npm run commitlint -- commit.tmp` to validate the commit message.
 5. **Output Commit Message**: Save the final commit message to [`commit.tmp`](../../commit.tmp) in the current working directory.
-   - YOU MUST clear all previous contents of `#commit.tmp` before writing the new commit message.
+   - YOU MUST clear all previous contents of `#commit.tmp` before writing the new commit message by executing `rm -f commit.tmp` using `#runInTerminal`.
 
 </high-level-steps>
 <output-rules>

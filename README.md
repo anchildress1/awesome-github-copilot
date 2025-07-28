@@ -57,6 +57,7 @@ If you’re using VS Code, these load automatically when your file matches the `
 | - | :-: | - | - |
 | [`format-conventional-commit`](#-format-conventional-commit) | [![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)]() | Turns your ordinary commit into beautifully conventional git poetry | Contains RAI trailers |
 | [`analyze-git-diff`](#-analyze-git-diff) | [![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)]() | Parses the git diff and generates a clean, contextual explanation designed for use in the commit message body — because “fixed stuff” isn’t enough. | |
+| [`design-principles`](#-design-principles) | [![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)]() | Reviews architectural and design choices for testability, scalability, and long-term regret avoidance | Ideal for early planning, system diagrams, or "wait... why did we do it that way?" moments |
 
 ---
 
@@ -123,6 +124,34 @@ Please analyze the following git diff using the instructions in `.github/instruc
 > You’ll need to generate your own diff file with:
 > `git diff --staged > diff.tmp`
 > Then reference it manually in your prompt as `#diff.tmp`.
+
+---
+
+---
+
+### ✨ Design Principles
+
+[![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)]()
+
+This one’s for your inner architect — or anyone who’s ever rewritten their own feature three times because “I finally figured out how it should work.” Give it a diagram, a structure, or a description of your system, and it’ll tear it apart just enough to build it better.
+
+#### 💡 Highlights
+
+- ✅ **Encourages clarity**: Forces explicit decisions — no more vague “we’ll figure it out later”
+- ✅ **Flags risk areas**: Points out brittle spots, circular dependencies, or testing traps
+- ✅ **Non-blocking by design**: It won’t say you failed — it just gives you better questions to ask
+
+#### ⛔️ Constraints
+
+- Not for code review — doesn’t read or analyze implementation
+- Requires a system-level input: diagram, architecture text, or structure block
+- May return questions, not answers — it’s a thought partner, not a judge
+
+#### 📟 Example Minimal Prompt
+
+```markdown
+Evaluate this proposed architecture using `#.github/instructions/design-principles.instructions.md`. Target: `#cart` and `#checkout` modules.
+```
 
 ---
 
