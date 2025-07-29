@@ -4,11 +4,11 @@ Each mode, prompt, or instruction earns a status badge (find the badge legend ri
 
 | Status | Badge | Meaning |
 | - | - | - |
-| `Draft` | ![Draft](https://img.shields.io/badge/status-draft-D90429.svg) | First pass, wild ideas—expect changes. Nothing is sacred yet. |
-| `Iterating` | ![Iterating](https://img.shields.io/badge/status-iterating-FF6600.svg) | Rapid tweaks, Survivor mode: “Let’s see what you can really do.” |
-| `Refining` | ![Refining](https://img.shields.io/badge/status-refining-6B33A2.svg) | In review—cue the perfectionism and last-minute OCD edits. |
-| `Validating` | ![Validating](https://img.shields.io/badge/status-validating-0070A3.svg) | Actively tested, feedback wanted—“Can someone break this for me, please?” |
-| `Final` | ![Final](https://img.shields.io/badge/status-final-32852F.svg) | Polished, proven, ready for prime time. The chef’s kiss of prompts. |
+| `Draft` | ![Draft - Pink](https://img.shields.io/badge/status-draft-F72585.svg) | First pass, wild ideas—expect changes. Nothing is sacred yet. |
+| `Tweak` | ![Tweak - Orange](https://img.shields.io/badge/status-tweak-FB5607.svg) | Rapid tweaks, Survivor mode: “Let’s see what you can really do.” |
+| `Polish` | ![Polish - Purple](https://img.shields.io/badge/status-polish-9B5DE5.svg) | In review—cue the perfectionism and last-minute OCD edits. |
+| `Check` | ![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg) | Actively tested, feedback wanted—“Can someone break this for me, please?” |
+| `Ready` | ![Ready - Green](https://img.shields.io/badge/status-ready-007F5F.svg) | Polished, proven, ready for prime time. The chef’s kiss of prompts. |
 
 > [!Note]
 >

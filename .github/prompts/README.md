@@ -15,13 +15,13 @@ Every prompt is tagged by lifecycle status (see [Status Lifecycle & Badges](../.
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| `generate-commit-message` | [![Status: Iterating](https://img.shields.io/badge/status-iterating-FF6600.svg)](#-generate-commit-message) | Directs Copilot to analyze a git diff, format a conventional commit, validate it, and save to `commit.tmp` | Use Agent Mode for best results. |
+| `generate-commit-message` | [![Status: Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg)](#-generate-commit-message) | Directs Copilot to analyze a git diff, format a conventional commit, validate it, and save to `commit.tmp` | Use Agent Mode for best results. |
 
 ---
 
 ## 🪄 generate-commit-message
 
-[![Status: Iterating](https://img.shields.io/badge/status-iterating-FF6600.svg)](#-generate-commit-message)
+[![Status: Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg)](#-generate-commit-message)
 
 This is the **Maestro** prompt — it doesn't write the commit message itself. Instead, it _conducts_:
 
@@ -48,7 +48,7 @@ It supplies the tools, too — editing the file via `#editFiles`, running valida
 
 ## ✨ Timestamp Handling (Utility Mode)
 
-[![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)](#-timestamp-handling-utility-mode)
+[![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](#-timestamp-handling-utility-mode)
 
 This is a helper instruction, not a standalone utility. It’s designed to be called by other prompts — especially when you ask Copilot to track its own work in a report or log. It generates a dual-format timestamp that’s both human-readable and machine-parseable, using your local timezone and Unix epoch.
 

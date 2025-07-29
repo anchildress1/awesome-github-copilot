@@ -8,7 +8,7 @@ status: draft
 
 # 🕴️ The Logfather: Logging Review Chat Mode
 
-[![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-D90429.svg)]()
+[![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)]()
 
 > In this family, we don’t print to console. We speak in structured truths.
 

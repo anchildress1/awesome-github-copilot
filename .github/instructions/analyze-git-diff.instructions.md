@@ -1,5 +1,5 @@
 ---
-status: Refining
+status: Polish
 title: Analyze Git Diff
 description: |
   Analyze a git diff and generate a concise, context-aware commit message.

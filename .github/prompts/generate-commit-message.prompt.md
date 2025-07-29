@@ -1,5 +1,5 @@
 ---
-status: Refining
+status: Polish
 mode: agent
 title: Format Conventional Commit
 description: |

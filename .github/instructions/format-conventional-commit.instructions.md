@@ -1,5 +1,5 @@
 ---
-status: Validating
+status: Check
 title: Format Conventional Commit
 description: |
   Generate a perfectly formatted conventional commit message that passes validation.

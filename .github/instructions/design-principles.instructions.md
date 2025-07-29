@@ -1,4 +1,8 @@
 ---
+status: Ready
+title: Design Principles
+description: |
+  This instruction evaluates design decisions for clarity, stability, and future impact.
 applyTo: '**'
 ---
 

@@ -1,5 +1,7 @@
 # awesome-github-copilot
 
+[![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot)
+
 > [!IMPORTANT]
 >
 > 🦄 Hack Time Update: Contest Mode Activated!
@@ -55,15 +57,15 @@ If you’re using VS Code, these load automatically when your file matches the `
 
 | File | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`format-conventional-commit`](#-format-conventional-commit) | [![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)]() | Turns your ordinary commit into beautifully conventional git poetry | Contains RAI trailers |
-| [`analyze-git-diff`](#-analyze-git-diff) | [![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)]() | Parses the git diff and generates a clean, contextual explanation designed for use in the commit message body — because “fixed stuff” isn’t enough. | |
-| [`design-principles`](#-design-principles) | [![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)]() | Reviews architectural and design choices for testability, scalability, and long-term regret avoidance | Ideal for early planning, system diagrams, or "wait... why did we do it that way?" moments |
+| [`format-conventional-commit`](#-format-conventional-commit) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)]() | Turns your ordinary commit into beautifully conventional git poetry | Contains RAI trailers |
+| [`analyze-git-diff`](#-analyze-git-diff) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]() | Parses the git diff and generates a clean, contextual explanation designed for use in the commit message body — because “fixed stuff” isn’t enough. | |
+| [`design-principles`](#-design-principles) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)]() | Reviews architectural and design choices for testability, scalability, and long-term regret avoidance | Ideal for early planning, system diagrams, or "wait... why did we do it that way?" moments |
 
 ---
 
 ### ✨ Format Conventional Commit
 
-[![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)]()
+[![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)]()
 
 Use this when you want a commit message that doesn’t just _pass linting_ - it tells the real story. Whether you're refining a draft or pulling details straight from your `git diff`, this mode delivers clean, compliant messages with just the right amount of nerdy precision. See [`format-conventional-commit.instructions.md`](.github/instructions/format-conventional-commit.instructions.md) for the full breakdown.
 
@@ -95,7 +97,7 @@ Generate a commit message for changes defined in `#diff-report.tmp` using instru
 
 ### ✨ Analyze Git Diff
 
-[![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)]()
+[![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]()
 
 This instruction powers the commit message body generator inside [`format-conventional-commit`](#-format-conventional-commit), but it’s just as handy on its own. Feed it any `git diff` and it’ll return a clean, no-nonsense breakdown of what changed. For the full expert workflow, see [`analyze-git-diff.instructions.md`](.github/instructions/analyze-git-diff.instructions.md).
 
@@ -131,7 +133,7 @@ Please analyze the following git diff using the instructions in `.github/instruc
 
 ### ✨ Design Principles
 
-[![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)]()
+[![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)]()
 
 This one’s for your inner architect — or anyone who’s ever rewritten their own feature three times because “I finally figured out how it should work.” Give it a diagram, a structure, or a description of your system, and it’ll tear it apart just enough to build it better.
 
@@ -165,14 +167,14 @@ Each one uses `agent` mode and is designed to act as a lead prompt that orchestr
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`generate-commit-message`](#-generate-commit-message) | [![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)](#-generate-commit-message) | Directs Copilot to generate and validate a Conventional Commit using diff analysis and formatting experts | Uses Maestro persona to coordinate two instruction layers |
-| [`get-current-timestamp`](#-get-current-timestamp) | [![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)](#-get-current-timestamp) | Defines the exact timestamp format and process for report generation. |   |
+| [`generate-commit-message`](#-generate-commit-message) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](#-generate-commit-message) | Directs Copilot to generate and validate a Conventional Commit using diff analysis and formatting experts | Uses Maestro persona to coordinate two instruction layers |
+| [`get-current-timestamp`](#-get-current-timestamp) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](#-get-current-timestamp) | Defines the exact timestamp format and process for report generation. |   |
 
 ---
 
 ### 🎼 Generate Commit Message
 
-[![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg)]()
+[![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)]()
 
 Think of this as the AI version of a pit conductor — not writing the music, but cueing every section at just the right time. This agent-mode prompt coordinates two separate instruction files: one to explain the `git diff`, and one to craft the final commit message. It validates the result using `commitlint` and saves the output to `commit.tmp`.
 
@@ -208,7 +210,7 @@ See [`generate-commit-message.prompt.md`](.github/prompts/generate-commit-messag
 
 ### ✨ Get Current Timestamp
 
-[![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)](#-get-current-timestamp)
+[![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](#-get-current-timestamp)
 
 When you need timestamps that are 100% consistent, timezone-stamped, and reliably human+machine readable, this is your go-to. It enforces a strict format and forbids ad-libbing — even AI can’t mess it up.
 
@@ -258,7 +260,7 @@ Each mode brings its own voice, purpose, and attitude — because sometimes you 
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](#-hlbpa-high-level-big-picture-architect-chat-mode) (High-Level Big-Picture Architect) | ![Status: Iterating (orange badge)](https://img.shields.io/badge/status-iterating-FF6600.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`hlbpa`](#-hlbpa-high-level-big-picture-architect-chat-mode) (High-Level Big-Picture Architect) | ![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
 
 ---
 

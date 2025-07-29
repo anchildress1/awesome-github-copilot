@@ -1,4 +1,5 @@
 ---
+status: Ready
 mode: ask
 model: GPT-4.1
 title: Get Current Timestamp for Reports
@@ -7,7 +8,6 @@ description: |
   It specifies the exact format and usage of timestamps to ensure consistency and accuracy across reports.
 tools:
   - runTasks
-status: Final
 ---
 
 <prompt id="get-current-timestamp">
