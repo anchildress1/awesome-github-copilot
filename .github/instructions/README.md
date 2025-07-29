@@ -17,6 +17,7 @@ Every instruction is labeled by lifecycle status (see [Status Lifecycle & Badges
 | [`format-conventional-commit`](#-format-conventional-commit-bobby-nash-edition) | [![Status: Validating (blue badge)](https://img.shields.io/badge/status-validating-0070A3.svg)](#-format-conventional-commit-bobby-nash-edition) | Converts staged changes into a conventional commit message | Utilizes companion [diff analysis instruction](./analyze-git-diff.instructions.md) |
 | [`analyze-git-diff`](#-analyze-git-diff-athena-grant-edition) | [![Status: Refining (purple badge)](https://img.shields.io/badge/status-refining-6B33A2.svg)](#-analyze-git-diff-athena-grant-edition) | Analyze git diff and generate explanations | Best used before commit generation for better results |
 | [`design-principles`](#-design-principles-hen-house-edition) | [![Status: Final (green badge)](https://img.shields.io/badge/status-final-32852F.svg)](#-design-principles-hen-house-edition) | Evaluates design decisions for clarity, stability, and future impact | Inspired by legacy code PTSD and late-night refactors |
+| [`logging-best-practices`](../../docs/instructions/logging-best-practices.md) | [![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-D90429.svg)]() | Checklist of logging do's and don'ts with multi-language examples | Designed to power [`The Logfather`](../../docs/chatmodes/logfather.md) chat mode |
 
 ---
 
