@@ -71,6 +71,7 @@ Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitH
 | - | :-: | - | - |
 | [`hlbpa`](../docs/chatmodes/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](../docs/chatmodes/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
 | [`logfather`](../docs/chatmodes/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](../docs/chatmodes/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
+| [`instructionalist`](../docs/chatmodes/instructionalist.md) | [![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)]() | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
 
 ---
 
