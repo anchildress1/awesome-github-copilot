@@ -25,6 +25,7 @@
     "commitlint": "npx commitlint --verbose --edit"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "glob": "11.0.3",
     "ignore": "7.0.5",
