@@ -1,9 +1,9 @@
 ## ✨ Analyze Git Diff (Athena Grant Edition)
 
-\[![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]
+[![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]()
 
 This instruction is Athena. It shows up first, surveys the entire scene, and calmly reports exactly what happened — no guesswork, no drama, just facts. Feed it a `git diff`, and it will return a structured, objective breakdown you can trust.
-See [`analyze-git-diff.instructions.md`](./analyze-git-diff.instructions.md) for more.
+See [`analyze-git-diff.instructions.md`](../../.github/instructions/analyze-git-diff.instructions.md) for more.
 
 > [!TIP]
 >

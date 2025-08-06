@@ -49,251 +49,68 @@ Your influence, clarity, and push for building things that scale across teams li
 
 ---
 
-## 📋 Instructions
+# 📚 The `.github/` Directory
 
-Hand-tuned AI workflows for common dev tasks — written for Copilot, but useful for any AI with a clue.
+Welcome to the heart of this repository’s GitHub automation, documentation, and creative workflow tools. This folder contains the essential resources and configuration files that power collaboration, automation, and custom Copilot experiences across the project.
 
-If you’re using VS Code, these load automatically when your file matches the `applyTo` pattern. If not, just pull them in manually with a trusty `#file` reference and keep movin’.
+Whether you’re looking for unique Copilot personalities, reusable prompt templates, or detailed instructions for contributors and bots, you’ll find the entry points here. For the full library of modes, prompts, and instructions, see the [`docs/`](./docs/) folder.
 
-| File | Status | Purpose | Notes |
-| - | :-: | - | - |
-| [`format-conventional-commit`](#-format-conventional-commit) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)]() | Turns your ordinary commit into beautifully conventional git poetry | Contains RAI trailers |
-| [`analyze-git-diff`](#-analyze-git-diff) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]() | Parses the git diff and generates a clean, contextual explanation designed for use in the commit message body — because “fixed stuff” isn’t enough. | |
-| [`design-principles`](#-design-principles) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)]() | Reviews architectural and design choices for testability, scalability, and long-term regret avoidance | Ideal for early planning, system diagrams, or "wait... why did we do it that way?" moments |
+Each document is clearly labeled by status (see [Status Lifecycle & Badges](./docs/status-badge-lifecycle.md)), so you’ll know if you’re about to deploy a seasoned attending... or an intern who thinks “merge conflict” is a new diagnosis.
+
+> 🦄 This repo thrives on creative chaos and workflow upgrades. If you’re new, start here to get oriented!
 
 ---
 
-### ✨ Format Conventional Commit
+## 🤹 Custom Instructions
 
-[![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)]()
-
-Use this when you want a commit message that doesn’t just _pass linting_ - it tells the real story. Whether you're refining a draft or pulling details straight from your `git diff`, this mode delivers clean, compliant messages with just the right amount of nerdy precision. See [`format-conventional-commit.instructions.md`](.github/instructions/format-conventional-commit.instructions.md) for the full breakdown.
-
-#### 💡 Highlights
-
-- ✅ **Objective explanations**: Strips the drama, keeps the facts - clearly explains what changed and why
-- ✅ **Context-aware**: Pulls from everything it’s got, but refuses to fake it - uses `(TBD)` when things get murky
-- ✅ **Breaking change callouts**: Loud and clear when something’s gonna break, with suggested mitigations
-- ✅ **RAI disclaimers**: Adds my Responsible AI trailer so you know where the humans end and the models begin (works with more than just Copilot)
-
-#### ⛔️ Constraints
-
-- Using a commit linter like `commitlint`? Validation issues may slow things down a bit
-- Missing context? You’ll get a `(TBD)` and a neat little list of follow-up questions
-- Output is **just** the raw commit message—no intro, no fluff, no commentary
-
-#### 📟 Example Minimal Prompt
-
-```markdown
-Generate a commit message for changes defined in `#diff-report.tmp` using instructions in `#commit-message.instructions.md`.
-```
-
-> [!TIP]
->
-> Running this in Agent Mode? It'll automatically generate the diff for you using `#changes` or `#runInTerminal`.
-> Flying solo? Use `git diff --staged > diff.tmp` to roll your own, then feed it in manually. Either way, you’re golden.
-
----
-
-### ✨ Analyze Git Diff
-
-[![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]()
-
-This instruction powers the commit message body generator inside [`format-conventional-commit`](#-format-conventional-commit), but it’s just as handy on its own. Feed it any `git diff` and it’ll return a clean, no-nonsense breakdown of what changed. For the full expert workflow, see [`analyze-git-diff.instructions.md`](.github/instructions/analyze-git-diff.instructions.md).
-
-#### 💡 Highlights
-
-- ✅ **Context-aware**: Generates a sharp, assumption-free bullet list based on your diff and any available chat context
-- ✅ **Prompts for gaps**: Flags missing info with `(TBD)` and adds smart follow-up questions at the end
-- ✅ **Breaking change callouts**: Loud and clear — anything risky gets a proper label so you don’t miss it
-
-### ⛔️ Constraints
-
-- No fake rationale — if it doesn't know _why_, it says so with `(TBD)`
-- Output is a pure markdown bullet list — no summary, no side notes, no small talk
-- Keeps lines under 100 characters for clean commit body compatibility
-- Won’t stop early — explains every change or flags it for follow-up
-
-### 📟 Example Minimal Prompt
-
-```markdown
-Please analyze the following git diff using the instructions in `.github/instructions/analyze-git-diff.instructions.md`.
-```
-
-> [!IMPORTANT]
->
-> In Ask Mode, chat history isn’t saved and `#changes` isn’t available.
-> You’ll need to generate your own diff file with:
-> `git diff --staged > diff.tmp`
-> Then reference it manually in your prompt as `#diff.tmp`.
-
----
-
----
-
-### ✨ Design Principles
-
-[![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)]()
-
-This one’s for your inner architect — or anyone who’s ever rewritten their own feature three times because “I finally figured out how it should work.” Give it a diagram, a structure, or a description of your system, and it’ll tear it apart just enough to build it better.
-
-#### 💡 Highlights
-
-- ✅ **Encourages clarity**: Forces explicit decisions — no more vague “we’ll figure it out later”
-- ✅ **Flags risk areas**: Points out brittle spots, circular dependencies, or testing traps
-- ✅ **Non-blocking by design**: It won’t say you failed — it just gives you better questions to ask
-
-#### ⛔️ Constraints
-
-- Not for code review — doesn’t read or analyze implementation
-- Requires a system-level input: diagram, architecture text, or structure block
-- May return questions, not answers — it’s a thought partner, not a judge
-
-#### 📟 Example Minimal Prompt
-
-```markdown
-Evaluate this proposed architecture using `#.github/instructions/design-principles.instructions.md`. Target: `#cart` and `#checkout` modules.
-```
-
----
-
----
-
-## 🎼 Prompts
-
-Hand-crafted prompt templates for directing the AI symphony. These aren’t instructions or personas — they’re conductors: fully orchestrated workflows that tell Copilot when to call in the specialists (like the 🧠 Commit Surgeon or 🎩 Diff Philosopher).
-
-Each one uses `agent` mode and is designed to act as a lead prompt that orchestrates other instructions behind the scenes.
-
-| Name | Status | Purpose | Notes |
-| - | :-: | - | - |
-| [`generate-commit-message`](#-generate-commit-message) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](#-generate-commit-message) | Directs Copilot to generate and validate a Conventional Commit using diff analysis and formatting experts | Uses Maestro persona to coordinate two instruction layers |
-| [`get-current-timestamp`](#-get-current-timestamp) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](#-get-current-timestamp) | Defines the exact timestamp format and process for report generation. |   |
-
----
-
-### 🎼 Generate Commit Message
-
-[![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)]()
-
-Think of this as the AI version of a pit conductor — not writing the music, but cueing every section at just the right time. This agent-mode prompt coordinates two separate instruction files: one to explain the `git diff`, and one to craft the final commit message. It validates the result using `commitlint` and saves the output to `commit.tmp`.
-
-See [`generate-commit-message.prompt.md`](.github/prompts/generate-commit-message.prompt.md) for the full details.
-
-#### 💡 Highlights
-
-- ✅ **Agent Mode**: Designed for tools like GitHub Copilot Agent or compatible AI extensions
-- ✅ **Delegates with purpose**: Relies on `analyze-git-diff` and `format-conventional-commit` to do the heavy lifting
-- ✅ **Validates output**: Ensures the final commit passes `commitlint` before saving or displaying
-- ✅ **Flexible input**: Works with provided `diff` or auto-generates one using `#changes` if available
-
-#### ⛔️ Constraints
-
-- Doesn’t do analysis or formatting itself — it just conducts
-- Requires `commitlint` validation to succeed before completing
-- Only produces the final commit message — no commentary, no helper text
-
-#### 📟 Example Minimal Prompt
-
-```markdown copy
-/generate-coommit-message for all staged changes
-```
-
-> [!TIP]
-> This works best in Agent Mode, where `#changes`, `#runInTerminal`, and `#editFiles` are available. If you’re flying manual, generate your own diff using:
->
-> `git diff --staged > diff.tmp`
->
-> Then reference it in the prompt as `#diff.tmp`.
-
----
-
-### ✨ Get Current Timestamp
-
-[![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](#-get-current-timestamp)
-
-When you need timestamps that are 100% consistent, timezone-stamped, and reliably human+machine readable, this is your go-to. It enforces a strict format and forbids ad-libbing — even AI can’t mess it up.
-
-See [`get-current-timestamp.prompt.md`](.github/prompts/get-current-timestamp.prompt.md) for the full details.
-
-#### 💡 Highlights
-
-- ✅ Designed to be called from other prompts, chat modes, or instructions
-- ✅ Uses `#runTasks` to generate real-time, traceable timestamps
-- ✅ Includes both human-readable and Unix formats
-- ✅ Enforces immutability — no reformatting allowed
-- ✅ Validates correct structure with examples
-
-#### ⛔️ Constraints
-
-- Manual timestamps are banned — use `#runTasks` or bust (Copilot can't tell time on it's own!)
-- Format cannot be altered, translated, or trimmed
-
-Only valid if the output looks exactly like this (but easy enough to change on your own):
-
-```markdown
-Thu Jun 8 09:34:00 EDT 2023 (1686233640)
-```
-
-#### 📟 Example Minimal Prompt
-
-This prompt is designed to be executed from other prompts or instructions. It's set up with VS Tasks, so you can just as easily run it yourself (the recommended Task Explorer makes it super simple).
-
-However, if you _really_ want to execute this as a standalone prompt, you can use:
-
-```markdown
-/get-current-timestamp
-```
+This is where the magic lives — reusable, testable, sometimes over-engineered instructions for GitHub Copilot and other AI agents. These aren’t prompts you paste once and forget — they’re designed to behave like little command-line utilities for your agent.
 
 > [!INFO]
-> Note that this prompt is designed to provide a timestamp for the start or end of a Copilot-generated report. Those are all contained in separate prompts that are coming soon, so stay tuned!
-
----
-
----
-
-## 📟 Chat Modes
-
-Custom Copilot personalities, built for focused chaos. Use them in GitHub Copilot Chat or any AI extension that supports custom prompts.
-
-Each mode brings its own voice, purpose, and attitude — because sometimes you need a debugger, and sometimes you need a hype squad. 🥳
+>
+> If you're using VS Code, you can enable custom instructions for Copilot by setting the `⚙️ copilot.customInstructions`field in your settings. If you're _not_ using VS Code... well, you probably know what you're doing and I trust you to handle it.
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](#-hlbpa-high-level-big-picture-architect-chat-mode) (High-Level Big-Picture Architect) | ![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`format-conventional-commit`](./docs/instructions/format-conventional-commits.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/format-conventional-commits.md) | Converts staged changes into a conventional commit message | Utilizes companion [diff analysis instruction](./instructions/analyze-git-diff.instructions.md) |
+| [`analyze-git-diff`](./docs/instructions/analyze-git-diff.md) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/instructions/analyze-git-diff.md) | Analyze git diff and generate explanations | Best used before commit generation for better results |
+| [`design-principles`](./docs/instructions/design-principles.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles.md) | Evaluates design decisions for clarity, stability, and future impact | Inspired by legacy code PTSD and late-night refactors |
+| [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Checklist of logging do's and don'ts with multi-language examples | Designed to power [`The Logfather`](./docs/chatmodes/logfather.md) chat mode |
+
+> 🦄 If Athena helped you bring order to your chaos, leave a star. You know she’s not asking for it — but she earned it.
 
 ---
 
-## ✨ HLBPA (High-Level Big-Picture Architect) Chat Mode
+## 🧑‍🚀 Prompts
 
-Refer to the [HLBPA Chat Mode README](.github/chatmodes/hlbpa.chatmode.md) for detailed insights and instructions on how to use this chat mode.
+These are your spectral conductors — high-level prompts designed for Agent Mode that don’t _do_ the work, they summon the right specialists to do it for them. Think: “raise the Diff Philosopher, call in the Commit Surgeon, validate it all without lifting a mortal finger.”
 
-> 🦄 Request several artifacts in one go to maximize each run. It may take longer to execute, but you'll save on premium requests.
+Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerminal`) and when to call them. You’re not just generating content — you’re performing a séance on your staging area with precision and a clipboard.
 
-### 💡 Highlights
+| Name | Status | Purpose | Notes |
+| - | :-: | - | - |
+| `generate-commit-message` | [![Status: Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/prompts/generate-commit-message.md) | Directs Copilot to analyze a git diff, format a conventional commit, validate it, and save to `commit.tmp` | Use Agent Mode for best results. |
+| [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](../docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Useful for scripts, logs, or automation. |
 
-- ✅ **Designed for cost efficiency**: Feed the XML file directly to your Copilot Coding Agent or use the MD file as an Agent Chat Mode, and then prompt as needed.
-- ✅ **Optimized for Copilot Coding Agent** (tested with Claude Sonnet 4)
-- ✅ Diagrams use **standard Mermaid syntax**; alternative artifact types supported (table/test/gapscan)
-- ✅ **Still iterating!** Not all workflows are fully tested yet, but core documentation/diagramming works well
+---
 
-### ⛔️ Constraints
+# 👷‍♂️ Chat Modes
 
-- Will _**not**_ modify your codebase or tests
-- **Documentation mode only** - never generates implementation plans of any kind
+Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitHub Copilot personalities, all designed for creative chaos, workflow upgrades, and occasional code emergencies. Every mode here is handpicked by me (with ChatGPT running triage in the background).
 
-### 📟 Example Minimal Prompt
+> 🦄 If things start to feel a little wild, just remember: it’s not quite The Pitt—but we do like to keep you on your toes.
 
-```markdown
-Please generate high-level documentation for this repo using the provided HLBPA chat mode. My name is Jane Doe. Artifact: architecture diagram. Target: #directory:controllers.
-```
+| Name | Status | Purpose | Notes |
+| - | :-: | - | - |
+| [`hlbpa`](./docs/chatmodes/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](../docs/chatmodes/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`logfather`](./docs/chatmodes/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](../docs/chatmodes/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
+| [`instructionalist`](./docs/chatmodes/instructionalist.md) | [![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)]() | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
+
+> 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
 
 ---
 
 ---
 
-> ⭐️ If you tried a chat mode and it helped you out, leave a star! Check back soon for updates.
-
----
+> ⭐️ If you tested any of the above modes and it helped you out, leave a star! If it failed spectacularly, let me know and I'll investigate. Check back soon for updates.
 
 <small>Generated with the help of ChatGPT as directed by Ashley Childress</small>

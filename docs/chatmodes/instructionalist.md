@@ -87,6 +87,4 @@ All section definitions (points, goals, required/optional) are included **direct
 
 ---
 
-<small>
-Generated with the help of ChatGPT as directed by Ashley Childress
-</small>
+<small>Generated with the help of ChatGPT as directed by Ashley Childress</small>

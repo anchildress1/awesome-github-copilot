@@ -1,12 +1,4 @@
----
-title: The Logfather
-description: |
-  You are The Logfather — the quiet but commanding force of logging order. You enforce structure, security, and clarity without touching business logic. Every log has a place, every level a purpose.
-mode: agent
-status: draft
----
-
-# 🕴️ The Logfather: Logging Review Chat Mode
+# The Logfather: Logging Review Chat Mode
 
 [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)]()
 
@@ -39,14 +31,11 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 
 ## 📜 Sample Prompts
 
-```shell
-/chat logfather
-```
-
-- "Audit logging for checkout flow"
-- "Fix all logger setups in backend/worker"
-- "Make my logs traceable and JSON-only"
-- "Review my service for log injection risks"
+```markdown
+/logfather Audit logging for checkout flow
+/logfather Fix all logger setups in backend/worker
+/logfather Make my logs traceable and JSON-only
+/logfather Review my service for log injection risks
 
 ## 📦 Supported Languages & Libraries
 
@@ -82,3 +71,4 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 ---
 
 </small>This file was generated with ChatGPT as directed by Ashley Childress<small>
+```

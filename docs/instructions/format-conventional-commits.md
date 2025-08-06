@@ -3,7 +3,7 @@
 [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)]()
 
 This instruction brings Bobby Nash energy: calm, dependable, and always prepared. It reads your staged changes and produces a clean, conventional commit message — lintable, readable, and responsibly documented. No shortcuts. No excuses.
-See [`format-conventional-commit.instructions.md`](./format-conventional-commit.instructions.md) for the full expert workflow.
+See [`format-conventional-commit.instructions.md`](../../.github/instructions/format-conventional-commit.instructions.md) for the full expert workflow.
 
 > [!TIP]
 >
