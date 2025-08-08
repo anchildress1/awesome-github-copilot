@@ -71,7 +71,7 @@ This is where the magic lives — reusable, testable, sometimes over-engineered 
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`format-conventional-commit`](./docs/instructions/format-conventional-commits.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/format-conventional-commits.md) | Converts staged changes into a conventional commit message | Utilizes companion [diff analysis instruction](./instructions/analyze-git-diff.instructions.md) |
+| [`format-conventional-commit`](./docs/instructions/format-conventional-commits.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/format-conventional-commits.md) | Converts staged changes into a conventional commit message | Utilizes companion [diff analysis instruction](./.github/instructions/analyze-git-diff.instructions.md) |
 | [`analyze-git-diff`](./docs/instructions/analyze-git-diff.md) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/instructions/analyze-git-diff.md) | Analyze git diff and generate explanations | Best used before commit generation for better results |
 | [`design-principles`](./docs/instructions/design-principles.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles.md) | Evaluates design decisions for clarity, stability, and future impact | Inspired by legacy code PTSD and late-night refactors |
 | [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Checklist of logging do's and don'ts with multi-language examples | Designed to power [`The Logfather`](./docs/chatmodes/logfather.md) chat mode |
@@ -89,7 +89,7 @@ Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerm
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
 | `generate-commit-message` | [![Status: Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/prompts/generate-commit-message.md) | Directs Copilot to analyze a git diff, format a conventional commit, validate it, and save to `commit.tmp` | Use Agent Mode for best results. |
-| [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](../docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Useful for scripts, logs, or automation. |
+| [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Useful for scripts, logs, or automation. |
 
 ---
 
@@ -101,9 +101,9 @@ Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitH
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](./docs/chatmodes/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](../docs/chatmodes/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
-| [`logfather`](./docs/chatmodes/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](../docs/chatmodes/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
-| [`instructionalist`](./docs/chatmodes/instructionalist.md) | [![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)]() | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
+| [`hlbpa`](./docs/chatmodes/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/chatmodes/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review** | Not designed to write code or tests. |
+| [`logfather`](./docs/chatmodes/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/chatmodes/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
+| [`instructionalist`](./docs/chatmodes/instructionalist.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/chatmodes/instructionalist.md) | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
 
 > 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
 
