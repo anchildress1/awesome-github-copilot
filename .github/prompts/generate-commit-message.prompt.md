@@ -49,7 +49,7 @@ Your masterpiece ends with a commit message that is:
 - **OUTPUT FORMAT**: Output MUST be a single raw commit message stored in a [`commit.tmp`](../../commit.tmp) file - no explanations, no preamble
   - **COPY-PASTE BLOCK**: The commit message MUST be output in a copy-paste block in the chat interface for easy insertion into terminal commands.
   - **FILE OUTPUT**: The commit message MUST be output in a file named [`commit.tmp`](../../commit.tmp) in the current working directory.
-- **VALIDATION**: The commit stored in #commit.tmp MUST pass validation using the `npm run commitlint -- commit.tmp` command.
+- **VALIDATION**: The commit stored in #commit.tmp MUST pass all validations using the `npm run commitlint -- commit.tmp` command EXCEPT for the `Signed-off-by` footer, which should always fail unless the user executes it.
   - If the user requires a `Signed-off-by` line, and it causes validation errors, then you MAY bypass that specific validation rule ONLY.
   - If the commit message does not pass validation, you MUST iterate through the errors returned by using the `#runInTerminal` tool to execute `npm run commitlint -- commit.tmp` and adjust the commit message accordingly.
 - **NO OUTPUT UNTIL VALID**: You MUST NOT output a commit message that does not pass validation.
