@@ -65,8 +65,7 @@ Each document is clearly labeled by status (see [Status Lifecycle & Badges](./do
 
 This is where the magic lives — reusable, testable, sometimes over-engineered instructions for GitHub Copilot and other AI agents. These aren’t prompts you paste once and forget — they’re designed to behave like little command-line utilities for your agent.
 
-> [!INFO]
->
+> [!NOTE]
 > If you're using VS Code, you can enable custom instructions for Copilot by setting the `⚙️ copilot.customInstructions`field in your settings. If you're _not_ using VS Code... well, you probably know what you're doing and I trust you to handle it.
 
 | Name | Status | Purpose | Notes |
@@ -88,7 +87,7 @@ Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerm
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| `generate-commit-message` | [![Status: Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/prompts/generate-commit-message.md) | Directs Copilot to analyze a git diff, format a conventional commit, validate it, and save to `commit.tmp` | Use Agent Mode for best results. |
+| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) | [![Status: Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/prompts/generate-commit-message.md) | Directs Copilot to analyze a git diff, format a conventional commit, validate it, and save to `commit.tmp` | Use Agent Mode for best results. |
 | [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Useful for scripts, logs, or automation. |
 
 ---

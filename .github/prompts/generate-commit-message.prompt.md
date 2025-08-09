@@ -107,21 +107,22 @@ Co-authored-by: GitHub Copilot <github.copilot@github.com>
 ```
 
 </example>
-<validation-rules class="critical">
+<validation-rule class="critical">
 
-#### Required **CRITICAL** Commit Message Validation Rules
+### Commitlint Validation Rule
 
-1. Ensure the commit message follows Conventional Commits spec exactly.
-2. Validate using `npm run commitlint -- commit.tmp` to lint `commit.tmp` and output any errors.
-3. If the commit message does not pass validation, you MUST iterate through the errors returned by `npm run commitlint -- commit.tmp` and adjust the commit message accordingly.
-4. You MUST NOT output a commit message that does not pass validation.
-5. You WILL repeat the validation process until the commit message passes all checks.
-6. If needed, you may return to a previous step to adjust the commit message based on the validation errors.
-7. Only after the commit message successfully passes validation, you will output the final commit message in a copy-paste block format.
-8. If validation fails because of a single `Signed-off-by` line, you MUST BYPASS that specific validation rule ONLY.
-   - **NEVER** add a `Signed-off-by` line if it causes validation errors, unless explicitly requested by the user.
+- You **MUST** use the `#runInTerminal` tool to execute `npm run commitlint -- commit.tmp` to validate the commit message in `commit.tmp`.
+- If the commit message does not pass validation, you are **REQUIRED** to iterate through the errors returned by `npm run commitlint -- commit.tmp` and adjust the commit message accordingly.
+- You will repeat the validation process until the commit message passes all checks, **except you MUST IGNORE any `Signed-off-by` related validation errors**.
+- **NEVER** automatically add `Signed-off-by` lines as this violates the integrity of the signing process - signing must be a deliberate personal act.
 
-</validation-rules> </commit-message>
+#### **CRITICAL** Validation Note
+
+If the commit message does not pass validation, you are **REQUIRED** to iterate through the errors returned by `npm run commitlint -- commit.tmp` and adjust the commit message accordingly. You will repeat the validation process until the commit message passes all checks.
+
+Always use the output from the `commitlint` tool to inform your adjustments. If the commit message does not pass validation, you **MUST NOT** output a commit message that does not pass validation.
+
+</validation-rule> </commit-message>
 
 <commit-validation> <pre-validation-checklist>
 

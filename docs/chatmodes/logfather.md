@@ -36,6 +36,7 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 /logfather Fix all logger setups in backend/worker
 /logfather Make my logs traceable and JSON-only
 /logfather Review my service for log injection risks
+```
 
 ## 📦 Supported Languages & Libraries
 
@@ -70,5 +71,7 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 
 ---
 
-</small>This file was generated with ChatGPT as directed by Ashley Childress<small>
+<small>This file was generated with ChatGPT as directed by Ashley Childress</small>
+
+```
 ```
