@@ -1,10 +1,14 @@
 ## ✨ HLBPA Chat Mode (High-Level Big-Picture Architect)
 
-[![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](../../.github/chatmodes/hlbpa.chatmode.md)
+[![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](../../.github/chatmodes/hlbpa.chatmode.md)
 
 ### Installation
 
-Chat modes are currently a preview feature in VS Code—think of it like Squid Game’s Red Light, Green Light: you can move fast, but one misstep and you’ll be called out! To play it safe in any IDE, just drop hlbpa.xml into Copilot’s context and explicitly tell it to follow every rule.
+Download a copy of either the [hlbpa.xml](https://github.com/copilot/agents/blob/main/hlbpa.xml) for Coding Agent or [hlbpa.chatmode.md](https://github.com/copilot/agents/blob/main/hlbpa.chatmode.md) for your chosen IDE.
+
+Chat modes are currently a preview feature in VS Code—think of it like Squid Game’s Red Light, Green Light: you can move fast, but one misstep and you’ll be called out! To play it safe in any IDE, just drop hlbpa.xml into Copilot’s context and tell it what you want with a specific context (or multiple contexts).
+
+> 🦄 Every time a new chance pops up, I _try to break it_! So far? It's handled everything that I've been able to throw at it. So, I'm going to bump the status another notch. It's not 100% yet, but it's pretty close.
 
 1. Open Command Palette and select `Chat: Configure Chat Modes...` and follow the prompt
 

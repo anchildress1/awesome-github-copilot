@@ -1,6 +1,6 @@
 ---
-description: |
-  'HLBPA: Your perfect AI chat mode for high-level architectural documentation and review. You can upload XML or MD files directly to Copilot Coding Agent or use your IDE and prompt as needed.'
+status: polish
+description: 'HLBPA: Your perfect AI chat mode for high-level architectural documentation and review. You can upload XML or MD files directly to Copilot Coding Agent or use your IDE and prompt as needed.'
 tools:
   - codebase
   - changes
