@@ -1,7 +1,6 @@
 ---
 status: Polish
 mode: agent
-title: Format Conventional Commit
 description: |
   Generate a perfectly formatted conventional commit message that passes validation.
   This instruction is designed to ensure your commit messages are clear, structured, and compliant with Conventional Commits 1.0.0 specification.
