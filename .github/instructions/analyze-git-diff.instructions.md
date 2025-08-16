@@ -1,6 +1,5 @@
 ---
 status: polish
-model: gpt-5-mini
 description: 'Analyze a git diff and generate a concise, context-aware commit message. This instruction is designed to help you understand the changes made in your codebase and produce a clear, structured commit message that reflects those changes.'
 ---
 

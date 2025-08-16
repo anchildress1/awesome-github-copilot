@@ -1,5 +1,5 @@
 ---
-status: Ready
+status: ready
 description: 'This instruction evaluates design decisions for clarity, stability, and future impact.'
 applyTo: '**'
 ---

@@ -1,5 +1,5 @@
 ---
-status: 'draft'
+status: draft
 description: 'A language-agnostic, Copilot-ready checklist for secure, structured, and scalable logging inside applications — not infrastructure.'
 ---
 

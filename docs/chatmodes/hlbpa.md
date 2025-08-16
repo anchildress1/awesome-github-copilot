@@ -4,7 +4,7 @@
 
 ### Installation
 
-Download a copy of either the [hlbpa.xml](https://github.com/copilot/agents/blob/main/hlbpa.xml) for Coding Agent or [hlbpa.chatmode.md](https://github.com/copilot/agents/blob/main/hlbpa.chatmode.md) for your chosen IDE.
+Download a copy of either the [hlbpa.xml](../../.github/chatmodes/hlbpa.xml) for Coding Agent or [hlbpa.chatmode.md](../../.github/chatmodes/hlbpa.chatmode.md) for your chosen IDE.
 
 Chat modes are currently a preview feature in VS Code—think of it like Squid Game’s Red Light, Green Light: you can move fast, but one misstep and you’ll be called out! To play it safe in any IDE, just drop hlbpa.xml into Copilot’s context and tell it what you want with a specific context (or multiple contexts).
 

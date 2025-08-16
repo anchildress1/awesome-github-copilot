@@ -1,5 +1,5 @@
 ---
-status: Polish
+status: polish
 mode: agent
 description: |
   Generate a perfectly formatted conventional commit message that passes validation.
