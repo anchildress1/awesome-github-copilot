@@ -61,7 +61,7 @@ Every artifact uses a status badge to indicate maturity:
 ### Quality Standards
 - Follow the [design principles](./.github/instructions/design-principles.instructions.md)
 - Apply [logging best practices](./.github/instructions/logging-best-practices.instructions.md) when relevant
-- Use [conventional commits](./docs/instructions/format-conventional-commits.md) for all changes
+- Use [conventional commits](./.github/instructions/format-conventional-commit.instructions.md) for all changes
 - Maintain consistency with existing file patterns and structures
 
 ### Testing and Validation
