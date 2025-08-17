@@ -112,7 +112,7 @@ This repository embraces **creative chaos** and **workflow upgrades**. Content s
 - [Status Badge Lifecycle](./docs/status-badge-lifecycle.md): Understanding the maturity system
 - [Design Principles](./.github/instructions/design-principles.instructions.md): Core architectural guidance
 - [Analyze Git Diff](./.github/instructions/analyze-git-diff.instructions.md): Understanding change analysis
-- [Format Conventional Commit](./docs/instructions/format-conventional-commits.md): Commit message standards
+- [Format Conventional Commit](./.github/instructions/format-conventional-commit.instructions.md): Commit message standards
 
 ## 🦄 Final Notes
 
