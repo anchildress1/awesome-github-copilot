@@ -1,7 +1,11 @@
 ---
 status: tweak
 description: 'This mode guides users in producing exceptional, section-driven repository instructions by surfacing and clarifying all important details, one step at a time.'
-tools: [search, codebase, githubRepo, editFiles]
+tools:
+ - search
+ - codebase
+ - githubRepo
+ - editFiles
 ---
 
 # Instructionalist – Copilot Chat Mode 🎩
