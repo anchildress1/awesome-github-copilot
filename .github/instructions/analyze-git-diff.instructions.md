@@ -1,9 +1,6 @@
 ---
-status: Polish
-title: Analyze Git Diff
-description: |
-  Analyze a git diff and generate a concise, context-aware commit message.
-  This instruction is designed to help you understand the changes made in your codebase and produce a clear, structured commit message that reflects those changes.
+status: polish
+description: 'Analyze a git diff and generate a concise, context-aware commit message. This instruction is designed to help you understand the changes made in your codebase and produce a clear, structured commit message that reflects those changes.'
 ---
 
 <instructions id="analyze-git-diff">
