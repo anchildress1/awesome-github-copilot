@@ -59,6 +59,17 @@ Each document is clearly labeled by status (see [Status Lifecycle & Badges](./do
 
 > 🦄 This repo thrives on creative chaos and workflow upgrades. If you’re new, start here to get oriented!
 
+## 🚀 Getting Started
+
+**New to this repository?** Start with these essential guides:
+
+- **[🎯 REPO-SETUP.md](./REPO-SETUP.md)** - Quick 5-minute setup for new developers
+- **[🤝 CONTRIBUTING.md](./CONTRIBUTING.md)** - Complete contribution guidelines and standards
+- **[🛠️ DEVELOPMENT.md](./DEVELOPMENT.md)** - Technical details and advanced workflows
+- **[✅ NEW-DEVELOPER-CHECKLIST.md](./NEW-DEVELOPER-CHECKLIST.md)** - Verify your setup is complete
+
+These guides ensure you understand our standards and can contribute effectively from day one.
+
 ---
 
 ## 🤹 Custom Instructions
