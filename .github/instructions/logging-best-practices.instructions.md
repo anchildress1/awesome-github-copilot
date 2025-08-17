@@ -1,9 +1,6 @@
 ---
 status: draft
-title: Logging Best Practices
-description: |
-  A language-agnostic, Copilot-ready checklist for secure, structured, and scalable logging inside applications — not infrastructure.
-applyTo: '**'
+description: 'A language-agnostic, Copilot-ready checklist for secure, structured, and scalable logging inside applications — not infrastructure.'
 ---
 
 # 🧾 Logging Best Practices
