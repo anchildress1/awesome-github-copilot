@@ -1,6 +1,6 @@
 # Principal Pragmatist Chat Mode 🧭✨
 
-[![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)](#principal-pragmatist-chat-mode-) [![Install in Visual Studio Code](https://img.shields.io/badge/Install-Visual%20Studio%20Code-0078d4)](vscode:chat-mode/install?url=https://raw.githubusercontent.com/anchildress1/awesome-github-copilot/refs/heads/main/.github/chatmodes/pragmatist.chatmode.md) [![Install in Visual Studio Code Insiders](https://img.shields.io/badge/Install-Visual%20Studio%20Code%20Insiders-00b294)](vscode-insiders:chat-mode/install?url=https://raw.githubusercontent.com/anchildress1/awesome-github-copilot/refs/heads/main/.github/chatmodes/pragmatist.chatmode.md)
+[![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)](#principal-pragmatist-chat-mode-)
 
 ### Why Use Pragmatist Mode? 🎯
 

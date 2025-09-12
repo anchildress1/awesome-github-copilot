@@ -1,6 +1,6 @@
 ## HLBPA Chat Mode (High-Level Big-Picture Architect) ✨
 
-[![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](#hlbpa-chat-mode-high-level-big-picture-architect-) [![Install in Visual Studio Code](https://img.shields.io/badge/Install-Visual%20Studio%20Code-0078d4?)](vscode:chat-mode/install?url=https://raw.githubusercontent.com/anchildress1/awesome-github-copilot/refs/heads/main/.github/chatmodes/hlbpa.chatmode.md) [![Install in Visual Studio Code Insiders](https://img.shields.io/badge/Install-Visual%20Studio%20Code%20Insiders-00b294?)](vscode-insiders:chat-mode/install?url=https://raw.githubusercontent.com/anchildress1/awesome-github-copilot/refs/heads/main/.github/chatmodes/hlbpa.chatmode.md)
+[![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](#hlbpa-chat-mode-high-level-big-picture-architect-)
 
 ### Why Use HLBPA?
 
