@@ -69,6 +69,7 @@ If this completes without errors, you're ready to contribute! 🎉
 ## 🆘 Common Issues
 
 ### Dependencies won't install
+
 ```bash
 npm cache clean --force
 rm -rf node_modules package-lock.json
@@ -76,6 +77,7 @@ npm install
 ```
 
 ### Git hooks not working
+
 ```bash
 npx lefthook uninstall
 npx lefthook install
@@ -83,15 +85,16 @@ npx lefthook list  # verify installation
 ```
 
 ### Commit message rejected
+
 - Check you included scope: `feat(docs): message`
 - Check you included body after blank line
 - Check you included `Signed-off-by:` footer
 - Keep subject under 72 characters
 
 ### VS Code Copilot not working
+
 - Ensure GitHub Copilot extension is installed and enabled
 - Check your GitHub Copilot subscription status
-- Verify custom instructions syntax in settings.json
 
 ---
 

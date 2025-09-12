@@ -22,6 +22,7 @@ git --version
 ```
 
 If missing, install from:
+
 - **Node.js**: [nodejs.org](https://nodejs.org/) (LTS version)
 - **Git**: [git-scm.com](https://git-scm.com/)
 

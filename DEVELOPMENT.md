@@ -27,7 +27,7 @@ This guide provides technical details for setting up and maintaining the awesome
    # Set up signed commits (recommended)
    git config user.signingkey YOUR_GPG_KEY_ID
    git config commit.gpgsign true
-   
+
    # Set up commit template (optional)
    git config commit.template .gitmessage
    ```
@@ -116,6 +116,7 @@ export default {
 ```
 
 **Key Requirements**:
+
 - Scope is **required** (not optional)
 - Body is **required** (not optional)
 - Signed-off-by trailer is **required**

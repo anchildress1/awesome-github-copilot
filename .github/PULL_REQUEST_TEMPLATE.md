@@ -7,7 +7,7 @@
 <!-- Mark with an `x` all the types that apply -->
 
 - [ ] 🧱 **New Instruction** - Adds a new custom instruction
-- [ ] 🚀 **New Prompt** - Adds a new Agent Mode prompt  
+- [ ] 🚀 **New Prompt** - Adds a new Agent Mode prompt
 - [ ] 🤖 **New Chat Mode** - Adds a new AI personality/chat mode
 - [ ] 🐛 **Bug Fix** - Fixes an issue in existing content
 - [ ] 📚 **Documentation** - Updates or adds documentation
@@ -20,16 +20,19 @@
 <!-- Describe how you tested this change -->
 
 ### For Instructions:
+
 - [ ] Tested in VS Code with GitHub Copilot
 - [ ] Verified behavior matches documentation
 - [ ] Tested edge cases and error scenarios
 
 ### For Prompts:
+
 - [ ] Tested in GitHub Copilot Agent Mode
 - [ ] Verified tool usage (`#changes`, `#editFiles`, etc.)
 - [ ] Confirmed output quality and completeness
 
 ### For Chat Modes:
+
 - [ ] Applied in compatible AI tools
 - [ ] Tested personality consistency across scenarios
 - [ ] Documented any limitations
@@ -62,9 +65,11 @@
 <!-- Include screenshots, examples, or test results -->
 
 ### Testing Evidence
+
 <!-- Show that you've tested this content -->
 
-### Visual Evidence  
+### Visual Evidence
+
 <!-- For UI changes, include before/after screenshots -->
 
 ## 🔗 Related Issues

@@ -5,6 +5,7 @@ Welcome to the **awesome-github-copilot** repository! This is Ashley Childress's
 ## 📋 Repository Purpose
 
 This repository contains:
+
 - **Custom Instructions**: Reusable, testable instructions for GitHub Copilot (`.github/instructions/`)
 - **Prompts**: High-level prompts for Agent Mode (`docs/prompts/`)
 - **Chat Modes**: Personality-driven AI configurations (`docs/chatmodes/`)
@@ -15,12 +16,14 @@ This repository contains:
 When contributing to this repository, follow these guidelines:
 
 ### 📁 File Organization
+
 - **Instructions**: Place in `.github/instructions/` with `.instructions.md` suffix
 - **Prompts**: Place in `docs/prompts/` directory
 - **Chat Modes**: Place in `docs/chatmodes/` directory
 - **Documentation**: Use `docs/` for supporting materials
 
 ### 🏷️ Status System
+
 Every artifact uses a status badge to indicate maturity:
 
 - ![Draft](https://img.shields.io/badge/status-draft-F72585.svg) **Draft**: Early concept, may not work reliably
@@ -32,6 +35,7 @@ Every artifact uses a status badge to indicate maturity:
 ### 📝 Content Guidelines
 
 #### For Instructions (.github/instructions/)
+
 - Start with YAML frontmatter including `status`, `title`, `description`, and `applyTo`
 - Use clear sections with emoji headers for visual organization
 - Include practical examples where applicable
@@ -39,12 +43,14 @@ Every artifact uses a status badge to indicate maturity:
 - Reference existing instructions when building upon them
 
 #### For Prompts (docs/prompts/)
+
 - Design for Agent Mode usage with specific tool references (`#changes`, `#editFiles`, etc.)
 - Include clear purpose and expected outcomes
 - Provide usage examples and tips
 - Link to related instructions when applicable
 
 #### For Chat Modes (docs/chatmodes/)
+
 - Define clear personality and behavioral guidelines
 - Specify use cases and scenarios
 - Include interaction examples
@@ -53,18 +59,21 @@ Every artifact uses a status badge to indicate maturity:
 ## 🛠️ Development Workflow
 
 ### Writing Style
+
 - Use active voice and clear, concise language
 - Include emojis for visual organization (consistently with existing patterns)
 - Keep technical jargon minimal and well-explained
 - Write for practitioners who need immediate, actionable guidance
 
 ### Quality Standards
+
 - Follow the [design principles](./.github/instructions/design-principles.instructions.md)
 - Apply [logging best practices](./.github/instructions/logging-best-practices.instructions.md) when relevant
 - Use [conventional commits](./.github/instructions/format-conventional-commit.instructions.md) for all changes
 - Maintain consistency with existing file patterns and structures
 
 ### Testing and Validation
+
 - Test instructions with actual GitHub Copilot usage
 - Verify prompts work as expected in Agent Mode
 - Validate chat modes produce desired personality and responses
@@ -73,6 +82,7 @@ Every artifact uses a status badge to indicate maturity:
 ## 🔧 Tools and Automation
 
 This repository uses:
+
 - **remark**: Markdown linting and formatting (`npm run check`, `npm run format`)
 - **commitlint**: Conventional commit enforcement
 - **lefthook**: Git hooks for quality gates
@@ -81,12 +91,14 @@ This repository uses:
 ## 🤝 Contribution Guidelines
 
 ### Before Creating New Content
+
 1. Check existing instructions, prompts, and modes for overlap
 2. Review the [Status Badge Lifecycle](./docs/status-badge-lifecycle.md)
 3. Understand the target audience and use case
 4. Consider how it fits into the overall collection
 
 ### Creating New Instructions
+
 1. Start with `status: draft` in frontmatter
 2. Use descriptive, kebab-case filenames ending in `.instructions.md`
 3. Include comprehensive `description` field explaining purpose and usage
@@ -94,6 +106,7 @@ This repository uses:
 5. Update main README.md with new entry and appropriate status badge
 
 ### Updating Existing Content
+
 1. Maintain backwards compatibility when possible
 2. Update status badge if making significant improvements
 3. Test changes against existing usage patterns
@@ -102,6 +115,7 @@ This repository uses:
 ## 🎨 Creative Philosophy
 
 This repository embraces **creative chaos** and **workflow upgrades**. Content should be:
+
 - **Uniquely crafted**: Not just rehashed generic advice
 - **Obsessively refined**: Tested and improved through real usage
 - **Clearly labeled**: Status badges help users understand maturity

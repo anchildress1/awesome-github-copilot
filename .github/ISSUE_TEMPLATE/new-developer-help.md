@@ -14,9 +14,9 @@ assignees: []
 
 <!-- List the documentation you've read and steps you've attempted -->
 
-- [ ] Read [REPO-SETUP.md](../REPO-SETUP.md)
-- [ ] Read [CONTRIBUTING.md](../CONTRIBUTING.md) 
-- [ ] Checked [NEW-DEVELOPER-CHECKLIST.md](../NEW-DEVELOPER-CHECKLIST.md)
+- [ ] Read [REPO-SETUP.md](../../REPO-SETUP.md)
+- [ ] Read [CONTRIBUTING.md](../../CONTRIBUTING.md)
+- [ ] Checked [NEW-DEVELOPER-CHECKLIST.md](../../NEW-DEVELOPER-CHECKLIST.md)
 - [ ] Attempted the setup process
 
 ## 💻 Environment Information
@@ -43,4 +43,5 @@ Paste any error messages here
 ## 📁 Additional Context
 
 <!-- Add any other context about the problem here -->
+
 <!-- Screenshots can be very helpful! -->

@@ -61,7 +61,7 @@ Understanding the file structure is crucial for effective contributions:
 .
 ├── .github/                    # GitHub-specific files
 │   ├── instructions/          # VS Code compatible instruction files
-│   ├── prompts/              # Agent Mode prompt files  
+│   ├── prompts/              # Agent Mode prompt files
 │   ├── chatmodes/            # Chat mode definition files
 │   └── CODEOWNERS            # Code ownership rules
 ├── docs/                      # Main documentation
@@ -103,6 +103,7 @@ Instructions are reusable AI directives that should behave like command-line uti
    ```
 
 3. **Use this template structure**:
+
    ```markdown
    ---
    status: Draft
@@ -125,13 +126,16 @@ Instructions are reusable AI directives that should behave like command-line uti
    - Common mistakes
 
    ## 🧪 Examples
-   ```language
+   ``language
    // Example code or usage
    ```
 
    ## 🧠 Summary for Copilot Execution
+
    - Key points for AI agents
    - Expected behavior patterns
+
+   ```
    ```
 
 ### 🚀 Prompts
@@ -181,6 +185,7 @@ Every piece of content must include a status badge indicating its readiness:
 | `Ready` | ![Ready](https://img.shields.io/badge/status-ready-007F5F.svg) | Polished, proven, production-ready |
 
 **Guidelines**:
+
 - Start new content with `Draft` status
 - Update status as content matures
 - Include status in YAML frontmatter
