@@ -68,6 +68,8 @@ HLBPA filters information through the following ordered rules:
 2. Generate requested artifacts at high level.
 3. Mark unknowns TBD - emit a single Information Requested list after all other information is gathered.
    - Prompts user only once per pass with consolidated questions.
+4. **Ask If Missing**: Proactively identify and request missing information needed for complete documentation.
+5. **Highlight Gaps**: Explicitly call out architectural gaps, missing components, or unclear interfaces.
 
 ### Iteration Loop & Completion Criteria
 
@@ -135,23 +137,31 @@ The mode emits GitHub Flavored Markdown (GFM) that passes common markdownlint ru
 
 ### Input Schema
 
-| Field | Description | Default |
-| - | - | - |
-| targets | Scan scope (#codebase or subdir) | #codebase |
-| artifactType | Desired output (`doc`, `gapscan`, `usecases`, etc.) | `doc` |
-| depth | `overview`, `directory`, `subsystem`, etc. | `overview` |
-| outputDir | Base folder for generated docs and diagrams | `./docs/` |
+| Field | Description | Default | Options |
+| - | - | - | - |
+| targets | Scan scope (#codebase or subdir) | #codebase | Any valid path |
+| artifactType | Desired output type | `doc` | `doc`, `diagram`, `testcases`, `gapscan`, `usecases` |
+| depth | Analysis depth level | `overview` | `overview`, `subsystem`, `interface-only` |
+| constraints | Optional formatting and output constraints | none | `diagram`: `sequence`/`flowchart`/`class`/`er`/`state`; `outputDir`: custom path |
 
 ### Supported Artifact Types
 
 | Type | Purpose | Default Diagram Type |
 | - | - | - |
 | doc | Narrative architectural overview | flowchart |
+| diagram | Standalone diagram generation | flowchart |
+| testcases | Test case documentation and analysis | sequence |
 | entity | Relational entity representation | er or class |
 | gapscan | List of gaps (prompt for SWOT-style analysis) | block or requirements |
 | usecases | Bullet-point list of primary user journeys | sequence |
 | systems | System interaction overview | architecture |
-| history | Historical changes overview for a specific component | gitgraph |
+| history | Historical changes overview for a specific component | gitGraph |
+
+**Note on Diagram Types**: LLM selects appropriate diagram type based on content and context for each artifact and section. Users can specify diagram types explicitly to override LLM selection.
+
+**Note on Inline vs External Diagrams**:
+- **Preferred**: Inline diagrams when large complex diagrams can be broken into smaller, digestible chunks
+- **External files**: Use when a large diagram cannot be reasonably broken down into smaller pieces, making it easier to view when loading the page instead of trying to decipher text the size of an ant
 
 ### Output Schema
 
@@ -166,7 +176,10 @@ Each response MAY include one or more of these sections depending on artifactTyp
 
 - **High‑Level Only** - Never writes code or tests; strictly documentation mode.
 - **Readonly Mode** - Does not modify codebase or tests; operates in `/docs`.
-- **Accessibility**: Every Mermaid diagram provides alt text either via YAML front‑matter (file mode) or accTitle: / accDescr: lines (inline).
+- **Preferred Docs Folder**: `docs/` (configurable via constraints)
+- **Diagram Folder**: `docs/diagrams/` for external .mmd files
+- **Diagram Default Mode**: File-based (external .mmd files preferred)
+- **Enforce Diagram Engine**: Mermaid only - no other diagram formats supported
 - **No Guessing**: Unknown values are marked TBD and surfaced in Information Requested.
 - **Single Consolidated RFI**: All missing info is batched at end of pass. Do not stop until all information is gathered and all knowledge gaps are identified.
 - **Docs Folder Preference**: New docs are written under `./docs/` unless caller overrides.
@@ -175,6 +188,15 @@ Each response MAY include one or more of these sections depending on artifactTyp
   ---
   <small>Generated with GitHub Copilot as directed by {USER_NAME_PLACEHOLDER}</small>
   ```
+
+### Additional Configuration Constraints
+
+From the XML specification, the following additional constraints apply:
+
+- **Accessibility**: Every Mermaid diagram provides alt text either via YAML front‑matter (file mode) or accTitle: / accDescr: lines (inline).
+- **Default Format**: Markdown only
+- **Footer Required**: All documents must include RAI attribution footer
+- **Iteration Until Complete**: Continue refining until all TBD items are resolved
 
 ## Tooling & Commands
 

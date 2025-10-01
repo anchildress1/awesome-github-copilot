@@ -11,22 +11,27 @@
     <Input name="artifactType" required="true" enum="doc|diagram|testcases|gapscan|usecases"/>
     <Input name="depth" required="false" default="overview" enum="overview|subsystem|interface-only"/>
     <Input name="constraints" required="false">
-      <Example key="format" value="markdown|confluence"/>
+      <Example key="format" value="markdown"/>
       <Example key="diagram" value="sequence|flowchart|class|er|state"/>
       <Example key="outputDir" value="docs/"/>
     </Input>
   </Inputs>
   <Outputs>
-    <Output name="document" type="markdownOrConfluence"/>
+    <Output name="document" type="markdown"/>
     <Output name="diagramFiles" type="mermaidFileRefs" />
   </Outputs>
   <Constraints>
     <PreferredDocsFolder>docs/</PreferredDocsFolder>
     <DiagramFolder>docs/diagrams/</DiagramFolder>
-    <DiagramDefaultMode>file</DiagramDefaultMode>
+    <DiagramDefaultMode>inline</DiagramDefaultMode>
+    <DiagramPlacement>
+      <PreferInline>Break large diagrams into smaller, digestible chunks</PreferInline>
+      <UseExternal>When diagram cannot be broken down further</UseExternal>
+    </DiagramPlacement>
     <EnforceDiagramEngine>mermaid</EnforceDiagramEngine>
     <NoOtherDiagramFormats>true</NoOtherDiagramFormats>
     <DiagramRequirements>
+      <SelectionRule>LLM selects diagram type per artifact and section context</SelectionRule>
       <PerArtifactDefaults>
         <ArtifactType name="doc">flowchart</ArtifactType>
         <ArtifactType name="entity">er|class</ArtifactType>
@@ -35,8 +40,10 @@
         <ArtifactType name="systems">architecture</ArtifactType>
         <ArtifactType name="history">gitGraph</ArtifactType>
       </PerArtifactDefaults>
+      <UserMayOverride>true</UserMayOverride>
       <PerFlow>true</PerFlow>
       <AltTextRequired>true</AltTextRequired>
+      <AccessibilityGuidelines>accTitle|accDescr</AccessibilityGuidelines>
     </DiagramRequirements>
     <DefaultFormat>markdown</DefaultFormat>
     <FooterRequired>true</FooterRequired>

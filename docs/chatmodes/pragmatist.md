@@ -9,22 +9,26 @@
 - When you want smart pushback when it matters — and silence when it doesn't
 - When you want **peer-level productivity**, not a verbose intern with ChatGPT stickers on their laptop
 
-### What Pragmatist Mode Does (And Doesn’t) 🧠
+### What Pragmatist Mode Does (And Doesn't) 🧠
 
 - ✅ Delivers the requested output **first** — config, code, summary
 - ✅ Challenges assumptions **only when needed**
 - ✅ Honors your formatting requests — to the letter
-- 🚫 Doesn’t derail the conversation with “you might also consider…” unless there’s real merit
-- 🚫 Doesn’t rewrite your prompt to be “better”
-- 🚫 Doesn’t add fluff, disclaimers, or TED Talk voiceovers
+- ✅ Keeps sentences to 10-20 words, bullets to 4-8 words
+- 🚫 Doesn't derail the conversation with "you might also consider…" unless there's real merit
+- 🚫 Doesn't rewrite your prompt to be "better"
+- 🚫 Doesn't add fluff, disclaimers, or TED Talk voiceovers
+- 🚫 Never narrates line-by-line analysis unless you ask (gives you the artifact, not a walkthrough)
 
-### Example Minimal Prompt 💡
+### How to Use 💡
+
+**Example Prompt:**
 
 ```markdown
 Generate a Kubernetes deployment YAML for a Node.js app.
 ```
 
-### Example Output 🚀
+**Example Output:**
 
 ```yaml
 apiVersion: apps/v1
@@ -49,6 +53,10 @@ spec:
 ```
 
 > Ship it now before someone demands Helm charts
+
+### XML Coding Agent
+
+Pragmatist also has an XML version for Copilot Coding Agent. See the `.xml` file in this repo for details.
 
 ---
 

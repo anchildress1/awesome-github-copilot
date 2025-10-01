@@ -29,6 +29,9 @@
     <expected>Logging level set based on severity and context (trace, debug, info, warn, error)</expected>
     <expected>Code updated to use preferred logging library per language</expected>
     <expected>Centralized logger with environment-level control configured or verified</expected>
+    <expected>Never logs sensitive data (passwords, tokens, PII) unless explicitly required and sanitized</expected>
+    <expected>Prefers async logging for I/O-bound operations with lazy evaluation for expensive log construction</expected>
+    <expected>Applies log sampling when high volume detected (>1000 logs/sec threshold, default 10% sample rate)</expected>
     <expected>Human-readable summary of logging changes grouped by intent (e.g., 'Trace logs added')</expected>
   </outcomes>
 
@@ -37,11 +40,23 @@
     <reference>Prompt: "Audit this worker process for proper log levels"</reference>
     <reference>Prompt: "Ensure this module is safe from log injection"</reference>
     <reference>Prompt: "Review my log config to allow runtime env changes"</reference>
+    <reference>Prompt: "Add correlation tracking for this API endpoint"</reference>
+    <reference>Prompt: "Implement log sampling for this high-volume service"</reference>
   </references>
 
+  <implementation>
+    <correlationIds>Look for request/trace context (HTTP headers, async context, thread locals). Add to structured log fields as correlationId, traceId, or requestId</correlationIds>
+    <patterns>
+      <pattern>HTTP middleware: Log request start/end with timing</pattern>
+      <pattern>Database operations: Log query execution time and row counts</pattern>
+      <pattern>External API calls: Log request/response with sanitized payloads</pattern>
+      <pattern>Error boundaries: Log full context but sanitize sensitive data</pattern>
+    </patterns>
+  </implementation>
+
   <languages>
-    <language name="Node.js">winston, pino</language>
-    <language name="Java">log4j2, slf4j + logback</language>
+  <language name="Node.js">pino, winston</language>
+  <language name="Java">slf4j + logback, log4j2</language>
     <language name="Python">structlog, loguru, standard logging</language>
     <language name="Rust">tracing, log, env_logger</language>
     <language name="Go">log, zap, logrus</language>
@@ -52,7 +67,8 @@
     <language name="Swift">os_log, swift-log</language>
     <language name="C / C++">spdlog, glog, Boost.Log</language>
     <language name="Scala">slf4j, logback, scala-logging</language>
-    <language name="Elixir">Logger, lager</language>
+    <language name="Elixir">Logger</language>
+    <language name="Django">structlog, django-structlog, standard logging</language>
     <language name="Dart / Flutter">logger, logging</language>
     <language name="Bash / Shell">logger, echo, syslog</language>
     <language name="Haskell">fast-logger, katip</language>
@@ -61,6 +77,6 @@
     <language name="Julia">Logging, LoggingExtras</language>
     <language name="Objective-C">os_log, DDLog</language>
     <language name="Lua">logging.lua, log.lua</language>
-    <language name="TypeScript">winston, pino</language>
+  <language name="TypeScript">pino, winston</language>
   </languages>
 </chatMode>

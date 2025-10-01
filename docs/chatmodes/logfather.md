@@ -1,14 +1,14 @@
-# The Logfather: Logging Review Chat Mode
+# The Logfather 🕴️
 
-[![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](#the-logfather-logging-review-chat-mode)
+![Status: Tweak - Orange Badge](https://img.shields.io/badge/status-tweak-FB5607.svg)
 
-> In this family, we don’t print to console. We speak in structured truths.
+> "I'm gonna make you a log you can't refuse."
 
-The Logfather doesn’t just scan your logs — he runs the neighborhood. This mode automates secure, structured, and centralized logging reviews across your codebase, wielding JSON like a switchblade and enforcing DI like a made man.
+The Logfather doesn't just scan your logs — he runs the neighborhood. This mode automates secure, structured, and centralized logging implementation and reviews across your codebase, wielding JSON like a switchblade and enforcing structured readability like a made man.
 
 He finds your weak spots: console logs, missing trace info, unstructured spew, misconfigured levels. And then he makes them disappear — replaced by audit-friendly, environment-driven observability.
 
-## 🪪 Who’s This For?
+## 🪪 Who's This For?
 
 - Developers who want to level up observability fast
 - Teams with spaghetti logs or missing traceability
@@ -16,26 +16,34 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 
 ## 🧪 What It Does
 
-- Inserts logging with context-appropriate severity levels
-- Enforces use of trusted, structured logging libraries per language
-- Applies environment-variable-based level control
-- Injects centralized logging setup if none is found
-- Summarizes changes by intent, not line number
+- Detects and fixes poor logging practices (e.g., wrong levels, missing logs, noisy debug prints)
+- Inserts or upgrades structured logging using appropriate libraries per language
+- Ensures logging setup is centralized and DI-compliant (if possible)
+- Verifies that logging levels are configurable via environment, not static config
+- Adds correlation IDs for distributed systems when request context is available
+- Implements log sampling for high-throughput scenarios
+- Provides clear, non-verbose summary of changes grouped by intent
+- **Never logs sensitive data** (passwords, tokens, PII) unless explicitly required and sanitized
 
 ## ⚠️ Rules of Engagement
 
-- ❌ Never touches business logic
-- ❌ No global rewrites unless explicitly asked
-- ✅ Fixes test mocks if logs break them
-- ✅ Operates based on specified scope (or defaults to smart guess)
+- ❌ Never alters or refactors application logic outside of logging concerns
+- ❌ Never inserts logs globally unless explicitly told to
+- ✅ Respects user's scoped intent (defaults to most valuable module or path)
+- ✅ Maintains compatibility with existing test suites (updates mocks as needed)
+- ✅ Applies appropriate logging levels based on context and severity
+- ✅ Uses structured logging (preferably JSON) with environment-configurable level control
 
-## 📜 Sample Prompts
+## 📜 How to Use
+
+**Example Prompts:**
 
 ```markdown
-/logfather Audit logging for checkout flow
-/logfather Fix all logger setups in backend/worker
-/logfather Make my logs traceable and JSON-only
-/logfather Review my service for log injection risks
+Audit this worker process for proper log levels
+Ensure this module is safe from log injection
+Review my log config to allow runtime env changes
+Add correlation tracking for this API endpoint
+Implement log sampling for this high-volume service
 ```
 
 ## 📦 Supported Languages & Libraries
@@ -44,11 +52,12 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 
 | 💻 Language | 🧰 Preferred Logging Libraries |
 | - | - |
-| Node.js | `winston`, `pino` |
-| Java | `log4j2`, `slf4j + logback` |
+| Node.js | `pino`, `winston` |
+| TypeScript | `pino`, `winston` |
+| Java | `slf4j + logback`, `log4j2` |
 | Python | `structlog`, `loguru`, `standard logging` |
+| Django | `structlog`, `django-structlog`, `standard logging` |
 | Rust | `tracing`, `log`, `env_logger` |
-| TypeScript | `winston`, `pino` |
 | Go | `log`, `zap`, `logrus` |
 | C# / .NET | `Microsoft.Extensions.Logging`, `Serilog`, `NLog` |
 | PHP | `monolog` |
@@ -57,7 +66,7 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 | Swift | `os_log`, `swift-log` |
 | C / C++ | `spdlog`, `glog`, `Boost.Log` |
 | Scala | `slf4j`, `logback`, `scala-logging` |
-| Elixir | `Logger`, `lager` |
+| Elixir | `Logger` |
 | Dart / Flutter | `logger`, `logging` |
 | Bash / Shell | `logger`, `echo`, `syslog` |
 | Haskell | `fast-logger`, `katip` |
@@ -67,11 +76,8 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 | Objective-C | `os_log`, `DDLog` |
 | Lua | `logging.lua`, `log.lua` |
 
-> 📝 These libraries are vetted, trusted, and won’t rat you out to the audit logs. The Logfather’s word is law.
+> 📝 These libraries are vetted, trusted, and won't rat you out to the audit logs. The Logfather's word is law.
 
 ---
 
-<small>This file was generated with ChatGPT as directed by Ashley Childress</small>
-
-```
-```
+<!-- This file was generated with the help of ChatGPT, Verdent, and GitHub Copilot by Ashley Childress -->

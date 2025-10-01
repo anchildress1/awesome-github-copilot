@@ -22,19 +22,9 @@
 
 ## How to Use HLBPA
 
-### 🪄 Minimum Input Required
+### 🪄 How to Use
 
-| Field | Purpose | Notes |
-| - | - | - |
-| Your Name | For the RAI footer (uses a placeholder if missing) | May define permanently in user-instructions in GitHub |
-| Target | `#codebase` by default if a repo is in context, but you can be more specific | |
-| Artifact Type | e.g. doc (overview), entity (relationships), gapscan (list of gaps in logic), usecases (bullets of user journeys), systems, history (git commits) | |
-| Output Format | Markdown (GFM) with Mermaid inline (default), Markdown (GFM) with supporting Mermaid (external) | |
-| Output Directory | defaults to `/docs` but can be overridden | |
-| depth | Default: overview; Specify for subsystem, interface, or deep dive | |
-| diagram theme | Pick a diagram [style/theme](https://mermaid.js.org/config/theming.html#available-themes) | `forest` |
-
-#### Example Minimal Prompt
+**Example Prompt:**
 
 ```markdown copy
 Please generate high-level documentation for this repo using the provided HLBPA chat mode. My name is Jane Doe. Artifact: architecture diagram and the test coverage gap report.
@@ -47,39 +37,29 @@ HLBPA supports various artifact types, which can be specified in the prompt. Her
 | Artifact Type | Description | Default Diagram |
 | - | - | - |
 | `doc` | Overview documentation | flowchart |
-| `entity` | Entity relationship diagrams | er or class |
-| `gapscan` | List of gaps in logic or documentation | block or requirements |
+| `entity` | Entity relationship diagrams | erDiagram |
+| `gapscan` | List of gaps in logic or documentation | block |
 | `usecases` | User journey bullet points | sequence |
 | `systems` | System architecture diagrams | architecture |
-| `history` | Git commit history overview | gitgraph |
+| `history` | Git commit history overview | gitGraph |
 
-### Coding Agent
+> [!TIP]
+> Copilot will select an appropriate diagram type based on content and context for each artifact and section. Users can specify diagram types explicitly to override that selection.
 
-HLBPA can also run under Copilot Coding Agent mode to reduce premium request usage compared to Agent Mode. To set this up:
+**Diagram Placement**:
 
-1. Upload the `hlbpa.xml` spec to <https://github.com/copilot/agents>
-2. Select your repository in the Agents dashboard
-3. Invoke Copilot with the same prompt syntax
+- **Inline preferred**: When large complex diagrams can be broken into smaller, digestible chunks
+- **External files**: When a large diagram cannot be reasonably broken down, making it easier to view when loading the page instead of trying to decipher text the size of an ant
 
-```markdown copy
-Please review all existing test cases for this repo using the provided HLBPA chat mode. My name is John Doe. Artifact: SWOT-style block diagram and a test coverage gap report.
-```
+**Accessibility**: Every Mermaid diagram provides alt text either via YAML front-matter (file mode) or accTitle: / accDescr: lines (inline).
 
-> 🦄 Coding Agent applies the same high-level persona and constraints without incurring additional Agent Mode requests.
+### XML Coding Agent
+
+HLBPA also has an XML version for Copilot Coding Agent. See the `.xml` file in this repo for details.
 
 ### 📈 Output
 
 At least one document and corresponding Mermaid diagrams will be generated, based on the prompt. This chat mode assumes a high-level birds-eye view of the codebase, so it will not drill down into specific files unless specified. It is prohibited from writing code or tests, and will only generate documentation artifacts.
-
-> 🦄 I coded in a preview of external `.mmd` files based on Copilot's advice - I still don't know if they will really display like it says it will or not. Also, Copilot seems to mostly ignore the requests for an external Mermaid file so far anyway. 🤷‍♀️
-
-#### Overriding Defaults
-
-You can override the defaults by specifying additional parameters in your prompt. For example, to generate a subsystem diagram with a specific theme:
-
-```markdown copy
-Please generate a subsystem architecture diagram for the `#payments` module with the `forest` theme.
-```
 
 ---
 
