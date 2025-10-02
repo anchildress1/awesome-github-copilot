@@ -1,4 +1,4 @@
-# The Logfather 🕴️
+# The Logfather
 
 ![Status: Tweak - Orange Badge](https://img.shields.io/badge/status-tweak-FB5607.svg)
 

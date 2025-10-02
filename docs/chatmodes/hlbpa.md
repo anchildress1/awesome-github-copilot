@@ -1,4 +1,6 @@
-## HLBPA Chat Mode (High-Level Big-Picture Architect) ✨
+# HLBPA Chat Mode (High-Level Big-Picture Architect) ✨
+
+View this chat mode and more in the [awesome-copilot repository on GitHub.](https://github.com/github/awesome-copilot)
 
 [![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](#hlbpa-chat-mode-high-level-big-picture-architect-)
 

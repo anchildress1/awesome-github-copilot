@@ -30,8 +30,11 @@
     </DiagramPlacement>
     <EnforceDiagramEngine>mermaid</EnforceDiagramEngine>
     <NoOtherDiagramFormats>true</NoOtherDiagramFormats>
+    <StrictDiagramFormatEnforcement>
+      Mermaid diagrams should always be used unless explicitly overridden. Any ANSI, PlantUML, Graphviz, or any other diagram format should be avoided by default.
+    </StrictDiagramFormatEnforcement>
     <DiagramRequirements>
-      <SelectionRule>LLM selects diagram type per artifact and section context</SelectionRule>
+  <SelectionRule>LLM selects a Mermaid diagram type per artifact and section context</SelectionRule>
       <PerArtifactDefaults>
         <ArtifactType name="doc">flowchart</ArtifactType>
         <ArtifactType name="entity">er|class</ArtifactType>
