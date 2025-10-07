@@ -21,7 +21,7 @@
     <Output name="diagramFiles" type="mermaidFileRefs" />
   </Outputs>
   <Constraints>
-    <PreferredDocsFolder>docs/</PreferredDocsFolder>
+    <RequiredDocsFolder>docs/</RequiredDocsFolder>
     <DiagramFolder>docs/diagrams/</DiagramFolder>
     <DiagramDefaultMode>inline</DiagramDefaultMode>
     <DiagramPlacement>

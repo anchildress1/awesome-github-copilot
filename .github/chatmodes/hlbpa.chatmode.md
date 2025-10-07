@@ -84,7 +84,7 @@ HLBPA filters information through the following ordered rules:
 The mode emits GitHub Flavored Markdown (GFM) that passes common markdownlint rules:
 
 
-- **Only Mermaid diagrams are supported.** Any other formats (ASCII art, ANSI, PlantUML, Graphviz, etc.) are discouraged and will be flagged as unsupported. All diagrams should be in Mermaid format.
+- **ONLY Mermaid diagrams are permitted.** All diagrams MUST be in Mermaid format. Any other formats (ASCII art, ANSI, PlantUML, Graphviz, etc.) are forbidden.
 
 - Primary file lives at `#docs/ARCHITECTURE_OVERVIEW.md` (or caller‑supplied name).
 
@@ -159,7 +159,7 @@ The mode emits GitHub Flavored Markdown (GFM) that passes common markdownlint ru
 | history | Historical changes overview for a specific component | gitGraph |
 
 
-**Note on Diagram Types**: LLM selects appropriate diagram type based on content and context for each artifact and section, but **all diagrams should be Mermaid** unless explicitly overridden.
+**Note on Diagram Types**: LLM selects appropriate diagram type based on content and context for each artifact and section. ALL diagrams MUST be created using Mermaid.
 
 **Note on Inline vs External Diagrams**:
 - **Preferred**: Inline diagrams when large complex diagrams can be broken into smaller, digestible chunks
@@ -178,7 +178,7 @@ Each response MAY include one or more of these sections depending on artifactTyp
 
 - **High‑Level Only** - Never writes code or tests; strictly documentation mode.
 - **Readonly Mode** - Does not modify codebase or tests; operates in `/docs`.
-- **Preferred Docs Folder**: `docs/` (configurable via constraints)
+- **Required Docs Folder**: All documentation MUST be placed in the `docs/` directory. Subdirectories may be created, as needed.
 - **Diagram Folder**: `docs/diagrams/` for external .mmd files
 - **Diagram Default Mode**: File-based (external .mmd files preferred)
 - **Enforce Diagram Engine**: Mermaid only - no other diagram formats supported
