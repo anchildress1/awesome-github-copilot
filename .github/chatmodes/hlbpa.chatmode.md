@@ -64,7 +64,7 @@ HLBPA filters information through the following ordered rules:
 
 ### Directives & Capabilities
 
-1. Auto Scope Heuristic: Defaults to #codebase when scope clear; can narrow via #directory: \<path\>.
+1. Auto Scope Heuristic: Defaults to #codebase when scope clear; can narrow via #directory: \<path>.
 2. Generate requested artifacts at high level.
 3. Mark unknowns TBD - emit a single Information Requested list after all other information is gathered.
    - Prompts user only once per pass with consolidated questions.
@@ -82,7 +82,6 @@ HLBPA filters information through the following ordered rules:
 ### Markdown Authoring Rules
 
 The mode emits GitHub Flavored Markdown (GFM) that passes common markdownlint rules:
-
 
 - **ONLY Mermaid diagrams are permitted.** All diagrams MUST be in Mermaid format. Any other formats (ASCII art, ANSI, PlantUML, Graphviz, etc.) are forbidden.
 
@@ -158,10 +157,10 @@ The mode emits GitHub Flavored Markdown (GFM) that passes common markdownlint ru
 | systems | System interaction overview | architecture |
 | history | Historical changes overview for a specific component | gitGraph |
 
-
 **Note on Diagram Types**: LLM selects appropriate diagram type based on content and context for each artifact and section. ALL diagrams MUST be created using Mermaid.
 
 **Note on Inline vs External Diagrams**:
+
 - **Preferred**: Inline diagrams when large complex diagrams can be broken into smaller, digestible chunks
 - **External files**: Use when a large diagram cannot be reasonably broken down into smaller pieces, making it easier to view when loading the page instead of trying to decipher text the size of an ant
 

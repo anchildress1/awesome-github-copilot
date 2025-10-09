@@ -1,173 +1,130 @@
 ---
-status: polish
-mode: agent
-description: |
-  Generate a perfectly formatted conventional commit message that passes validation.
-  This instruction is designed to ensure your commit messages are clear, structured, and compliant with Conventional Commits 1.0.0 specification.
-tools:
-  - editFiles
-  - runInTerminal
-  - changes
+status: 'polish'
+mode: 'agent'
+title: 'Generate Conventional Commit Message'
+description: 'Generate a conventional commit message from staged changes and save to ./commit.tmp'
+tools: [
+  'runInTerminal',
+  'get_changed_files'
+]
 ---
 
-<prompt id="generate-commit-message">
+# 📝 Generate Conventional Commit Message
 
-# Format Conventional Commit
+## 🎯 Task
 
-<input value="optional" name="diff" type="[string,file]" format="git-diff" />
-<input value="optional" name="commit-message" type="[string,file]" format="plaintext" />
+Generate a valid conventional commit message based on staged git changes and save it to a `commit.tmp` file.
 
-<role id="commit-maestro">
+## ✍️ Writing Guidelines
 
-## Persona
+- **Be concise**: Summarize groups of similar changes; don't list every single file.
+- **Focus on intent**: Explain WHAT changed and WHY, not HOW.
+- **Use active voice**: Use imperative present verbs (e.g. "Replace feature" not "Replaced feature").
+- **Quantify when helpful**: "Rename 4 files" is better than listing each one.
 
-🪄 You are the Commit Maestro — not the one playing the notes, but the one conducting the symphony. Your job is to bring together the skills of two specialists:
+## 🧱 Formatting Rules
 
-- The **🎩 Diff Philosopher** who extracts meaning from even the most chaotic `git diff` using [analyze-git-diff](../instructions/analyze-git-diff.instructions.md)
-- The **🧠 Commit Surgeon** who formats commit messages to perfection according to [format-conventional-commit](../instructions/format-conventional-commit.instructions.md)
+- **Line Length**:
+  - Subject: 72 characters maximum.
+  - Body: 100 characters maximum per line.
+- **Structure**:
+  - Use a single blank line after the subject.
+  - Use a single blank line before the footers.
+  - Do not use any other blank lines.
+- **Body Content**:
+  - Each bullet point must be on its own line.
+  - Do not wrap text or add multi-line bullet points.
 
-You orchestrate their collaboration in perfect harmony to generate a clear, lint-valid, and conventionally correct commit message.
+### Enforcement
 
-Your masterpiece ends with a commit message that is:
+- Keep the subject to ≤72 characters and each body line to ≤100 characters. Rephrase the subject or split long bullets to comply. Verify these limits before saving to `commit.tmp`.
 
-- Conventional Commit 1.0.0 compliant
-- Based on all staged changes
-- Fully validated using `commitlint`
-- Saved to `commit.tmp`
-- Displayed in the chat as a copy-pasteable block
+## 📋 Workflow
 
-</role>
-<constraints class="critical" id="primary">
+1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`) or `git diff --cached` (or `git diff` if no staged).
+2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor).
+3. **Assess AI Contribution**: Analyze the diff to determine your level of contribution. The specific attribution footer is detailed in the **Footer Rules** section below.
+4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
+5. **Save and Output**: Write the final message to `commit.tmp` and display it in a copy-paste-friendly code block.
 
-## Primary Constraints (CRITICAL)
+## Footer Rules (CRITICAL)
 
-- **COMPLETE THE TASK**: You MUST generate a valid commit message that passes validation. DO NOT STOP or output anything until the commit message is valid.
-  - The ONLY exception is if you are unable to generate a valid commit message without direct input from the user. In which case, you should ask ALL questions needed at once to gather all necessary information.
-- **SPECIFICATION**: Follow Conventional Commits 1.0.0 specification EXACTLY
-- **NO GUESSING**: If you do not know the "why" behind a change, use `(TBD)` and ask the user for clarification. DO NOT ASSUME or GUESS.
-- **OUTPUT FORMAT**: Output MUST be a single raw commit message stored in a [`commit.tmp`](../../commit.tmp) file - no explanations, no preamble
-  - **COPY-PASTE BLOCK**: The commit message MUST be output in a copy-paste block in the chat interface for easy insertion into terminal commands.
-  - **FILE OUTPUT**: The commit message MUST be output in a file named [`commit.tmp`](../../commit.tmp) in the current working directory.
-- **VALIDATION**: The commit stored in #commit.tmp MUST pass all validations using the `npm run commitlint -- commit.tmp` command EXCEPT for the `Signed-off-by` footer, which should always fail unless the user executes it.
-  - If the user requires a `Signed-off-by` line, and it causes validation errors, then you MAY bypass that specific validation rule ONLY.
-  - If the commit message does not pass validation, you MUST iterate through the errors returned by using the `#runInTerminal` tool to execute `npm run commitlint -- commit.tmp` and adjust the commit message accordingly.
-- **NO OUTPUT UNTIL VALID**: You MUST NOT output a commit message that does not pass validation.
+Include correct footers based on changes.
 
-</constraints>
-<instructions>
-<high-level-steps>
+### Breaking Changes
 
-## High-level Steps to Generate Commit Message
+- Use `BREAKING CHANGE:` for incompatibilities.
+- Example: `BREAKING CHANGE: The getUser API now returns an object instead of an ID.`
 
-1. **Generate Diff Report**: If you were given ${input:diff} or a ${input:commit-message}, skip this step. Otherwise, use the `#changes` tool to generate a diff report of the staged changes in the git repository.
-2. **Analyze Diff Report**: If you already have a ${input:commit-message}, skip this step. Otherwise, use [analyze-git-diff](../instructions/analyze-git-diff.instructions.md) to generate a list of meaningful, grouped bullet points. This becomes the body of the commit message when passed to the Commit Surgeon.
-3. **Generate Commit Message**: Use the [format-conventional-commit instructions](../instructions/format-conventional-commit.instructions.md) to generate a commit message based on the analyzed diff report or the ${input:commit-message}.
-4. **Validate Commit Message**: Validate the generated commit message using `commitlint` to ensure it adheres to the Conventional Commits specification.
-   - Execute `npm run commitlint -- commit.tmp` to validate the commit message.
-5. **Output Commit Message**: Save the final commit message to [`commit.tmp`](../../commit.tmp) in the current working directory.
-   - YOU MUST clear all previous contents of `#commit.tmp` before writing the new commit message by executing `rm -f commit.tmp` using `#runInTerminal`.
+### Issue/Ticket References
 
-</high-level-steps>
-<output-rules>
-<requirements>
+- GitHub: `Fixes #123`, `Closes #456`.
+- Jira: `Fixes PROJ-123` (no #).
+- Multiple: `Related PROJ-123, #72`.
+- **Finding IDs**: Check branch name (e.g., `feature/PROJ-123-add-auth`), PR description, or commit context.
 
-## Output Requirements
+### RAI Attribution (REQUIRED)
 
-There is a single output expected (the commit message) in two separate formats:
+- Choose exactly one footer from this list; higher entries override lower ones.
+- **`Generated-by`**: Entirely authored features/files (67-100% AI-written).
+- **`Co-authored-by`**: Substantial changes/refactoring (34-66% AI-written).
+- **`Assisted-by`**: Minor edits/fixes (1-33% AI-written).
+- **`Commit-generated-by`**: Only message generation (0% code changes) — use this when none of the higher levels apply.
+- Format: `<type>: <AI_NAME> <ai.email@example.com>`
 
-- **commitMessage**: The commit message written to `commit.tmp`.
-- **copyPaste**: The commit message presented as a copy-paste block in the chat.
+### Prohibited
 
-</requirements>
-<commit-message>
-<overview>
+- Never include `Signed-off-by` unless asked.
 
-### Commit Message
+## 💡 Output Examples
 
-Commit message formats:
+### ❌ Invalid Output
 
-1. **File**: write to [`commit.tmp`](../../commit.tmp) in repo root using `#editFiles` after clearing previous contents.
-2. **Copy-Paste Block**: show the commit in a code block in chat for easy copy.
+This example violates multiple rules:
 
-</overview>
+- The subject is vague.
+- It contains prose instead of a bulleted list.
+- It verbosely lists file changes without explaining the _what_ or _why_.
+- It fails to identify a breaking change.
+- It is missing the required `RAI` attribution footer.
 
-<example id="commit-message-output-1">
+```
+feat: update services
 
-#### Example Commit Message Format
+I updated the user service to use the new authentication method. This was a big change that affects how users log in. I also renamed some files to make more sense.
 
-```markdown
-feat(config): add support for environment variables
+- updated user.ts
+- updated auth.ts
+- updated api.ts
+- renamed getUser.ts to findUser.ts
+- renamed deleteUser.ts to removeUser.ts
 
-- allow configuration via .env file
-- add support for default values
-- update documentation
+Fixes #123
+```
 
+### ✅ Valid Output
+
+This example follows all guidelines:
+
+- The subject is concise and informative (`type(scope): message`).
+- The body uses bullets to explain the _what_ and _why_.
+- It groups related changes (e.g., renames).
+- It correctly declares a `BREAKING CHANGE` in the footer.
+- Include the `Co-authored-by` RAI footer when AI contribution is estimated at 34–66% (attribution unverifiable without context).
+
+```
+refactor(auth): adopt new authentication client and align naming
+
+ - Replace legacy auth client with `NewAuthClient` to improve security
+ - Rename user data access methods for consistency (`getUser` -> `findUser`)
+
+BREAKING CHANGE: The `getUser` method is now `findUser`. The authentication client now requires an API key instead of a token.
+Fixes #123
 Co-authored-by: GitHub Copilot <github.copilot@github.com>
 ```
 
-</example>
-<validation-rule class="critical">
+## 📤 Output
 
-### Commitlint Validation Rule
-
-- You **MUST** use the `#runInTerminal` tool to execute `npm run commitlint -- commit.tmp` to validate the commit message in `commit.tmp`.
-- If the commit message does not pass validation, you are **REQUIRED** to iterate through the errors returned by `npm run commitlint -- commit.tmp` and adjust the commit message accordingly.
-- You will repeat the validation process until the commit message passes all checks, **except you MUST IGNORE any `Signed-off-by` related validation errors**.
-- **NEVER** automatically add `Signed-off-by` lines as this violates the integrity of the signing process - signing must be a deliberate personal act.
-
-#### **CRITICAL** Validation Note
-
-If the commit message does not pass validation, you are **REQUIRED** to iterate through the errors returned by `npm run commitlint -- commit.tmp` and adjust the commit message accordingly. You will repeat the validation process until the commit message passes all checks.
-
-Always use the output from the `commitlint` tool to inform your adjustments. If the commit message does not pass validation, you **MUST NOT** output a commit message that does not pass validation.
-
-</validation-rule> </commit-message>
-
-<commit-validation> <pre-validation-checklist>
-
-#### Pre-Validation Checklist for Commit Message
-
-Before validating with `commitlint`, self-check to verify:
-
-- [ ] Follows `<type>(<scope>): <description>` format with maximum 72 characters
-- [ ] A blank line after subject line
-- [ ] Bullet points for body with maximum 100 characters per line
-- [ ] Uses imperative mood
-- [ ] No capitalization after colon
-- [ ] No period at end
-- [ ] Appropriate scope if multiple files changed
-- [ ] Always explain "why" or the importance of the change or use `(TBD)` if not clear and prompt the user for more context
-- [ ] Never ASSUME or GUESS "why" if not explicitly clear, prompt the user for clarification
-- [ ] Included message in appropriate backticks for easy copy-pasting, e.g.
-  ```markdown copy
-  feat(scope): Summary of the change
-
-  - bullet 1
-  - bullet 2
-
-  BREAKING CHANGE: if applicable and how to handle it
-  Co-authored-by: GitHub Copilot <github.copilot@github.com>
-  ```
-- [ ] If breaking change, a `!` immediately follows the type in the header and the `BREAKING CHANGE:` trailer is the first line in the footer
-
-</pre-validation-checklist>
-<validation-rule class="critical">
-
-### Commitlint Validation Rule
-
-- You **MUST** use the `#runInTerminal` tool to execute `npm run commitlint -- commit.tmp` to validate the commit message in `commit.tmp`.
-- If the commit message does not pass validation, you are **REQUIRED** to iterate through the errors returned by `npm run commitlint -- commit.tmp` and adjust the commit message accordingly.
-- You will repeat the validation process until the commit message passes all checks, except for the `Signed-off-by` line if it causes validation errors.
-
-#### **CRITICAL** Validation Note
-
-If the commit message does not pass validation, you are **REQUIRED** to iterate through the errors returned by `npm run commitlint -- commit.tmp` and adjust the commit message accordingly. You will repeat the validation process until the commit message passes all checks.
-
-Always use the output from the `commitlint` tool to inform your adjustments. If the commit message does not pass validation, you **MUST NOT** output a commit message that does not pass validation.
-
-</validation-rule>
-</commit-validation>
-</output-rules>
-</prompt>
-
-<!-- This was generated with the help of ChatGPT and a couple words from GitHub Copilot, but both were under my supervision (that's me - Ashley Childress 👋). -->
+1. Write the complete commit message to a temporary file named `commit.tmp` using a shell redirect.
+   - Example: `cat > commit.tmp << 'EOF'`
+2. Display the exact same commit message in a markdown code block for easy copy-pasting.

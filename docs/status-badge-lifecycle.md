@@ -5,10 +5,11 @@ Each mode, prompt, or instruction earns a status badge (find the badge legend ri
 | Status | Badge | Meaning |
 | - | - | - |
 | `Draft` | ![Draft - Pink](https://img.shields.io/badge/status-draft-F72585.svg) | First pass, wild ideas—expect changes. Nothing is sacred yet. |
-| `Tweak` | ![Tweak - Orange](https://img.shields.io/badge/status-tweak-FB5607.svg) | Rapid tweaks, Survivor mode: “Let’s see what you can really do.” |
+| `Tweak` | ![Tweak - Orange](https://img.shields.io/badge/status-tweak-FB5607.svg) | Rapid tweaks, Survivor mode: "Let's see what you can really do." |
 | `Polish` | ![Polish - Purple](https://img.shields.io/badge/status-polish-9B5DE5.svg) | In review—cue the perfectionism and last-minute OCD edits. |
-| `Check` | ![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg) | Actively tested, feedback wanted—“Can someone break this for me, please?” |
-| `Ready` | ![Ready - Green](https://img.shields.io/badge/status-ready-007F5F.svg) | Polished, proven, ready for prime time. The chef’s kiss of prompts. |
+| `Check` | ![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg) | Actively tested, feedback wanted—"Can someone break this for me, please?" |
+| `Ready` | ![Ready - Green](https://img.shields.io/badge/status-ready-007F5F.svg) | Polished, proven, ready for prime time. The chef's kiss of prompts. |
+| `Deprecated` | ![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-6C757D.svg) | End of life. Replaced by something better. Check the docs for migration path. |
 
 > [!Note]
 >

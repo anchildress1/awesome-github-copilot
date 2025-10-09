@@ -81,8 +81,8 @@ This is where the magic lives — reusable, testable, sometimes over-engineered 
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`format-conventional-commit`](./docs/instructions/format-conventional-commits.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/format-conventional-commits.md) | Converts staged changes into a conventional commit message | Utilizes companion [diff analysis instruction](./.github/instructions/analyze-git-diff.instructions.md) |
-| [`analyze-git-diff`](./docs/instructions/analyze-git-diff.md) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/instructions/analyze-git-diff.md) | Analyze git diff and generate explanations | Best used before commit generation for better results |
+| [`format-conventional-commit`](./docs/instructions/format-conventional-commits.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/format-conventional-commits.md) | Converts staged changes into a conventional commit message | Self-contained; no separate diff analysis needed. |
+| [~~`analyze-git-diff`~~](./docs/instructions/analyze-git-diff.md) | [![Status: Deprecated](https://img.shields.io/badge/status-deprecated-6C757D.svg)](./docs/instructions/analyze-git-diff.md) | Analyze git diff and generate explanations | DEPRECATED: No longer necessary with modern models |
 | [`design-principles`](./docs/instructions/design-principles.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles.md) | Evaluates design decisions for clarity, stability, and future impact | Inspired by legacy code PTSD and late-night refactors |
 | [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Checklist of logging do's and don'ts with multi-language examples | Designed to power [`The Logfather`](./docs/chatmodes/logfather.md) chat mode |
 
@@ -98,7 +98,8 @@ Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerm
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) | [![Status: Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/prompts/generate-commit-message.md) | Directs Copilot to analyze a git diff, format a conventional commit, validate it, and save to `commit.tmp` | Use Agent Mode for best results. |
+| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI annotation | Simple, responsible, zero orchestration. |
+| [`generate-commit-message-orchestrator`](./docs/prompts/generate-commit-message-orchestrator.deprecated.md) | [![Status: Deprecated](https://img.shields.io/badge/status-deprecated-6C757D.svg)](./docs/prompts/generate-commit-message-orchestrator.deprecated.md) | ~~Complex orchestration approach~~ | **DEPRECATED:** Use `generate-commit-message` instead. |
 | [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Useful for scripts, logs, or automation. |
 
 ---
