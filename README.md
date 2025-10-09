@@ -2,13 +2,14 @@
 
 [![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot)
 
-> [!IMPORTANT]
+> [!TIP]
 >
-> 🦄 Hack Time Update: Contest Mode Activated!
+> So my initial idea to make these easily accessible with a Copilot Extension is impossible for a couple of reasons. Most recently, GitHub has announced a sunset notice for that entire functionality in favor of MCP.
+> The [awesome-copilot](http://github.com/github/awesome-copilot) repo already supports MCP functionality plus an install into VS Code or Visual Studio. So I've started moving some of the better tested versions into that repo, too. I'll try to note where, but this version will *probably* be more up-to-date anyway.
 >
-> I’m off chasing glory in a coding contest through the end of September, 2025, so this repo’s usual hustle is on a quick coffee break. I’ll ninja-drop updates whenever I can between rounds, but please hang tight while I duke it out on the leaderboard.
->
-> Thanks for your patience - and may your builds always pass! 🏅✨
+> Drop a line if you want to collaborate or have questions! Check my socials on my profile page. 🦄
+
+---
 
 Welcome to my collection of **Custom Instructions, Prompts, and Chat Modes** — your go-to resource for uniquely crafted, obsessively refined GitHub Copilot personalities. These were built for creative chaos, workflow upgrades, and the occasional code emergency.
 
