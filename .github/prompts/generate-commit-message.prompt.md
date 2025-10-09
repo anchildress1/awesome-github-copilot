@@ -117,7 +117,7 @@ Include correct footers based on changes.
 
 This example violates multiple rules:
 
-- The subject is vague.
+- The subject is vague and begins with lowercase letter.
 - It contains prose instead of a bulleted list.
 - It verbosely lists file changes without explaining the _what_ or _why_.
 - It fails to identify a breaking change.
@@ -144,14 +144,14 @@ Fixes #123
 
 This example follows all guidelines:
 
-- The subject is concise and informative (`type(scope): message`).
+- The subject is concise and informative (`type(scope): Message`).
 - The body uses bullets to explain the _what_ and _why_.
 - It groups related changes (e.g., renames).
 - It correctly declares a `BREAKING CHANGE` in the footer.
 - Include the `Co-authored-by` RAI footer when AI contribution is estimated at 34–66% (attribution unverifiable without context).
 
 ```
-refactor(auth): adopt new authentication client and align naming
+refactor(auth): Adopt new authentication client and align naming
 
  - Replace legacy auth client with `NewAuthClient` to improve security
  - Rename user data access methods for consistency (`getUser` -> `findUser`)
