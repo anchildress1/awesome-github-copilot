@@ -8,6 +8,7 @@ tools: [
   'get_changed_files'
 ]
 ---
+
 <custom-prompt id="generate-commit-message">
 
 # 📝 Generate Conventional Commit Message

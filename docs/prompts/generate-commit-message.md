@@ -1,6 +1,6 @@
 # Generate Simple Conventional Commit Message 🧠
 
-> Status: Polish (see repository README for badge and lifecycle details)
+[![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]()
 
 This one exists because the old commit generator was trying too hard. It walked Copilot through every diff like a nervous parent, while modern models were already doing the homework on their own.
 
@@ -72,4 +72,4 @@ And if you want to go one better — use a **GPG key** to sign your commits and 
 
 ---
 
-Generated with the help of ChatGPT as directed by Ashley Childress
+🛡️ _Generated with the help of ChatGPT as directed by Ashley Childress_

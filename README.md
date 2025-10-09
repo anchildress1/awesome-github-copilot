@@ -2,10 +2,10 @@
 
 [![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot)
 
-> [!TIP]
+> [!NOTE]
 >
 > So my initial idea to make these easily accessible with a Copilot Extension is impossible for a couple of reasons. Most recently, GitHub has announced a sunset notice for that entire functionality in favor of MCP.
-> The [awesome-copilot](http://github.com/github/awesome-copilot) repo already supports MCP functionality plus an install into VS Code or Visual Studio. So I've started moving some of the better tested versions into that repo, too. I'll try to note where, but this version will *probably* be more up-to-date anyway.
+> The [awesome-copilot](http://github.com/github/awesome-copilot) repo already supports MCP functionality plus an install into VS Code or Visual Studio. So I've started moving some of the better tested versions into that repo, too. I'll try to note where, but this version will _probably_ be more up-to-date anyway.
 >
 > Drop a line if you want to collaborate or have questions! Check my socials on my profile page. 🦄
 

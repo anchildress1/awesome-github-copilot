@@ -1,137 +1,68 @@
 # 🚀 awesome-github-copilot Repository Instructions
 
-Welcome to the **awesome-github-copilot** repository! This is Ashley Childress's curated collection of AI prompts, custom instructions, and chat modes for GitHub Copilot and other AI tools.
+Custom instructions, prompts, and chat modes for GitHub Copilot and AI tools.
 
-## 📋 Repository Purpose
+## File Organization 📁
 
-This repository contains:
+- **Instructions**: `.github/instructions/` with `.instructions.md` suffix
+- **Prompts**: `.github/prompts/` with `.prompt.md` suffix
+- **Chat Modes**: `.github/chatmodes/` with `.chatmode.md` suffix
+- **Documentation**: `docs/` (explanatory materials and guides) with `.md` suffix
+- **Core Guides**: Root-level (CONTRIBUTING.md, DEVELOPMENT.md, etc.)
 
-- **Custom Instructions**: Reusable, testable instructions for GitHub Copilot (`.github/instructions/`)
-- **Prompts**: High-level prompts for Agent Mode (`docs/prompts/`)
-- **Chat Modes**: Personality-driven AI configurations (`docs/chatmodes/`)
-- **Documentation**: Comprehensive guides and examples (`docs/`)
+## Status System 🏷️
 
-## 🎯 Core Principles
+All artifacts in `.github/` use status values in YAML frontmatter. Documentation files in `docs/` are user-facing and don't require frontmatter. See [status-badge-lifecycle.md](../docs/status-badge-lifecycle.md) for definitions.
 
-When contributing to this repository, follow these guidelines:
+## Content Standards 📝
 
-### 📁 File Organization
+> **Note**: Emojis in headers should come **after** the text for accessibility. Screen readers announce emojis first when they appear at the start, which disrupts comprehension.
 
-- **Instructions**: Place in `.github/instructions/` with `.instructions.md` suffix
-- **Prompts**: Place in `docs/prompts/` directory
-- **Chat Modes**: Place in `docs/chatmodes/` directory
-- **Documentation**: Use `docs/` for supporting materials
+### Instructions (.github/instructions/)
 
-### 🏷️ Status System
+- YAML frontmatter: `status`, `description`, `applyTo` (optional)
+- Status values: `draft`, `tweak`, `polish`, `check`, `ready`, `deprecated`
+- Focus on actionable guidance of behaviors for a given scenario
+- Include examples only when they clarify non-obvious behavior
 
-Every artifact uses a status badge to indicate maturity:
+### Prompts (.github/prompts/)
 
-- ![Draft](https://img.shields.io/badge/status-draft-F72585.svg) **Draft**: Early concept, may not work reliably
-- ![Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg) **Tweak**: Functional but needs refinement
-- ![Polish](https://img.shields.io/badge/status-polish-9B5DE5.svg) **Polish**: Works well, minor improvements needed
-- ![Check](https://img.shields.io/badge/status-check-3A86FF.svg) **Check**: Stable, undergoing final validation
-- ![Ready](https://img.shields.io/badge/status-ready-007F5F.svg) **Ready**: Production-ready and battle-tested
+- YAML frontmatter: `status`, `mode`, `description`, `tools` (array)
+- Status values: `draft`, `tweak`, `polish`, `check`, `ready`, `deprecated`
+- Specify step-by-step recipes with expected outcomes and Agent Mode tool usage
+- Link to related instructions when dependencies exist
 
-### 📝 Content Guidelines
+### Chat Modes (.github/chatmodes/)
 
-#### For Instructions (.github/instructions/)
+- YAML frontmatter: `status`, `model` (optional), `description`, `tools` (array)
+- Status values: `draft`, `tweak`, `polish`, `check`, `ready`, `deprecated`
+- Define personality, use cases, and behavioral constraints
+- Note dependencies on instructions or specific tools
 
-- Start with YAML frontmatter including `status`, `title`, `description`, and `applyTo`
-- Use clear sections with emoji headers for visual organization
-- Include practical examples where applicable
-- Focus on actionable guidance, not theory
-- Reference existing instructions when building upon them
+### Documentation (docs/)
 
-#### For Prompts (docs/prompts/)
+- User-facing explanations and guides
+- No frontmatter required (documentation for humans, not AI artifacts)
+- Explains the purpose and usage of artifacts to end users with examples where appropriate
 
-- Design for Agent Mode usage with specific tool references (`#changes`, `#editFiles`, etc.)
-- Include clear purpose and expected outcomes
-- Provide usage examples and tips
-- Link to related instructions when applicable
+## Development Standards 🛠️
 
-#### For Chat Modes (docs/chatmodes/)
+- **Writing**: Active voice, concise language, minimal jargon
+- **Formatting**: Consistent emoji placement, markdown structure
+- **Quality Gates**:
+  - Run `npm run check` before committing
+  - Follow conventional commits (see `.github/prompts/generate-commit-message.prompt.md`)
+  - Test instructions/prompts with actual Copilot usage
 
-- Define clear personality and behavioral guidelines
-- Specify use cases and scenarios
-- Include interaction examples
-- Note any dependencies on instructions or tools
+## Automation Stack 🔧
 
-## 🛠️ Development Workflow
-
-### Writing Style
-
-- Use active voice and clear, concise language
-- Include emojis for visual organization (consistently with existing patterns)
-- Keep technical jargon minimal and well-explained
-- Write for practitioners who need immediate, actionable guidance
-
-### Quality Standards
-
-- Follow the [design principles](./.github/instructions/design-principles.instructions.md)
-- Apply [logging best practices](./.github/instructions/logging-best-practices.instructions.md) when relevant
-- Use [conventional commits](./.github/instructions/format-conventional-commit.instructions.md) for all changes
-- Maintain consistency with existing file patterns and structures
-
-### Testing and Validation
-
-- Test instructions with actual GitHub Copilot usage
-- Verify prompts work as expected in Agent Mode
-- Validate chat modes produce desired personality and responses
-- Ensure markdown formatting renders correctly
-
-## 🔧 Tools and Automation
-
-This repository uses:
-
-- **remark**: Markdown linting and formatting (`npm run check`, `npm run format`)
+- **remark**: Markdown linting (`npm run check`, `npm run format`)
 - **commitlint**: Conventional commit enforcement
-- **lefthook**: Git hooks for quality gates
-- **GitHub Actions**: Automated testing and validation
+- **lefthook**: Pre-commit/pre-push hooks
+- **GitHub Actions**: CI validation
 
-## 🤝 Contribution Guidelines
+## Key References 📚
 
-### Before Creating New Content
-
-1. Check existing instructions, prompts, and modes for overlap
-2. Review the [Status Badge Lifecycle](./docs/status-badge-lifecycle.md)
-3. Understand the target audience and use case
-4. Consider how it fits into the overall collection
-
-### Creating New Instructions
-
-1. Start with `status: draft` in frontmatter
-2. Use descriptive, kebab-case filenames ending in `.instructions.md`
-3. Include comprehensive `description` field explaining purpose and usage
-4. Test thoroughly before advancing status
-5. Update main README.md with new entry and appropriate status badge
-
-### Updating Existing Content
-
-1. Maintain backwards compatibility when possible
-2. Update status badge if making significant improvements
-3. Test changes against existing usage patterns
-4. Document breaking changes clearly
-
-## 🎨 Creative Philosophy
-
-This repository embraces **creative chaos** and **workflow upgrades**. Content should be:
-
-- **Uniquely crafted**: Not just rehashed generic advice
-- **Obsessively refined**: Tested and improved through real usage
-- **Clearly labeled**: Status badges help users understand maturity
-- **Personality-driven**: Chat modes especially should have distinct character
-
-## 📚 Learning Resources
-
-- [Status Badge Lifecycle](./docs/status-badge-lifecycle.md): Understanding the maturity system
-- [Design Principles](./.github/instructions/design-principles.instructions.md): Core architectural guidance
-- [Analyze Git Diff](./.github/instructions/analyze-git-diff.instructions.md): Understanding change analysis
-- [Format Conventional Commit](./.github/instructions/format-conventional-commit.instructions.md): Commit message standards
-
-## 🦄 Final Notes
-
-Remember: This isn't just a collection of prompts—it's a curated experience designed to make AI tools more effective and enjoyable to use. Every piece should add real value and reflect the creative, practical spirit of the project.
-
-When in doubt, check existing patterns, test thoroughly, and don't be afraid to iterate. The goal is to create tools that developers actually want to use in their daily workflow.
-
-> If you're contributing, thank you for being part of the creative chaos! 🥰
+- [Design Principles](instructions/design-principles.instructions.md): Architectural guidance
+- [Logging Best Practices](instructions/logging-best-practices.instructions.md): Language-agnostic logging standards
+- [Status Lifecycle](../docs/status-badge-lifecycle.md): Badge maturity system
