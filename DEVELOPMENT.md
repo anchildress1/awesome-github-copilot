@@ -4,6 +4,19 @@ This guide provides technical details for setting up and maintaining the awesome
 
 ---
 
+## Recommended series
+
+These are the opening posts in three separate series I wrote — handy background reading that maps to the repo's chat modes, prompts, and instructions work.
+
+- [All I’ve Learned About GitHub Copilot Instructions (So Far)](https://dev.to/anchildress1/all-ive-learned-about-github-copilot-instructions-so-far-5bm7)
+  _Lessons on writing instructions that actually work in the wild._
+
+- [GitHub Copilot: Everything You Wanted to Know About Reusable (and Experimental) Prompts](https://dev.to/anchildress1/github-copilot-everything-you-wanted-to-know-about-reusable-and-experimental-prompts-part-1-iff)
+  _Practical prompt patterns, experiments, and clever tricks._
+
+-  [GitHub Copilot Chat Modes Explained (with Personality) 🎭](https://dev.to/anchildress1/github-copilot-chat-modes-explained-with-personality-2f4c)
+  _A lively tour of chat-mode personalities and why they matter._
+
 ## 🏗️ Development Environment Setup
 
 ### System Requirements
@@ -27,7 +40,7 @@ This guide provides technical details for setting up and maintaining the awesome
    # Set up signed commits (recommended)
    git config user.signingkey YOUR_GPG_KEY_ID
    git config commit.gpgsign true
-   
+
    # Set up commit template (optional)
    git config commit.template .gitmessage
    ```
@@ -69,11 +82,11 @@ For optimal development experience with GitHub Copilot:
 ### Primary Scripts
 
 ```bash
-# Lint all markdown files
-npm run check
-
 # Format markdown and fix GitHub alerts
 npm run format
+
+# Lint all markdown files
+npm run lint
 
 # Validate commit messages
 npm run commitlint -- <commit-message-file>
@@ -83,7 +96,7 @@ npm run commitlint -- <commit-message-file>
 
 ```bash
 # Full validation pipeline
-npm run check && npm run format
+npm run format && npm run lint
 
 # Quick format staged files
 git add . && npm run format
@@ -98,71 +111,15 @@ echo "feat(docs): Add development guide" | npx commitlint
 
 ### Commitlint Configuration
 
-Located in `commitlint.config.js`, this enforces strict conventional commit standards:
-
-```javascript
-export default {
-  extends: ['@commitlint/config-conventional'],
-  rules: {
-    'type-enum': [2, 'always', [
-      'build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test'
-    ]],
-    'scope-enum': [2, 'always', [
-      'config', 'instructions', 'prompts', 'chatmodes', 'build', 'deps', 'tooling', 'readme'
-    ]],
-    // ... additional strict rules
-  }
-};
-```
-
-**Key Requirements**:
-- Scope is **required** (not optional)
-- Body is **required** (not optional)
-- Signed-off-by trailer is **required**
-- Maximum line lengths strictly enforced
+Located in [`commitlint.config.js`](commitlint.config.js), this enforces strict conventional commit standards.
 
 ### Remark Configuration
 
-Located in `.remarkrc.js`, this handles markdown linting and formatting:
-
-```javascript
-export default {
-  settings: {
-    emphasis: '_',
-    bullet: '-',
-    listItemIndent: 'one',
-    tablePipeAlign: false,
-    maximumLineLength: false,
-  },
-  plugins: [
-    [remarkFrontmatter, { type: 'yaml', marker: '-' }],
-    [remarkGfm, { singleTilde: false, tablePipeAlign: false }],
-  ],
-};
-```
+Located in [`remarkrc.js`](remarkrc.js), this handles markdown linting and formatting.
 
 ### Lefthook Configuration
 
-Located in `lefthook.yml`, this manages git hooks:
-
-```yaml
-pre-commit:
-  parallel: true
-  commands:
-    format:
-      run: |
-        STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
-        if [ -n "$STAGED_FILES" ]; then
-          echo "$STAGED_FILES" | xargs -r npm run format
-          echo "$STAGED_FILES" | xargs -r git add
-        fi
-
-commit-msg:
-  parallel: true
-  commands:
-    commitlint:
-      run: npm run commitlint -- {1}
-```
+Located in [`lefthook.yml`](lefthook.yml), this manages git hooks.
 
 ---
 
@@ -289,9 +246,6 @@ npx lefthook install
 
 # Check hook status
 npx lefthook list
-
-# Skip hooks temporarily (development only)
-LEFTHOOK=0 git commit -m "message"
 ```
 
 ---
@@ -300,20 +254,7 @@ LEFTHOOK=0 git commit -m "message"
 
 ### Current Dependencies
 
-```json
-{
-  "devDependencies": {
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
-    "glob": "11.0.3",
-    "ignore": "7.0.5",
-    "lefthook": "1.12.2",
-    "remark-cli": "12.0.1",
-    "remark-frontmatter": "5.0.0",
-    "remark-gfm": "4.0.1"
-  }
-}
-```
+Refer to [`package.json`](package.json) for the full list of dependencies and their versions.
 
 ### Updating Dependencies
 

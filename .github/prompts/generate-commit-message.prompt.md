@@ -65,6 +65,8 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 3. **Assess AI Contribution**: Use the `edit_diff_history` tool to determine your level of contribution or the percentage of file edits made by AI. The specific attribution footer is detailed in the **Footer Rules** section below.
 
+***CRITICAL SAFETY***: NEVER run `git commit` or `git push` automatically. Always write the commit message to `commit.tmp`, display it, and wait for explicit user approval before staging, signing, or committing. If the user asks you to prepare a commit, stop after creating `commit.tmp` and explicitly ask for confirmation to perform the commit.
+
 4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
 
 5. **Save and Output**: Write the final message to `commit.tmp` and display it in a copy-paste-friendly code block.

@@ -1,7 +1,7 @@
 {
   "name": "awesome-github-copilot",
   "version": "0.0.0",
-  "license": "",
+  "license": "MIT",
   "author": "Ashley Childress",
   "description": "🚧 WIP: My AI prompts, chat modes & instructions - curated by me (and ChatGPT). Updates often!",
   "keywords": [
@@ -20,7 +20,7 @@
   },
   "type": "module",
   "scripts": {
-    "check": "npx remark . -f -q",
+    "lint": "npx remark . -f -q",
     "format": "npx remark . -o && node scripts/fix-github-alerts.js",
     "commitlint": "npx commitlint --verbose --edit"
   },

@@ -42,8 +42,8 @@ Each piece of content is carefully crafted, tested, and marked with a [status ba
 
 3. **Verify your setup**:
    ```bash
-   npm run check    # Lint markdown files
    npm run format   # Format markdown and fix GitHub alerts
+   npm run lint     # Lint markdown files
    ```
 
 4. **Set up git hooks** (optional but recommended):
@@ -174,15 +174,7 @@ Chat modes define unique AI personalities for specific workflows.
 
 ## Status Badge System 🌈
 
-Every piece of content must include a status badge indicating its readiness:
-
-| Status | Badge | When to Use |
-| - | - | - |
-| `Draft` | ![Draft](https://img.shields.io/badge/status-draft-F72585.svg) | First pass, wild ideas—expect changes |
-| `Tweak` | ![Tweak](https://img.shields.io/badge/status-tweak-FB5607.svg) | Rapid iterations, testing different approaches |
-| `Polish` | ![Polish](https://img.shields.io/badge/status-polish-9B5DE5.svg) | In review, refining details |
-| `Check` | ![Check](https://img.shields.io/badge/status-check-3A86FF.svg) | Actively tested, feedback wanted |
-| `Ready` | ![Ready](https://img.shields.io/badge/status-ready-007F5F.svg) | Polished, proven, production-ready |
+Every piece of content must include a status badge indicating its readiness. Refer to the [Status Lifecycle & Badges](./docs/status-badge-lifecycle.md) for the full details.
 
 **Guidelines**:
 
@@ -195,59 +187,7 @@ Every piece of content must include a status badge indicating its readiness:
 
 ## Commit Guidelines 📝
 
-This project uses **Conventional Commits** with strict validation via commitlint.
-
-### Commit Message Format ✉️
-
-```
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
-```
-
-### Required Rules ⚠️
-
-- **Types**: `feat`, `fix`, `refactor`, `perf`, `test`, `ci`, `docs`, `style`, `build`, `chore`
-- **Scopes**: `config`, `instructions`, `prompts`, `chatmodes`, `build`, `deps`, `tooling`, `readme`
-- **Subject**: Sentence case, max 72 characters, no period
-- **Body**: Required, max 100 characters per line
-- **Footer**: Must include `Signed-off-by: Your Name <email@example.com>`
-
-### Examples 💡
-
-```bash
-# Adding new instruction
-feat(instructions): Add logging best practices instruction
-
-- create comprehensive logging guidelines
-- include multi-language examples
-- add security considerations
-
-Signed-off-by: John Doe <john@example.com>
-
-# Fixing documentation
-fix(docs): Correct status badge examples in contributing guide
-
-- fix broken badge links
-- update color codes to match current system
-- improve example formatting
-
-Signed-off-by: Jane Smith <jane@example.com>
-```
-
-### Validation ✅
-
-Commits are automatically validated using lefthook and commitlint:
-
-```bash
-# Test your commit message
-echo "feat(docs): Add contributing guidelines" | npx commitlint
-
-# Manual validation
-npx commitlint --edit
-```
+This project uses **Conventional Commits** with strict validation via commitlint. Refer to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) and the [generate-commit-message](./docs/prompts/generate-commit-message.md) prompt.
 
 ---
 
@@ -257,7 +197,7 @@ npx commitlint --edit
 
 ```bash
 # Check all markdown files
-npm run check
+npm run lint
 
 # Format and fix issues
 npm run format
@@ -307,7 +247,6 @@ The repository includes automated validation:
 3. **Follow naming conventions**:
    - Use kebab-case for filenames
    - Match existing patterns
-   - Check CODEOWNERS requirements
 
 ### PR Requirements 📃
 
