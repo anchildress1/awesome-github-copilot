@@ -1,4 +1,4 @@
-# 🚀 awesome-github-copilot Repository Instructions
+# awesome-github-copilot Repository Instructions 🚀
 
 Custom instructions, prompts, and chat modes for GitHub Copilot and AI tools.
 
@@ -16,7 +16,7 @@ All artifacts in `.github/` use status values in YAML frontmatter. Documentation
 
 ## Content Standards 📝
 
-> **Note**: Emojis in headers should come **after** the text for accessibility. Screen readers announce emojis first when they appear at the start, which disrupts comprehension.
+- Emojis in headers MUST come **after** the text for accessibility. Screen readers announce emojis first when they appear at the start, which disrupts comprehension.
 
 ### Instructions (.github/instructions/)
 
@@ -63,6 +63,4 @@ All artifacts in `.github/` use status values in YAML frontmatter. Documentation
 
 ## Key References 📚
 
-- [Design Principles](instructions/design-principles.instructions.md): Architectural guidance
-- [Logging Best Practices](instructions/logging-best-practices.instructions.md): Language-agnostic logging standards
 - [Status Lifecycle](../docs/status-badge-lifecycle.md): Badge maturity system

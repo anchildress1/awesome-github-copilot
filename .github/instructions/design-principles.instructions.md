@@ -1,12 +1,12 @@
 ---
-status: ready
-description: 'This instruction evaluates design decisions for clarity, stability, and future impact.'
-# applyTo: '**/*'
+status: "ready"
+description: "This instruction evaluates design decisions for clarity, stability, and future impact."
+applyTo: "repoRoot/globPattern.txt"
 ---
 
-# 📝 Design Principles
+# Design Principles 📝
 
-## Core Patterns & Principles
+## Core Patterns & Principles 🧭
 
 - 🔄 **Modular/Hexagonal Architecture (Ports & Adapters):** Split core business logic from external systems via well-defined interfaces.
 - 🎯 **Single Responsibility Principle (SRP):** Each module, function, or class should have one clear responsibility.

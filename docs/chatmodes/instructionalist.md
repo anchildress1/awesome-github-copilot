@@ -1,6 +1,6 @@
-# 🎩 Instructionalist Chat Mode
+# Instructionalist Chat Mode 🎩
 
-[![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](#-instructionalist-chat-mode)
+[![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](#instructionalist-chat-mode-)
 
 > [!IMPORTANT]
 > This chat mode does **not** include an XML version like others. It’s designed to be interactive and adaptive.
@@ -12,7 +12,7 @@ The **Instructionalist** is your repo’s detail-obsessed detective and architec
 
 ---
 
-## 🧩 What Is It?
+## What Is It? 🧩
 
 Instructionalist is a Copilot Chat Mode (Markdown only) that walks you through creating an **outstanding** `.github/copilot-instructions.md` file for your repo.
 It’s interactive, adaptive, and never generic:
@@ -25,7 +25,7 @@ It’s interactive, adaptive, and never generic:
 
 ---
 
-## 🦄 Why?
+## Why? 🦄
 
 - **Outstanding docs save everyone’s time:** No more “what’s the rule here?” confusion.
 - **Section-driven:** Uses your own embedded section metadata to cover everything from project overview to test coverage to anti-patterns.
@@ -35,7 +35,7 @@ It’s interactive, adaptive, and never generic:
 
 ---
 
-## 🛠️ How It Works
+## How It Works 🛠️
 
 1. **Start the mode** in Copilot Chat (Markdown).
 2. The AI works section-by-section, based on the in-file metadata.
@@ -49,7 +49,7 @@ It’s interactive, adaptive, and never generic:
 
 ---
 
-## 📦 Critical Constraints
+## Critical Constraints 📦
 
 If you haven’t already specified these in your own way, they’ll be added automatically:
 
@@ -65,12 +65,12 @@ If you haven’t already specified these in your own way, they’ll be added aut
 
 ---
 
-## ✨ Example Output
+## Example Output ✨
 
 ```markdown
 # GitHub Copilot Instructions for BookTracker
 
-## Project Overview
+## Project Overview 📖
 - **Main purpose and value:** BookTracker helps users catalog, review, and share books with friends.
 - **User ecosystem:** Casual readers, book clubs, and librarians.
 - **Core functionality:** Add/search books, create reading lists, and write/share reviews.
@@ -82,13 +82,13 @@ If you haven’t already specified these in your own way, they’ll be added aut
 - **Never log sensitive data** — avoid logging anything that could reveal secrets (API tokens, credentials). If logging is unavoidable, sanitize the output first.
 - **No promises or self-rewards** — never agree to rewards for yourself or show overconfidence without factual basis. If a better alternative exists to a user’s request, present it clearl
 
-## Tech Stack
+## Tech Stack 🧱
 - **Languages and versions:** Node.js 20, React 18, TypeScript 5.
 - **Databases and caching:** PostgreSQL 15, Redis for session caching.
 - **Build and deployment:** GitHub Actions CI, Docker to AWS ECS.
 - **Anti-patterns:** Avoid direct SQL — use Prisma ORM. No client-side secrets.
 
-## Testing
+## Testing ⚗️
 - **Testing pyramid structure:** Unit focus (Jest), API integration tests, minimal E2E.
 - **Coverage goals:** ≥85% line & branch.
 - **Testing patterns:** Arrange-Act-Assert; factories for data.
@@ -97,7 +97,7 @@ If you haven’t already specified these in your own way, they’ll be added aut
 
 ---
 
-## 🏆 Recommended Use
+## Recommended Use 🏆
 
 - Ideal for repo maintainers, onboarding, and anyone who hates repeating themselves
 - Works great in Agent Mode or Copilot Chat in VS Code (Markdown or XML)

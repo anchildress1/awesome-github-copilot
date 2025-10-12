@@ -1,10 +1,10 @@
-# 🎯 Repository Setup Guide
+# Repository Setup Guide 🎯
 
 Quick-start guide for new developers to get up and running with awesome-github-copilot development.
 
 ---
 
-## ⚡ Quick Start (5 minutes)
+## Quick Start (5 minutes) ⚡
 
 ### 1. Prerequisites Check
 
@@ -85,9 +85,9 @@ If this works without errors, you're ready to contribute! 🎉
 
 ---
 
-## 🎯 Understanding the Repository
+## Understanding the Repository 🎯
 
-### What This Repository Contains
+### What This Repository Contains 📦
 
 This is a curated collection of AI content for GitHub Copilot and other AI agents:
 
@@ -95,7 +95,7 @@ This is a curated collection of AI content for GitHub Copilot and other AI agent
 - **🚀 Prompts**: High-level workflows for Agent Mode
 - **🤖 Chat Modes**: Complete AI personalities for specific tasks
 
-### File Organization
+### File Organization 🗂️
 
 ```
 awesome-github-copilot/
@@ -113,7 +113,7 @@ awesome-github-copilot/
 └── README.md               # Project overview and usage
 ```
 
-### Key Concepts
+### Key Concepts 🔑
 
 1. **Status Badges**: Every piece of content has a status (Draft, Tweak, Polish, Check, Ready)
 2. **Dual Documentation**: Content exists in both `.github/` (implementation) and `docs/` (documentation)
@@ -122,9 +122,9 @@ awesome-github-copilot/
 
 ---
 
-## 🛠️ Development Workflow
+## Development Workflow 🛠️
 
-### Creating New Content
+### Creating New Content ✨
 
 1. **Choose your content type**:
    - **Instruction**: Modifies AI behavior for specific tasks
@@ -148,7 +148,7 @@ awesome-github-copilot/
 
 5. **Update README.md** to include your content in the appropriate table
 
-### Making Changes
+### Making Changes ✏️
 
 ```bash
 # Create a feature branch
@@ -173,7 +173,7 @@ Signed-off-by: Your Name <your.email@example.com>"
 git push origin feat/your-feature-name
 ```
 
-### Quality Checks
+### Quality Checks ✔️
 
 The repository has automated quality control:
 
@@ -188,7 +188,7 @@ npx commitlint    # Checks commit message format
 
 ---
 
-## 📝 Commit Message Requirements
+## Commit Message Requirements 📝
 
 This repository uses **strict conventional commits**. Here's the format:
 
@@ -200,7 +200,7 @@ This repository uses **strict conventional commits**. Here's the format:
 <footer>
 ```
 
-### Required Elements
+### Required Elements 📎
 
 - **Type**: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `chore`
 - **Scope**: `instructions`, `prompts`, `chatmodes`, `docs`, `config`, `build`
@@ -208,7 +208,7 @@ This repository uses **strict conventional commits**. Here's the format:
 - **Body**: **Required** - explain what and why, max 100 chars per line
 - **Footer**: **Required** - must include `Signed-off-by: Name <email>`
 
-### Examples
+### Examples 📑
 
 ```bash
 # Adding new content
@@ -241,9 +241,9 @@ Signed-off-by: Dev Team <dev@example.com>
 
 ---
 
-## 🧪 Testing Your Content
+## Testing Your Content 🧪
 
-### Instructions Testing
+### Instructions Testing 🧪
 
 1. **In VS Code**:
    ```json
@@ -261,14 +261,14 @@ Signed-off-by: Dev Team <dev@example.com>
 
 3. **Document results** in your PR
 
-### Prompts Testing
+### Prompts Testing 📝
 
 1. **Use GitHub Copilot Agent Mode**
 2. **Test tool integration** (`#changes`, `#editFiles`, `#runInTerminal`)
 3. **Verify output quality**
 4. **Check error handling**
 
-### Chat Modes Testing
+### Chat Modes Testing 💬
 
 1. **Apply in compatible tools** (Copilot Chat, Claude, etc.)
 2. **Test personality consistency**
@@ -277,16 +277,16 @@ Signed-off-by: Dev Team <dev@example.com>
 
 ---
 
-## 🚨 Common Issues and Solutions
+## Common Issues and Solutions 🚨
 
-### Commit Message Rejected
+### Commit Message Rejected 🆘
 
 ```bash
 # Error: "scope-empty: scope may not be empty"
 # Fix: Always include a scope
 git commit -m "feat(instructions): Your message"
 
-# Error: "body-empty: body may not be empty"  
+# Error: "body-empty: body may not be empty"
 # Fix: Always include a body after a blank line
 git commit -m "feat(instructions): Your subject
 
@@ -295,7 +295,7 @@ Your detailed explanation here
 Signed-off-by: Your Name <email>"
 ```
 
-### Markdown Linting Errors
+### Markdown Linting Errors ❗
 
 ```bash
 # Run formatter to auto-fix most issues
@@ -305,7 +305,7 @@ npm run format
 npx remark your-file.md -f
 ```
 
-### Git Hooks Not Working
+### Git Hooks Not Working ⚓
 
 ```bash
 # Reinstall hooks
@@ -316,7 +316,7 @@ npx lefthook install
 npx lefthook list
 ```
 
-### Dependencies Issues
+### Dependencies Issues 🧰
 
 ```bash
 # Clear npm cache and reinstall
@@ -327,23 +327,23 @@ npm install
 
 ---
 
-## 🎯 Your First Contribution
+## Your First Contribution 🎯
 
 Ready to make your first contribution? Here's a beginner-friendly approach:
 
-### Option 1: Fix Documentation
+### Option 1: Fix Documentation 📓
 
 1. Find a typo or unclear section in any `.md` file
 2. Fix it and test with `npm run check`
 3. Commit with type `docs`
 
-### Option 2: Improve Existing Content
+### Option 2: Improve Existing Content 🎚️
 
 1. Test an existing instruction/prompt/chat mode
 2. Suggest improvements or report issues
 3. Submit changes with type `fix` or `refactor`
 
-### Option 3: Create New Content
+### Option 3: Create New Content 🎇
 
 1. Start with a simple instruction for a common task
 2. Follow the templates in existing content
@@ -352,23 +352,23 @@ Ready to make your first contribution? Here's a beginner-friendly approach:
 
 ---
 
-## 📚 Resources and Next Steps
+## Resources and Next Steps 📚
 
-### Essential Reading
+### Essential Reading 📚
 
 1. **[CONTRIBUTING.md](./CONTRIBUTING.md)**: Complete contribution guidelines
 2. **[DEVELOPMENT.md](./DEVELOPMENT.md)**: Technical details and advanced workflows
 3. **[Status Lifecycle](./docs/status-badge-lifecycle.md)**: Understanding content maturity
 4. **[README.md](./README.md)**: Project overview and content catalog
 
-### Getting Help
+### Getting Help 🙋
 
 - **Issues**: Report bugs or request features
 - **Discussions**: Ask questions or share ideas
 - **Pull Requests**: Contribute improvements
 - **Code Owners**: Check `.github/CODEOWNERS` for specific areas
 
-### Community Guidelines
+### Community Guidelines 🤝
 
 - **Be respectful** and constructive
 - **Test thoroughly** before submitting
@@ -378,7 +378,7 @@ Ready to make your first contribution? Here's a beginner-friendly approach:
 
 ---
 
-## ✅ Setup Checklist
+## Setup Checklist ✅
 
 Before you start contributing, ensure:
 

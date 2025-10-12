@@ -1,4 +1,4 @@
-# 🤝 Contributing to awesome-github-copilot
+# Contributing to awesome-github-copilot 🤝
 
 Welcome to the creative chaos! This repository is a curated collection of **Custom Instructions, Prompts, and Chat Modes** for GitHub Copilot and other AI agents. Every contribution helps build a more powerful toolkit for developers worldwide.
 
@@ -6,7 +6,7 @@ Welcome to the creative chaos! This repository is a curated collection of **Cust
 
 ---
 
-## 📚 Repository Overview
+## Repository Overview 📚
 
 This repository contains three main types of content:
 
@@ -18,16 +18,16 @@ Each piece of content is carefully crafted, tested, and marked with a [status ba
 
 ---
 
-## 🚀 Getting Started
+## Getting Started 🚀
 
-### Prerequisites
+### Prerequisites ☑️
 
 - **Node.js** (v18 or higher)
 - **Git** with conventional commit knowledge
 - **GitHub Copilot** or compatible AI agent for testing
 - A text editor (VS Code recommended for Copilot integration)
 
-### Development Setup
+### Development Setup 🚧
 
 1. **Clone the repository**:
    ```bash
@@ -53,7 +53,7 @@ Each piece of content is carefully crafted, tested, and marked with a [status ba
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure 📁
 
 Understanding the file structure is crucial for effective contributions:
 
@@ -77,7 +77,7 @@ Understanding the file structure is crucial for effective contributions:
 └── README.md                # Main project documentation
 ```
 
-### File Naming Conventions
+### File Naming Conventions 📛
 
 - **Instructions**: `kebab-case.md` (e.g., `format-conventional-commit.md`)
 - **Prompts**: `kebab-case.md` (e.g., `generate-commit-message.md`)
@@ -86,9 +86,9 @@ Understanding the file structure is crucial for effective contributions:
 
 ---
 
-## 🎯 Creating New Content
+## Creating New Content 🎯
 
-### 📝 Instructions
+### Instructions 📝
 
 Instructions are reusable AI directives that should behave like command-line utilities.
 
@@ -138,7 +138,7 @@ Instructions are reusable AI directives that should behave like command-line uti
    ```
    ```
 
-### 🚀 Prompts
+### Prompts 🚀
 
 Prompts are high-level directives for Agent Mode that orchestrate workflows.
 
@@ -154,7 +154,7 @@ Prompts are high-level directives for Agent Mode that orchestrate workflows.
 
 3. **Follow the prompt template pattern** from existing prompts
 
-### 🤖 Chat Modes
+### Chat Modes 🤖
 
 Chat modes define unique AI personalities for specific workflows.
 
@@ -172,7 +172,7 @@ Chat modes define unique AI personalities for specific workflows.
 
 ---
 
-## 🌈 Status Badge System
+## Status Badge System 🌈
 
 Every piece of content must include a status badge indicating its readiness:
 
@@ -193,11 +193,11 @@ Every piece of content must include a status badge indicating its readiness:
 
 ---
 
-## 📝 Commit Guidelines
+## Commit Guidelines 📝
 
 This project uses **Conventional Commits** with strict validation via commitlint.
 
-### Commit Message Format
+### Commit Message Format ✉️
 
 ```
 <type>(<scope>): <subject>
@@ -207,7 +207,7 @@ This project uses **Conventional Commits** with strict validation via commitlint
 <footer>
 ```
 
-### Required Rules
+### Required Rules ⚠️
 
 - **Types**: `feat`, `fix`, `refactor`, `perf`, `test`, `ci`, `docs`, `style`, `build`, `chore`
 - **Scopes**: `config`, `instructions`, `prompts`, `chatmodes`, `build`, `deps`, `tooling`, `readme`
@@ -215,7 +215,7 @@ This project uses **Conventional Commits** with strict validation via commitlint
 - **Body**: Required, max 100 characters per line
 - **Footer**: Must include `Signed-off-by: Your Name <email@example.com>`
 
-### Examples
+### Examples 💡
 
 ```bash
 # Adding new instruction
@@ -237,7 +237,7 @@ fix(docs): Correct status badge examples in contributing guide
 Signed-off-by: Jane Smith <jane@example.com>
 ```
 
-### Validation
+### Validation ✅
 
 Commits are automatically validated using lefthook and commitlint:
 
@@ -251,9 +251,9 @@ npx commitlint --edit
 
 ---
 
-## 🧪 Testing and Validation
+## Testing and Validation 🧪
 
-### Markdown Linting
+### Markdown Linting 📄
 
 ```bash
 # Check all markdown files
@@ -263,7 +263,7 @@ npm run check
 npm run format
 ```
 
-### Content Testing
+### Content Testing 🧫
 
 1. **Test instructions with Copilot**:
    - Copy instruction to VS Code settings
@@ -280,7 +280,7 @@ npm run format
    - Verify personality and behavior
    - Test with various scenarios
 
-### Pre-commit Validation
+### Pre-commit Validation 🛡️
 
 The repository includes automated validation:
 
@@ -290,9 +290,9 @@ The repository includes automated validation:
 
 ---
 
-## 🔄 Pull Request Process
+## Pull Request Process 🔄
 
-### Before Submitting
+### Before Submitting 📋
 
 1. **Test thoroughly**:
    - Validate with actual AI agents
@@ -309,7 +309,7 @@ The repository includes automated validation:
    - Match existing patterns
    - Check CODEOWNERS requirements
 
-### PR Requirements
+### PR Requirements 📃
 
 - [ ] **Clear description** of changes and motivation
 - [ ] **Testing evidence** (screenshots, examples, test results)
@@ -318,7 +318,7 @@ The repository includes automated validation:
 - [ ] **Documentation updated** (README.md, related files)
 - [ ] **No breaking changes** without justification
 
-### Review Process
+### Review Process 👀
 
 1. **Automated checks** must pass (commitlint, remark)
 2. **Manual review** by code owners
@@ -327,9 +327,9 @@ The repository includes automated validation:
 
 ---
 
-## 🎨 Style Guidelines
+## Style Guidelines 🎨
 
-### Markdown Standards
+### Markdown Standards 📏
 
 - Use **GFM (GitHub Flavored Markdown)**
 - **Single underscore** for emphasis: `_emphasis_`
@@ -337,7 +337,7 @@ The repository includes automated validation:
 - **No pipe alignment** in tables
 - **Emoji prefixes** for headers when appropriate
 
-### Content Guidelines
+### Content Guidelines 📜
 
 - **Be concise** but comprehensive
 - **Use examples** liberally
@@ -345,7 +345,7 @@ The repository includes automated validation:
 - **Test thoroughly** before submitting
 - **Document edge cases** and limitations
 
-### Language Style
+### Language Style 🖋️
 
 - **Active voice** preferred
 - **Clear, actionable** language
@@ -354,22 +354,22 @@ The repository includes automated validation:
 
 ---
 
-## 🆘 Getting Help
+## Getting Help 🆘
 
-### Resources
+### Resources 🔗
 
 - [Status Badge Lifecycle](./docs/status-badge-lifecycle.md)
 - [Existing Instructions](./docs/instructions/)
 - [Prompt Examples](./docs/prompts/)
 - [Chat Mode Gallery](./docs/chatmodes/)
 
-### Community
+### Community 👥
 
 - **GitHub Issues**: Report bugs or request features
 - **GitHub Discussions**: Ask questions or share ideas
 - **Pull Requests**: Contribute improvements
 
-### Common Issues
+### Common Issues 🚩
 
 1. **Commit validation failures**: Check `commitlint.config.js` rules
 2. **Markdown linting errors**: Run `npm run format` to auto-fix
@@ -378,7 +378,7 @@ The repository includes automated validation:
 
 ---
 
-## 🏆 Recognition
+## Recognition 🏆
 
 Contributors are recognized in several ways:
 
@@ -389,7 +389,7 @@ Contributors are recognized in several ways:
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap 🔮
 
 This project continues to evolve. Areas of focus include:
 

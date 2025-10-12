@@ -1,4 +1,4 @@
-# awesome-github-copilot
+# awesome-github-copilot 🔭
 
 [![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot)
 
@@ -25,7 +25,7 @@ Some ideas aren’t fully baked yet — a few are wild concepts still in beta-br
 
 ---
 
-## 💥 Sparked It. Shaped It. Shoutouts.
+## Sparked It. Shaped It. Shoutouts. 💥
 
 > 🦄 This project isn’t fully baked yet - it’s somewhere between “I might be onto something” and “what if I made it do _this_ too?”
 > But from the beginning, a few people showed up, encouraged the madness, and gave me room to run wild just to test a theory.
@@ -34,14 +34,14 @@ Some ideas aren’t fully baked yet — a few are wild concepts still in beta-br
 
 ---
 
-### 🕹️ Courtney
+### Courtney 🕹️
 
 For jumping into early testing with zero hesitation, breaking everything in sight (in the best way), and somehow still being excited to tell others about it. I appreciate the feedback, the encouragement, and your willingness to _poke the bear_ to make things better.
 Your early involvement helps shape what this will become - **thank you** for being part of the chaos.
 
 ---
 
-### 🧨 Vijaya
+### Vijaya 🧨
 
 **Thank you** for planting the original idea that I immediately ran with, rewired, and reimagined into something you probably don’t even recognize - but it's still firmly rooted in your vision of what _useful_ actually looks like.
 Your influence, clarity, and push for building things that scale across teams lit the fuse. This entire project is built on that spark and simply wouldn’t exist without you.
@@ -50,7 +50,7 @@ Your influence, clarity, and push for building things that scale across teams li
 
 ---
 
-# 📚 The `.github/` Directory
+# The `.github/` Directory 📚
 
 Welcome to the heart of this repository’s GitHub automation, documentation, and creative workflow tools. This folder contains the essential resources and configuration files that power collaboration, automation, and custom Copilot experiences across the project.
 
@@ -60,7 +60,7 @@ Each document is clearly labeled by status (see [Status Lifecycle & Badges](./do
 
 > 🦄 This repo thrives on creative chaos and workflow upgrades. If you’re new, start here to get oriented!
 
-## 🚀 Getting Started
+## Getting Started 🚀
 
 **New to this repository?** Start with these essential guides:
 
@@ -73,7 +73,7 @@ These guides ensure you understand our standards and can contribute effectively 
 
 ---
 
-## 🤹 Custom Instructions
+## Custom Instructions 🤹
 
 This is where the magic lives — reusable, testable, sometimes over-engineered instructions for GitHub Copilot and other AI agents. These aren’t prompts you paste once and forget — they’re designed to behave like little command-line utilities for your agent.
 
@@ -82,16 +82,16 @@ This is where the magic lives — reusable, testable, sometimes over-engineered 
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`format-conventional-commit`](./docs/instructions/format-conventional-commits.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/format-conventional-commits.md) | Converts staged changes into a conventional commit message | Self-contained; no separate diff analysis needed. |
-| [~~`analyze-git-diff`~~](./docs/instructions/analyze-git-diff.md) | [![Status: Deprecated](https://img.shields.io/badge/status-deprecated-6C757D.svg)](./docs/instructions/analyze-git-diff.md) | Analyze git diff and generate explanations | DEPRECATED: No longer necessary with modern models |
 | [`design-principles`](./docs/instructions/design-principles.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles.md) | Evaluates design decisions for clarity, stability, and future impact | Inspired by legacy code PTSD and late-night refactors |
-| [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Checklist of logging do's and don'ts with multi-language examples | Designed to power [`The Logfather`](./docs/chatmodes/logfather.md) chat mode |
+| [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Checklist of logging do's and don'ts with multi-language examples | Designed to power [`The Logfather`](./docs/chatmodes/logfather.md) chat mode, but not actively used there anymore |
+| `format-conventional-commit` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | Modern models are capable of handling this natively. |
+| `analyze-git-diff` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | No longer necessary with modern models |
 
 > 🦄 If Athena helped you bring order to your chaos, leave a star. You know she’s not asking for it — but she earned it.
 
 ---
 
-## 🧑‍🚀 Prompts
+## Prompts 🧑‍🚀
 
 These are your spectral conductors — high-level prompts designed for Agent Mode that don’t _do_ the work, they summon the right specialists to do it for them. Think: “raise the Diff Philosopher, call in the Commit Surgeon, validate it all without lifting a mortal finger.”
 
@@ -99,13 +99,13 @@ Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerm
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI annotation | Simple, responsible, zero orchestration. |
-| [`generate-commit-message-orchestrator`](./docs/prompts/generate-commit-message-orchestrator.deprecated.md) | [![Status: Deprecated](https://img.shields.io/badge/status-deprecated-6C757D.svg)](./docs/prompts/generate-commit-message-orchestrator.deprecated.md) | ~~Complex orchestration approach~~ | **DEPRECATED:** Use `generate-commit-message` instead. |
-| [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Useful for scripts, logs, or automation. |
+| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) (v2) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI annotation | Simple, responsible, zero orchestration. |
+| [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-A0A0A0.svg)](./docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Recent updates to Copilot's system instructions means it's now capable of handling this one on its own. |
+| `generate-commit-message` (v1) | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Original prompt was too noisy for newer models, re-written with that in mind as v2. | |
 
 ---
 
-# 👷‍♂️ Chat Modes
+# Chat Modes 👷‍♂️
 
 Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitHub Copilot personalities, all designed for creative chaos, workflow upgrades, and occasional code emergencies. Every mode here is handpicked by me (with ChatGPT running triage in the background).
 

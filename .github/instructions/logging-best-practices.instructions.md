@@ -1,23 +1,23 @@
 ---
-status: draft
-description: 'A language-agnostic, Copilot-ready checklist for secure, structured, and scalable logging inside applications — not infrastructure.'
-# applyTo: '**/*'
+status: "draft"
+description: "A language-agnostic, Copilot-ready checklist for secure, structured, and scalable logging inside applications — not infrastructure."
+applyTo: "repoRoot/globPattern.txt"
 ---
 
-# 🧾 Logging Best Practices
+# Logging Best Practices 🧾
 
 A language-agnostic, Copilot-ready checklist for secure, structured, and scalable logging inside applications — not infrastructure.
 
 ---
 
-## ✅ Do This
+## Do This ✅
 
-### 🧱 Use Structured Logging
+### Use Structured Logging 🧱
 
 - Format logs as **JSON** wherever possible
 - Include: `timestamp`, `severity`, `message`, `contextual fields` (e.g. `requestId`, `userId`, `service`, etc.)
 
-### 🎚️ Apply Proper Log Levels
+### Apply Proper Log Levels 🎚️
 
 - **TRACE**: For step-by-step debugging, not for prod
 - **DEBUG**: Method entry/exit, variable values, etc.
@@ -26,25 +26,25 @@ A language-agnostic, Copilot-ready checklist for secure, structured, and scalabl
 - **ERROR**: Failures that degrade service
 - **FATAL**: Crashes, unrecoverable errors
 
-### 🕵️‍♂️ Add Context to Every Entry
+### Add Context to Every Entry 🕵️‍♂️
 
 - Include trace/correlation/request IDs
 - Include service/module names
 - Include method or function names if possible
 
-### 🔀 Control Log Levels at Runtime
+### Control Log Levels at Runtime 🔀
 
 - Respect environment-level overrides (e.g. `LOG_LEVEL` env var)
 - Use DI-based logging config if possible
 
-### 🧼 Protect Sensitive Data
+### Protect Sensitive Data 🧼
 
 - Mask or omit PII (e.g., SSNs, full account numbers)
 - Avoid logging authentication tokens or secrets
 
 ---
 
-## ❌ Don’t Do This
+## Don't Do This ❌
 
 - Don’t use `print()`, `console.log`, or raw output functions
 - Don’t over-log or duplicate the same event
@@ -54,15 +54,15 @@ A language-agnostic, Copilot-ready checklist for secure, structured, and scalabl
 
 ---
 
-## 🧪 Examples (in multiple languages)
+## Examples (in multiple languages) 🧪
 
-### Java (SLF4J + Logback)
+### Java (SLF4J + Logback) ☕
 
 ```java
 logger.info("Order processed", kv("orderId", orderId), kv("status", "confirmed"));
 ```
 
-### Node.js (Winston)
+### Node.js (Winston) 🟢
 
 ```js
 logger.info({
@@ -72,7 +72,7 @@ logger.info({
 });
 ```
 
-### Python (`structlog`)
+### Python (`structlog`) 🐍
 
 ```python
 logger.info("email_sent", request_id=request_id, recipient=email, duration_ms=123)
@@ -80,7 +80,7 @@ logger.info("email_sent", request_id=request_id, recipient=email, duration_ms=12
 
 ---
 
-## 🧠 Summary for Copilot Execution
+## Summary for Copilot Execution 🧠
 
 - Always assume logs must be structured
 - Always check for centralized logger presence before inserting one

@@ -9,7 +9,7 @@ export default {
     'scope-empty': [2, 'never'],
     'scope-case': [2, 'always', 'lower-case'],
     'scope-enum': [2, 'always', [
-      'config', 'instructions', 'prompts', 'chatmodes', 'build', 'deps', 'tooling', 'readme'
+      'config', 'instructions', 'prompts', 'chatmodes', 'build', 'deps', 'tooling', 'readme', 'copilot'
     ]],
     'subject-case': [2, 'always', ['sentence-case']],
     'subject-empty': [2, 'never'],
@@ -23,7 +23,7 @@ export default {
     'footer-leading-blank': [2, 'always',],
     'footer-max-line-length': [2, 'always', 100],
     'header-max-length': [2, 'always', 72],
-    'signed-off-by': [2, 'always'],
-    'trailer-exists': [2, 'always', ['Signed-off-by']]
+    'signed-off-by': [1, 'always'],
+    'trailer-exists': [1, 'always', ['Signed-off-by']]
   }
 };

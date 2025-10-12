@@ -1,28 +1,27 @@
 ---
-status: 'polish'
-mode: 'agent'
-title: 'Generate Conventional Commit Message'
-description: 'Generate a conventional commit message from staged changes and save to ./commit.tmp'
+status: "polish"
+mode: "agent"
+description: "Generate a conventional commit message from staged changes and save to ./commit.tmp"
 tools: [
-  'runInTerminal',
-  'get_changed_files'
+  "runInTerminal",
+  "get_changed_files"
 ]
 ---
 
 <custom-prompt id="generate-commit-message">
 
-# 📝 Generate Conventional Commit Message
+# Generate Conventional Commit Message 📝
 
 <goal-definition>
 
-## 🎯 Task
+## Task 🎯
 
 Generate a valid conventional commit message based on staged git changes and save it to a `commit.tmp` file.
 
 </goal-definition>
 <style-guidelines>
 
-## ✍️ Writing Guidelines
+## Writing Guidelines ✍️
 
 - **Be concise**: Summarize groups of similar changes; don't list every single file.
 - **Focus on intent**: Explain WHAT changed and WHY, not HOW.
@@ -32,7 +31,7 @@ Generate a valid conventional commit message based on staged git changes and sav
 </style-guidelines>
 <formatting-constraints>
 
-## 🧱 Formatting Rules
+## Formatting Rules 🧱
 
 - **Line Length**:
   - Subject: 72 characters maximum.
@@ -47,7 +46,7 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 <formatting-enforcement>
 
-### Enforcement
+### Enforcement 👮
 
 - Keep the subject to ≤72 characters and each body line to ≤100 characters. Rephrase the subject or split long bullets to comply. Verify these limits before saving to `commit.tmp`.
 
@@ -55,7 +54,7 @@ Generate a valid conventional commit message based on staged git changes and sav
 </formatting-constraints>
 <workflow-overview>
 
-## 📋 Workflow
+## Workflow 📋
 
 1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`) or `git diff --cached` (or `git diff` if no staged).
 2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor).
@@ -66,13 +65,13 @@ Generate a valid conventional commit message based on staged git changes and sav
 </workflow-overview>
 <footer-constraints class="critical">
 
-## Footer Rules (CRITICAL)
+## Footer Rules (CRITICAL) 👣
 
 Include correct footers based on changes.
 
 <breaking-changes>
 
-### Breaking Changes
+### Breaking Changes 💥
 
 - Use `BREAKING CHANGE:` for incompatibilities.
 - Example: `BREAKING CHANGE: The getUser API now returns an object instead of an ID.`
@@ -80,7 +79,7 @@ Include correct footers based on changes.
 </breaking-changes>
 <issue-story-references>
 
-### Issue/Ticket References
+### Issue/Ticket References 🔗
 
 - GitHub: `Fixes #123`, `Closes #456`.
 - Jira: `Fixes PROJ-123` (no #).
@@ -90,7 +89,7 @@ Include correct footers based on changes.
 </issue-story-references>
 <rai-attribution>
 
-### RAI Attribution (REQUIRED)
+### RAI Attribution (REQUIRED) 🖋️
 
 - Choose exactly one footer from this list; higher entries override lower ones.
 - **`Generated-by`**: Entirely authored features/files (67-100% AI-written).
@@ -102,7 +101,7 @@ Include correct footers based on changes.
 </rai-attribution>
 <prohibited-actions>
 
-### Prohibited
+### Prohibited 🛑
 
 - Never include `Signed-off-by` unless asked.
 
@@ -110,11 +109,11 @@ Include correct footers based on changes.
 </footer-constraints>
 <reference-examples>
 
-## 💡 Output Examples
+## Output Examples 💡
 
 <invalid-output-example>
 
-### ❌ Invalid Output
+### Invalid Output ❌
 
 This example violates multiple rules:
 
@@ -141,7 +140,7 @@ Fixes #123
 </invalid-output-example>
 <valid-output-example>
 
-### ✅ Valid Output
+### Valid Output ✅
 
 This example follows all guidelines:
 
@@ -165,7 +164,7 @@ Co-authored-by: GitHub Copilot <github.copilot@github.com>
 </valid-output-example>
 <output-instructions>
 
-## 📤 Output
+## Output 📤
 
 1. Write the complete commit message to a temporary file named `commit.tmp` using a shell redirect.
    - Example: `cat > commit.tmp << 'EOF'`

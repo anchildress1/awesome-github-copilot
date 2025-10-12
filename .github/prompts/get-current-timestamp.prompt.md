@@ -1,13 +1,8 @@
 ---
-status: Ready
-mode: ask
-model: GPT-4.1
-title: Get Current Timestamp for Reports
-description: |
-  This prompt provides guidelines for handling timestamps in AI implementation and review reports.
-  It specifies the exact format and usage of timestamps to ensure consistency and accuracy across reports.
-tools:
-  - runTasks
+status: "deprecated"
+mode: "ask"
+description: "Recent updates to Copilot's system instructions means it's now capable of handling this one on its own."
+tools: [ "runTasks" ]
 ---
 
 <prompt id="get-current-timestamp">

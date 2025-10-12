@@ -1,19 +1,19 @@
-# 🛠️ Development Guide
+# Development Guide 🛠️
 
 This guide provides technical details for setting up and maintaining the awesome-github-copilot development environment.
 
 ---
 
-## 🏗️ Development Environment Setup
+## Development Environment Setup 🏗️
 
-### System Requirements
+### System Requirements 🖥️
 
 - **Node.js**: v18+ (LTS recommended)
 - **npm**: v9+ (comes with Node.js)
 - **Git**: v2.30+ with conventional commit support
 - **VS Code**: Latest version (for Copilot integration testing)
 
-### Environment Configuration
+### Environment Configuration 🌐
 
 1. **Clone with development setup**:
    ```bash
@@ -37,7 +37,7 @@ This guide provides technical details for setting up and maintaining the awesome
    npx lefthook install
    ```
 
-### VS Code Setup
+### VS Code Setup 🛰️
 
 For optimal development experience with GitHub Copilot:
 
@@ -64,9 +64,9 @@ For optimal development experience with GitHub Copilot:
 
 ---
 
-## 📋 Available Scripts
+## Available Scripts 📋
 
-### Primary Scripts
+### Primary Scripts ▶️
 
 ```bash
 # Lint all markdown files
@@ -79,7 +79,7 @@ npm run format
 npm run commitlint -- <commit-message-file>
 ```
 
-### Development Workflows
+### Development Workflows 🔁
 
 ```bash
 # Full validation pipeline
@@ -94,9 +94,9 @@ echo "feat(docs): Add development guide" | npx commitlint
 
 ---
 
-## 🔧 Tool Configuration
+## Tool Configuration 🔧
 
-### Commitlint Configuration
+### Commitlint Configuration 📜
 
 Located in `commitlint.config.js`, this enforces strict conventional commit standards:
 
@@ -122,7 +122,7 @@ export default {
 - Signed-off-by trailer is **required**
 - Maximum line lengths strictly enforced
 
-### Remark Configuration
+### Remark Configuration 📝
 
 Located in `.remarkrc.js`, this handles markdown linting and formatting:
 
@@ -142,7 +142,7 @@ export default {
 };
 ```
 
-### Lefthook Configuration
+### Lefthook Configuration 🪝
 
 Located in `lefthook.yml`, this manages git hooks:
 
@@ -167,9 +167,9 @@ commit-msg:
 
 ---
 
-## 🧪 Testing Strategies
+## Testing Strategies 🧪
 
-### Markdown Validation
+### Markdown Validation 🔎
 
 ```bash
 # Lint specific files
@@ -182,7 +182,7 @@ npx remark . -f -q
 npx remark . -o
 ```
 
-### Instruction Testing
+### Instruction Testing 🔬
 
 For testing custom instructions:
 
@@ -200,7 +200,7 @@ For testing custom instructions:
    - [ ] Edge cases handled appropriately
    - [ ] No unintended side effects
 
-### Prompt Testing
+### Prompt Testing 🧪
 
 For Agent Mode prompts:
 
@@ -209,7 +209,7 @@ For Agent Mode prompts:
 3. **Check output quality** and completeness
 4. **Validate error handling**
 
-### Chat Mode Testing
+### Chat Mode Testing 🧠
 
 1. **Apply in compatible AI tools**
 2. **Test personality consistency**
@@ -218,9 +218,9 @@ For Agent Mode prompts:
 
 ---
 
-## 🏗️ Build Process
+## Build Process 🏗️
 
-### File Generation
+### File Generation 🏭
 
 The repository uses scripts to maintain consistency:
 
@@ -234,7 +234,7 @@ node scripts/fix-github-alerts.js
 # - Maintains GitHub compatibility
 ```
 
-### Validation Pipeline
+### Validation Pipeline 🏁
 
 1. **Pre-commit hooks**:
    - Format staged files
@@ -253,9 +253,9 @@ node scripts/fix-github-alerts.js
 
 ---
 
-## 🐛 Debugging Common Issues
+## Debugging Common Issues 🐛
 
-### Commit Message Failures
+### Commit Message Failures ❎
 
 ```bash
 # Test commit message format
@@ -268,7 +268,7 @@ echo "your-commit-message" | npx commitlint
 # - Subject too long (max 72 chars)
 ```
 
-### Markdown Linting Errors
+### Markdown Linting Errors ⚠️
 
 ```bash
 # Show detailed errors
@@ -281,7 +281,7 @@ npx remark . -f
 # - Emphasis style inconsistencies
 ```
 
-### Git Hook Problems
+### Git Hook Problems 🔗
 
 ```bash
 # Reinstall hooks
@@ -297,9 +297,9 @@ LEFTHOOK=0 git commit -m "message"
 
 ---
 
-## 📦 Dependency Management
+## Dependency Management 📦
 
-### Current Dependencies
+### Current Dependencies 📦
 
 ```json
 {
@@ -316,7 +316,7 @@ LEFTHOOK=0 git commit -m "message"
 }
 ```
 
-### Updating Dependencies
+### Updating Dependencies ⬆️
 
 ```bash
 # Check for updates
@@ -329,7 +329,7 @@ npm update
 npm install package-name@latest --save-dev
 ```
 
-### Security Considerations
+### Security Considerations 🛡️
 
 ```bash
 # Audit for vulnerabilities
@@ -344,9 +344,9 @@ npm audit --audit-level=moderate
 
 ---
 
-## 🚀 Release Process
+## Release Process 🚀
 
-### Version Management
+### Version Management 🏷️
 
 This repository uses semantic versioning:
 
@@ -354,14 +354,14 @@ This repository uses semantic versioning:
 - **MINOR**: New instructions, prompts, or chat modes
 - **PATCH**: Bug fixes, documentation updates
 
-### Content Status Progression
+### Content Status Progression 📈
 
 1. **Draft** → **Tweak**: Initial testing and iteration
 2. **Tweak** → **Polish**: Refinement and edge case handling
 3. **Polish** → **Check**: Community testing and feedback
 4. **Check** → **Ready**: Production-ready, fully documented
 
-### Quality Gates
+### Quality Gates 🚪
 
 Before promoting content status:
 
@@ -373,9 +373,9 @@ Before promoting content status:
 
 ---
 
-## 🔍 Code Review Guidelines
+## Code Review Guidelines 🔍
 
-### For Reviewers
+### For Reviewers 👀
 
 1. **Functionality review**:
    - Test instructions/prompts/chat modes
@@ -392,7 +392,7 @@ Before promoting content status:
    - No conflicts with existing content
    - Proper file organization
 
-### For Contributors
+### For Contributors ✍️
 
 1. **Self-review checklist**:
    - [ ] All tests pass locally
@@ -409,23 +409,23 @@ Before promoting content status:
 
 ---
 
-## 📈 Performance Considerations
+## Performance Considerations 📈
 
-### File Organization
+### File Organization 📁
 
 - Keep individual files focused and modular
 - Use clear naming conventions
 - Maintain logical directory structure
 - Avoid deeply nested hierarchies
 
-### Content Optimization
+### Content Optimization 📊
 
 - Write concise but comprehensive instructions
 - Use examples effectively
 - Minimize redundancy across content
 - Optimize for AI agent processing
 
-### Repository Size
+### Repository Size 💾
 
 - Use `.remarkignore` to exclude build artifacts
 - Keep assets optimized and necessary
@@ -434,9 +434,9 @@ Before promoting content status:
 
 ---
 
-## 🔮 Future Development
+## Future Development 🔮
 
-### Planned Improvements
+### Planned Improvements 💡
 
 1. **Enhanced testing frameworks**:
    - Automated instruction validation
@@ -453,7 +453,7 @@ Before promoting content status:
    - Quality scoring
    - Collaborative editing tools
 
-### Technical Debt
+### Technical Debt 🔧
 
 - Standardize all instruction formats
 - Improve cross-platform compatibility

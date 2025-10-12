@@ -1,4 +1,4 @@
-# 🌈 Status Lifecycle & Badges
+# Status Lifecycle & Badges 🌈
 
 Each mode, prompt, or instruction earns a status badge (find the badge legend right here—and at the top of each README):
 
@@ -9,7 +9,8 @@ Each mode, prompt, or instruction earns a status badge (find the badge legend ri
 | `Polish` | ![Polish - Purple](https://img.shields.io/badge/status-polish-9B5DE5.svg) | In review—cue the perfectionism and last-minute OCD edits. |
 | `Check` | ![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg) | Actively tested, feedback wanted—"Can someone break this for me, please?" |
 | `Ready` | ![Ready - Green](https://img.shields.io/badge/status-ready-007F5F.svg) | Polished, proven, ready for prime time. The chef's kiss of prompts. |
-| `Deprecated` | ![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-6C757D.svg) | End of life. Replaced by something better. Check the docs for migration path. |
+| `Deprecated` | ![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-A0A0A0.svg) | End of life. Replaced by something better. Check the docs for migration path. |
+| `Removed` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Fully removed, no longer supported. Exists here only for historical context. |
 
 > [!Note]
 >

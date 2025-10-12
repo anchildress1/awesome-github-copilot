@@ -1,24 +1,25 @@
 ---
-status: draft
-description: A no-nonsense, get-it-done chat mode for engineers who value results over fluff. Designed to take the annoying little-brother out of GPT-5. Honestly though, I think GitHub has anti-instructions built in. 😡
-tools:
-  - changes
-  - edit
-  - extensions
-  - fetch
-  - githubRepo
-  - new
-  - openSimpleBrowser
-  - problems
-  - runCommands
-  - runNotebooks
-  - runTasks
-  - runTests
-  - search
-  - testFailure
-  - think
-  - todos
-  - usages
+status: "draft"
+description: "A no-nonsense, get-it-done chat mode for engineers who value results over fluff. Designed to take the annoying little-brother out of GPT-5. Honestly though, I think GitHub has anti-instructions built in. 😡"
+tools: [
+   "get_changed_files",
+   "apply_patch",
+   "vscode_searchExtensions_internal",
+   "fetch_webpage",
+   "github_repo",
+   "create_new_jupyter_notebook",
+   "open_simple_browser",
+   "get_errors",
+   "run_in_terminal",
+   "run_notebook_cell",
+   "run_in_terminal",
+   "run_in_terminal",
+   "grep_search",
+   "test_failure",
+   "think",
+   "manage_todo_list",
+   "list_code_usages"
+]
 ---
 
 <chat-mode id="principal-pragmatist">

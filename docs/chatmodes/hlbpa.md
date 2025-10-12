@@ -4,7 +4,7 @@ View this chat mode and more in the [awesome-copilot repository on GitHub.](http
 
 [![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](#hlbpa-chat-mode-high-level-big-picture-architect-)
 
-### Why Use HLBPA?
+### Why Use HLBPA? ❓
 
 1. Rapidly understand complex repos.
 2. Auto‑generate API & data flow diagrams.
@@ -12,7 +12,7 @@ View this chat mode and more in the [awesome-copilot repository on GitHub.](http
 4. Identify architectural gaps and risks.
 5. Get a visual overview of recent changes.
 
-### What HLBPA Does (And Doesn’t)
+### What HLBPA Does (And Doesn't) 🤔
 
 - **Produces high-level docs**, architecture diagrams, gap scans, and test coverage analyses
 - Defaults to documenting the _entire system_ from a birds eye view, unless you specify (can target subsystems, folders, or files)
@@ -22,9 +22,9 @@ View this chat mode and more in the [awesome-copilot repository on GitHub.](http
 - Diagrams include _accessibility tags_
 - **Will not stop until complete** - will surface what’s missing at the end and ask for feedback before finishing - this may take awhile, but it's designed to do as much work as possible in one pass (saving you premium requests)
 
-## How to Use HLBPA
+## How to Use HLBPA 🚀
 
-### 🪄 How to Use
+### How to Use 🪄
 
 **Example Prompt:**
 
@@ -32,7 +32,7 @@ View this chat mode and more in the [awesome-copilot repository on GitHub.](http
 Please generate high-level documentation for this repo using the provided HLBPA chat mode. My name is Jane Doe. Artifact: architecture diagram and the test coverage gap report.
 ```
 
-### Artifact Types
+### Artifact Types 🧩
 
 HLBPA supports various artifact types, which can be specified in the prompt. Here are some common ones:
 
@@ -55,11 +55,11 @@ HLBPA supports various artifact types, which can be specified in the prompt. Her
 
 **Accessibility**: Every Mermaid diagram provides alt text either via YAML front-matter (file mode) or accTitle: / accDescr: lines (inline).
 
-### XML Coding Agent
+### XML Coding Agent 🏷️
 
 HLBPA also has an XML version for Copilot Coding Agent. See the `.xml` file in this repo for details.
 
-### 📈 Output
+### Output 📈
 
 At least one document and corresponding Mermaid diagrams will be generated, based on the prompt. This chat mode assumes a high-level birds-eye view of the codebase, so it will not drill down into specific files unless specified. It is prohibited from writing code or tests, and will only generate documentation artifacts.
 

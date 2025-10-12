@@ -1,4 +1,4 @@
-## ✨ Design Principles (Hen House Edition)
+## Design Principles (Hen House Edition) ✨
 
 [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)]()
 
@@ -12,7 +12,7 @@ See [`design-principles.instructions.md`](../../.github/instructions/design-prin
 >
 > Use it early and often. Better to get roasted by a fake chicken than your future tech lead.
 
-### 🛠️ Installation & Usage
+### Installation & Usage 🛠️
 
 1. Give the agent a system diagram, architecture block, or code structure description.
 2. It will:
@@ -21,19 +21,19 @@ See [`design-principles.instructions.md`](../../.github/instructions/design-prin
    - Flag risks to clarity, testing, or long-term evolution
 3. You’ll get a markdown list of issues + mitigation questions
 
-### ✅ Why Use This Instruction?
+### Why Use This Instruction? ✅
 
 - Forces you to justify every choice (and that’s a good thing)
 - Promotes clearer, simpler, more maintainable designs
 - Great for early-stage planning or late-night doubt spirals
 
-### ⛔ Constraints
+### Constraints ⛔
 
 - No implementation feedback — design only
 - Doesn’t review code syntax or formatting
 - Will not give a “pass/fail” judgment — just discussion points
 
-### 📟 Example Minimal Prompt
+### Example Minimal Prompt 📟
 
 ```markdown copy
 Please evaluate the design of this proposed component using `#.github/instructions/design-principles.instructions.md`. Artifact: `#subsystems.mmd`.

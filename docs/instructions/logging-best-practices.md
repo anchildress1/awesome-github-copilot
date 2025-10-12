@@ -1,4 +1,4 @@
-# 🧾 Logging Best Practices — Instruction ReadMe
+# Logging Best Practices — Instruction ReadMe 🧾
 
 [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)]()
 
@@ -10,7 +10,7 @@ Originally crafted as a companion to [`The Logfather`](../../.github/chatmodes/l
 
 ---
 
-## 🤝 Designed for...
+## Designed for... 🤝
 
 - **The Logfather** chat mode — for automated agent-driven logging audits and fixes
 - **Manual use** — by developers who want to up their observability game
@@ -18,7 +18,7 @@ Originally crafted as a companion to [`The Logfather`](../../.github/chatmodes/l
 
 ---
 
-## ✨ What It Covers
+## What It Covers ✨
 
 - ✅ JSON-structured logging best practices
 - ✅ Log level definitions and guidance
@@ -29,7 +29,7 @@ Originally crafted as a companion to [`The Logfather`](../../.github/chatmodes/l
 
 ---
 
-## 📎 How to Use
+## How to Use 📎
 
 You can:
 
@@ -40,7 +40,7 @@ You can:
 
 ---
 
-## 🧠 AI Behavior When Used
+## AI Behavior When Used 🧠
 
 When loaded in context, Copilot should:
 
@@ -52,7 +52,7 @@ When loaded in context, Copilot should:
 
 ---
 
-## 📟 Example Prompt
+## Example Prompt 📟
 
 ```markdown
 Please review this file using `#./instructions/logging-best-practices.instructions.md` and insert structured logs with appropriate levels.

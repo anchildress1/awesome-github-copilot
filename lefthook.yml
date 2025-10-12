@@ -13,4 +13,4 @@ commit-msg:
   parallel: true
   commands:
     commitlint:
-      run: npm run commitlint -- {1}
+      run: npx commitlint --edit {1} --strict

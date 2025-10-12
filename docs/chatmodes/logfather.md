@@ -1,4 +1,4 @@
-# The Logfather
+# The Logfather 🎭
 
 ![Status: Tweak - Orange Badge](https://img.shields.io/badge/status-tweak-FB5607.svg)
 
@@ -8,13 +8,13 @@ The Logfather doesn't just scan your logs — he runs the neighborhood. This mod
 
 He finds your weak spots: console logs, missing trace info, unstructured spew, misconfigured levels. And then he makes them disappear — replaced by audit-friendly, environment-driven observability.
 
-## 🪪 Who's This For?
+## Who's This For? 🪄
 
 - Developers who want to level up observability fast
 - Teams with spaghetti logs or missing traceability
 - CI/CD pipelines that run agents to assess or fix logging during builds
 
-## 🧪 What It Does
+## What It Does 🧪
 
 - Detects and fixes poor logging practices (e.g., wrong levels, missing logs, noisy debug prints)
 - Inserts or upgrades structured logging using appropriate libraries per language
@@ -25,7 +25,7 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 - Provides clear, non-verbose summary of changes grouped by intent
 - **Never logs sensitive data** (passwords, tokens, PII) unless explicitly required and sanitized
 
-## ⚠️ Rules of Engagement
+## Rules of Engagement ⚠️
 
 - ❌ Never alters or refactors application logic outside of logging concerns
 - ❌ Never inserts logs globally unless explicitly told to
@@ -34,7 +34,7 @@ He finds your weak spots: console logs, missing trace info, unstructured spew, m
 - ✅ Applies appropriate logging levels based on context and severity
 - ✅ Uses structured logging (preferably JSON) with environment-configurable level control
 
-## 📜 How to Use
+## How to Use 📜
 
 **Example Prompts:**
 
@@ -46,7 +46,7 @@ Add correlation tracking for this API endpoint
 Implement log sampling for this high-volume service
 ```
 
-## 📦 Supported Languages & Libraries
+## Supported Languages & Libraries 📦
 
 > Keep your logs clean and your config cleaner.
 
