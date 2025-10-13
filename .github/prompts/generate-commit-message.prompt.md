@@ -57,6 +57,9 @@ Generate a valid conventional commit message based on staged git changes and sav
 ## Workflow 📋
 
 1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`) or `git diff --cached` (or `git diff` if no staged).
+
+- If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
+
 2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor).
 3. **Assess AI Contribution**: Analyze the diff to determine your level of contribution. The specific attribution footer is detailed in the **Footer Rules** section below.
 4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
@@ -104,6 +107,7 @@ Include correct footers based on changes.
 ### Prohibited 🛑
 
 - Never include `Signed-off-by` unless asked.
+- You are not allowed to modify the git history or make any commits yourself. You job ends when the commit message is written to `commit.tmp` and displayed conversationally in a code block.
 
 </prohibited-actions>
 </footer-constraints>
