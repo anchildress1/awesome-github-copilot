@@ -4,7 +4,8 @@ mode: "agent"
 description: "Generate a conventional commit message from staged changes and save to ./commit.tmp"
 tools: [
   "runInTerminal",
-  "get_changed_files"
+  "get_changed_files",
+  "edit_diff_history"
 ]
 ---
 
@@ -33,9 +34,16 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 ## Formatting Rules 🧱
 
+- **User Constraints**:
+  - There may be an existing linter set up for the repo.
+  - You must always search for one and if found, suggest to the user adding a reference to instructions.
+  - Regardless, if any commit lint rules exist in the repo you are required to follow them above this except in the case of the RAI footer. The RAI footer is always required.
+  - Fall back to the rules in this prompt if no linter is found.
 - **Line Length**:
-  - Subject: 72 characters maximum.
-  - Body: 100 characters maximum per line.
+  - Subject: ≤ 72 characters maximum.
+  - Body: ≤ 100 characters maximum per line.
+  - Elimininate noise, rephrase, or be less explicit to meet limits.
+  - Verify before saving to `commit.tmp`.
 - **Structure**:
   - Use a single blank line after the subject.
   - Use a single blank line before the footers.
@@ -44,13 +52,6 @@ Generate a valid conventional commit message based on staged git changes and sav
   - Each bullet point must be on its own line.
   - Do not wrap text or add multi-line bullet points.
 
-<formatting-enforcement>
-
-### Enforcement 👮
-
-- Keep the subject to ≤72 characters and each body line to ≤100 characters. Rephrase the subject or split long bullets to comply. Verify these limits before saving to `commit.tmp`.
-
-</formatting-enforcement>
 </formatting-constraints>
 <workflow-overview>
 
@@ -58,11 +59,14 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`) or `git diff --cached` (or `git diff` if no staged).
 
-- If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
+   - If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
 
-2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor).
-3. **Assess AI Contribution**: Analyze the diff to determine your level of contribution. The specific attribution footer is detailed in the **Footer Rules** section below.
+2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor) based on your conversation history with the user and any access to issue tracking.
+
+3. **Assess AI Contribution**: Use the `edit_diff_history` tool to determine your level of contribution or the percentage of file edits made by AI. The specific attribution footer is detailed in the **Footer Rules** section below.
+
 4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
+
 5. **Save and Output**: Write the final message to `commit.tmp` and display it in a copy-paste-friendly code block.
 
 </workflow-overview>
@@ -84,21 +88,56 @@ Include correct footers based on changes.
 
 ### Issue/Ticket References 🔗
 
-- GitHub: `Fixes #123`, `Closes #456`.
-- Jira: `Fixes PROJ-123` (no #).
-- Multiple: `Related PROJ-123, #72`.
-- **Finding IDs**: Check branch name (e.g., `feature/PROJ-123-add-auth`), PR description, or commit context.
+<footer-selection-rules>
 
+#### Footer Selection
+
+Choose one per referenced issue:
+
+- **`Fixes`**: Commit fully resolves/closes issue (bug fix, root cause removal). Merging auto-closes issue.
+- **`Resolves`**: Equivalent to `Fixes` when project prefers this keyword. Closes issue on merge.
+- **`Refs`**: Default fallback when relationship cannot be confidently determined (ambiguous scope, missing metadata). Does NOT close issue.
+
+</footer-selection-rules>
+<formatting-rules>
+
+#### Formatting
+
+- One footer line per issue/external ID.
+- Format: `<KEYWORD> <ISSUE>` (e.g., `Fixes RPLNSHMNT-1234`, `Refs https://tickets.example.com/1234`).
+- Multiple issues with mixed relationships: use explicit per-line keywords (e.g., `Fixes FOO-1`, `Refs FOO-2`).
+
+</formatting-rules>
+<decision-heuristics>
+
+#### Decision Heuristics
+
+- Message/body states "fixes/removes/closes bug/root cause" → use `Fixes` (or `Resolves` if repo standard).
+- Message indicates "WIP", "preliminary", "adds tests for", "related to", or work that doesn't finish issue → use `Refs`.
+- PR/branch metadata shows linked issue explicitly marked "closes" or matching ID in PR title/body → use `Fixes`/`Resolves`.
+- Cannot infer intent or explicit action not stated → use `Refs` (avoid accidental closure).
+
+</decision-heuristics>
+<finding-ids>
+
+#### Finding IDs
+
+- Use your conversation history with the user along with the existing ID in the `./commit.tmp` file, branch name (e.g., `feature/PROJ-123-add-auth`), PR description, or commit context.
+- If you have accessible tools to access issue trackers, use them to verify IDs you find match the context of the change.
+  - If there are discrepancies, you must CLARIFY with the user that you have used a preferred issue they mentioned in chat, branch name or existing commit message ID, and that they should verify it is correct before pushing.
+- If no IDs are found, omit this footer entirely.
+
+</finding-ids>
 </issue-story-references>
 <rai-attribution>
 
 ### RAI Attribution (REQUIRED) 🖋️
 
 - Choose exactly one footer from this list; higher entries override lower ones.
-- **`Generated-by`**: Entirely authored features/files (67-100% AI-written).
-- **`Co-authored-by`**: Substantial changes/refactoring (34-66% AI-written).
-- **`Assisted-by`**: Minor edits/fixes (1-33% AI-written).
-- **`Commit-generated-by`**: Only message generation (0% code changes) — use this when none of the higher levels apply.
+- **Generated-by**: Approximately 67-100% of the changes are AI-implemented (AI wrote all modified/added code, even if refactoring existing logic).
+- **Co-authored-by**: Approximately 34-66% of the changes are AI-implemented (substantial AI contribution to refactoring or new features).
+- **Assisted-by**: Approximately 3-33% of the changes are AI-implemented (minor AI edits or fixes).
+- **Commit-generated-by**: Only message generation (0% logic changes, but some trivial changes may exist) or trivial change other than direct manipulation of code (e.g., whitespace, comments, renames).
 - Format: `<type>: <AI_NAME> <ai.email@example.com>`
 
 </rai-attribution>

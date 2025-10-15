@@ -20,22 +20,34 @@ This version keeps those. The format, the tone, and the responsibility stay. Eve
 
 ---
 
-## RAI Footers Explained 🧾
+## RAI Attribution Explained 🖋️
 
-Every commit that used AI to get there should say so. That’s not a disclaimer — it’s context.
+Every commit that used AI to get there should say so. That’s not a disclaimer — it’s context about who contributed what.
+
+Choose exactly one footer that best describes the AI's role. Higher-level attributions take precedence:
+
+- **Generated-by**: AI created most of the code (roughly 67-100% AI-written) — the AI wrote all the modified or added code, even if it involved refactoring existing logic
+- **Co-authored-by**: AI substantially contributed (roughly 34-66% AI-written) — major AI help with refactoring or new features
+- **Assisted-by**: AI made minor edits (roughly 3-33% AI-written) — small fixes or improvements
+- **Commit-generated-by**: AI only wrote the commit message — no code changes, just the message itself
+
+Format: `<type>: GitHub Copilot <github.copilot@github.com>`
 
 If you haven’t read it yet, the [RAI section of my blog post](https://dev.to/anchildress1/can-we-set-the-record-straight-ai-content-and-a-bit-of-sanity-1inj#5-ai-code-is-ai-content-writers-you-too) walks through why that matters and why I’m not budging on it. This isn’t about permission. _It’s about provenance._
 
-Use **one** footer — no more, no less.
+---
 
-```text
-Generated-by: GitHub Copilot <github.copilot@github.com>
-Co-authored-by: GitHub Copilot <github.copilot@github.com>
-Assisted-by: GitHub Copilot <github.copilot@github.com>
-Commit-generated-by: GitHub Copilot <github.copilot@github.com>
-```
+## Issue References 🔗
 
-That’s how we draw the line between collaboration and confusion.
+When your changes relate to an issue or ticket, you can add a footer to show the connection. Different footers indicate different types of relationships:
+
+**`Fixes #123`** - This commit completely solves the issue. The problem is gone, the root cause is addressed, and the issue can be closed.
+
+**`Resolves #456`** - Same as Fixes, but mostly for features or some projects prefer this word. It means the issue is fully resolved.
+
+**`Refs #789`** - This work is related to the issue but doesn't close it. Maybe it's a partial fix, adds tests, or provides context for future work.
+
+**The Safe Choice**: When you're not sure which to use, go with `Refs`. It keeps issues open and provides helpful context without accidentally closing anything.
 
 ---
 
@@ -52,7 +64,7 @@ feat(search-index): introduce incremental indexer with content dedupe
 - Add comprehensive test coverage for indexer and repository layers
 - Update design notes and runbook to reflect the streamlined flow
 
-Related DEVOPS-2025
+Fixes DEVOPS-2025
 Co-authored-by: GitHub Copilot <github.copilot@github.com>
 ```
 
