@@ -43,7 +43,7 @@ When your changes relate to an issue or ticket, you can add a footer to show the
 
 **`Fixes #123`** - This commit completely solves the issue. The problem is gone, the root cause is addressed, and the issue can be closed.
 
-**`Resolves #456`** - Same as Fixes, but mostly for features or some projects prefer this word. It means the issue is fully resolved.
+**`Resolves #456`** - Same as Fixes, but some projects prefer this word. It means the issue is fully resolved.
 
 **`Refs #789`** - This work is related to the issue but doesn't close it. Maybe it's a partial fix, adds tests, or provides context for future work.
 

@@ -134,9 +134,9 @@ Choose one per referenced issue:
 ### RAI Attribution (REQUIRED) 🖋️
 
 - Choose exactly one footer from this list; higher entries override lower ones.
-- **Generated-by**: Approximately 67-100% of the changes are AI-implemented (AI wrote all modified/added code, even if refactoring existing logic).
-- **Co-authored-by**: Approximately 34-66% of the changes are AI-implemented (substantial AI contribution to refactoring or new features).
-- **Assisted-by**: Approximately 3-33% of the changes are AI-implemented (minor AI edits or fixes).
+- **Generated-by**: Most/all lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (AI wrote all modified/added code, even if refactoring existing logic).
+- **Co-authored-by**: Significant portion of lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (substantial AI contribution to refactoring or new features).
+- **Assisted-by**: Few lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (minor AI edits or fixes).
 - **Commit-generated-by**: Only message generation (0% logic changes, but some trivial changes may exist) or trivial change other than direct manipulation of code (e.g., whitespace, comments, renames).
 - Format: `<type>: <AI_NAME> <ai.email@example.com>`
 
