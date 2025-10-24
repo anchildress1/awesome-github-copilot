@@ -1,6 +1,6 @@
 # awesome-github-copilot 🔭
 
-[![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot)
+[![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot) [![GitHub License](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 
 > [!NOTE]
 >
@@ -23,8 +23,6 @@ Some ideas aren’t fully baked yet — a few are wild concepts still in beta-br
 
 ---
 
----
-
 ## Sparked It. Shaped It. Shoutouts. 💥
 
 > 🦄 This project isn’t fully baked yet - it’s somewhere between “I might be onto something” and “what if I made it do _this_ too?”
@@ -32,21 +30,15 @@ Some ideas aren’t fully baked yet — a few are wild concepts still in beta-br
 >
 > **Thank you** for your ideas, your encouragement, your feedback, and for listening during all the times _I wouldn’t shut up about it!_ These shoutouts are for you. 🥰
 
----
-
 ### Courtney 🕹️
 
 For jumping into early testing with zero hesitation, breaking everything in sight (in the best way), and somehow still being excited to tell others about it. I appreciate the feedback, the encouragement, and your willingness to _poke the bear_ to make things better.
 Your early involvement helps shape what this will become - **thank you** for being part of the chaos.
 
----
-
 ### Vijaya 🧨
 
 **Thank you** for planting the original idea that I immediately ran with, rewired, and reimagined into something you probably don’t even recognize - but it's still firmly rooted in your vision of what _useful_ actually looks like.
 Your influence, clarity, and push for building things that scale across teams lit the fuse. This entire project is built on that spark and simply wouldn’t exist without you.
-
----
 
 ---
 
@@ -116,11 +108,9 @@ Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitH
 | [`hlbpa`](./docs/chatmodes/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](./docs/chatmodes/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review**. | Not designed to write code or tests. <br>**Note:** This also lives in [awesome-copilot](https://github.com/github/awesome-copilot) repo. |
 | [`logfather`](./docs/chatmodes/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/chatmodes/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
 | [`instructionalist`](./docs/chatmodes/instructionalist.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/chatmodes/instructionalist.md) | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
-| [`Principal Pragmatist`](./docs/chatmodes/pragmatist.md) | [![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/chatmodes/pragmatist.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This is my attempt to reign in GPT 5 with it's insanity of text walls. |
+| [`Principal Pragmatist`](./docs/chatmodes/pragmatist.md) | [![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/chatmodes/pragmatist.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This works for most everything _except_ what I wrote it for. \[WIP] |
 
 > 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
-
----
 
 ---
 
