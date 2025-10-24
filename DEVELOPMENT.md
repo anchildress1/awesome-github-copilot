@@ -14,7 +14,7 @@ These are the opening posts in three separate series I wrote — handy backgroun
 - [GitHub Copilot: Everything You Wanted to Know About Reusable (and Experimental) Prompts](https://dev.to/anchildress1/github-copilot-everything-you-wanted-to-know-about-reusable-and-experimental-prompts-part-1-iff)
   _Practical prompt patterns, experiments, and clever tricks._
 
--  [GitHub Copilot Chat Modes Explained (with Personality) 🎭](https://dev.to/anchildress1/github-copilot-chat-modes-explained-with-personality-2f4c)
+- [GitHub Copilot Chat Modes Explained (with Personality) 🎭](https://dev.to/anchildress1/github-copilot-chat-modes-explained-with-personality-2f4c)
   _A lively tour of chat-mode personalities and why they matter._
 
 ## 🏗️ Development Environment Setup

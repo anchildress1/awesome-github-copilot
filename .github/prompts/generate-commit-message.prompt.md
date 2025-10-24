@@ -57,21 +57,39 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 ## Workflow 📋
 
-1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`) or `git diff --cached` (or `git diff` if no staged).
+1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`).
 
-   - If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
+- If the previous tool call fails for any reason, you may retry the command using the `runInTerminal` command and `git diff --cached` (or `git diff` if no staged).
+
+- If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
 
 2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor) based on your conversation history with the user and any access to issue tracking.
 
 3. **Assess AI Contribution**: Use the `edit_diff_history` tool to determine your level of contribution or the percentage of file edits made by AI. The specific attribution footer is detailed in the **Footer Rules** section below.
 
-***CRITICAL SAFETY***: NEVER run `git commit` or `git push` automatically. Always write the commit message to `commit.tmp`, display it, and wait for explicit user approval before staging, signing, or committing. If the user asks you to prepare a commit, stop after creating `commit.tmp` and explicitly ask for confirmation to perform the commit.
+- If the above tool call fails, you can retry using your chat history with the user to estimate your contribution level.
+- Default to the highest reasonable attribution if unsure.
+
+_**CRITICAL SAFETY**_: NEVER run `git commit` or `git push` automatically.
+
+- Always write the commit message to `commit.tmp`, display it, and wait for explicit user approval before staging, signing, or committing.
+- If the user asks you to prepare a commit, stop after creating `commit.tmp` and explicitly ask for confirmation to perform the commit.
 
 4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
 
 5. **Save and Output**: Write the final message to `commit.tmp` and display it in a copy-paste-friendly code block.
 
 </workflow-overview>
+<tool-failure-handling>
+
+## Tool Failure Handling (CRITICAL) ⚠️
+
+- If any tool call fails for any reason at any step, you should continue making a best-effort attempt to complete the task using alternative methods or your own knowledge.
+- Capture and report: the tool name, the command or parameters attempted, the exact error message or exit code, and any stdout/stderr or partial output.
+- After you complete the task, report the failure details to the user along with your best-effort results.
+- When retrying, limit retries to one automatic retry unless the user authorizes more.
+
+</tool-failure-handling>
 <footer-constraints class="critical">
 
 ## Footer Rules (CRITICAL) 👣
