@@ -57,9 +57,8 @@ Each document is clearly labeled by status (see [Status Lifecycle & Badges](./do
 **New to this repository?** Start with these essential guides:
 
 - **[🎯 REPO-SETUP.md](./REPO-SETUP.md)** - Quick 5-minute setup for new developers
-- **[🤝 CONTRIBUTING.md](./CONTRIBUTING.md)** - Complete contribution guidelines and standards
+- **[🤝 CONTRIBUTING.md](./CONTRIBUTING.md)** - Save time and check out [github/awesome-copilot](https://github.com/github/awesome-copilot)
 - **[🛠️ DEVELOPMENT.md](./DEVELOPMENT.md)** - Technical details and advanced workflows
-- **[✅ NEW-DEVELOPER-CHECKLIST.md](./NEW-DEVELOPER-CHECKLIST.md)** - Verify your setup is complete
 
 These guides ensure you understand our standards and can contribute effectively from day one.
 
