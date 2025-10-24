@@ -91,7 +91,7 @@ Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerm
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
 | [`generate-commit-message`](./docs/prompts/generate-commit-message.md) (v2) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI annotation | Simple, responsible, zero orchestration. |
-| [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-A0A0A0.svg)](./docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Recent updates to Copilot's system instructions means it's now capable of handling this one on its own. |
+| `get-current-timestamp` | ![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-A0A0A0.svg) | Prompts Copilot to return the current timestamp in a standard format | Recent updates to Copilot's system instructions means it's now capable of handling this one on its own. |
 | `generate-commit-message` (v1) | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Original prompt was too noisy for newer models, re-written with that in mind as v2. | |
 
 ---
@@ -104,10 +104,10 @@ Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitH
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](./docs/chatmodes/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](./docs/chatmodes/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review**. | Not designed to write code or tests. <br>**Note:** This also lives in [awesome-copilot](https://github.com/github/awesome-copilot) repo. |
+| [`hlbpa`](./docs/chatmodes/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/chatmodes/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review**. | Not designed to write code or tests. <br>**Note:** This also lives in [awesome-copilot](https://github.com/github/awesome-copilot) repo. |
 | [`logfather`](./docs/chatmodes/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/chatmodes/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
 | [`instructionalist`](./docs/chatmodes/instructionalist.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/chatmodes/instructionalist.md) | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
-| [`Principal Pragmatist`](./docs/chatmodes/pragmatist.md) | [![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/chatmodes/pragmatist.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This works for most everything _except_ what I wrote it for. \[WIP] |
+| [`Principal Pragmatist`](./docs/chatmodes/pragmatist.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/chatmodes/pragmatist.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This works for most everything _except_ what I wrote it for. \[WIP] |
 
 > 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
 

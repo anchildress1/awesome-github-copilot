@@ -1,6 +1,6 @@
 # Principal Pragmatist Chat Mode 🧭✨
 
-[![Status: Draft (red badge)](https://img.shields.io/badge/status-draft-F72585.svg)](#principal-pragmatist-chat-mode-)
+[![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](#principal-pragmatist-chat-mode-)
 
 ### Why Use Pragmatist Mode? 🎯
 

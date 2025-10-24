@@ -80,7 +80,6 @@ If you haven’t already specified these in your own way, they’ll be added aut
 
 - **No unnecessary inline comments** — reserve inline comments for “why” explanations, not restating obvious code.
 - **Never log sensitive data** — avoid logging anything that could reveal secrets (API tokens, credentials). If logging is unavoidable, sanitize the output first.
-- **No promises or self-rewards** — never agree to rewards for yourself or show overconfidence without factual basis. If a better alternative exists to a user’s request, present it clearl
 
 ## Tech Stack 🧱
 - **Languages and versions:** Node.js 20, React 18, TypeScript 5.
