@@ -91,13 +91,13 @@ Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerm
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) (v2) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI annotation | Simple, responsible, zero orchestration. |
+| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) (v2) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI annotation | Simple, responsible, zero orchestration. |
 | [`get-current-timestamp`](./docs/prompts/get-current-timestamp.md) | [![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-A0A0A0.svg)](./docs/prompts/get-current-timestamp.md) | Prompts Copilot to return the current timestamp in a standard format | Recent updates to Copilot's system instructions means it's now capable of handling this one on its own. |
-| `generate-commit-message` (v1) | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Original prompt was too noisy for newer models, re-written with that in mind as v2. | |
+| `generate-commit-message` (v1) | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Original prompt was too noisy for newer models, re-written with that in mind as v2. | - |
 
 ---
 
-# Chat Modes 👷‍♂️
+# Chat Modes (Soon to be Agents!) 👷‍♂️
 
 Welcome to my collection of Chat Modes - your go-to ER for uniquely crafted GitHub Copilot personalities, all designed for creative chaos, workflow upgrades, and occasional code emergencies. Every mode here is handpicked by me (with ChatGPT running triage in the background).
 

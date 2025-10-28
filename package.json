@@ -24,6 +24,12 @@
     "format": "npx remark . -o && node scripts/fix-github-alerts.js",
     "commitlint": "npx commitlint --verbose --edit"
   },
+  "volta": {
+    "node": "25.1.0"
+  },
+  "engines": {
+    "node": "25.x.x"
+  },
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
