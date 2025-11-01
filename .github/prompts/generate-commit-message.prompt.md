@@ -4,7 +4,10 @@ mode: "agent"
 description: "Generate a conventional commit message from staged changes and save to ./commit.tmp"
 tools: [
   "runInTerminal",
-  "get_changed_files"
+  "get_changed_files",
+  "changes",
+  "createFile",
+  "editFiles"
 ]
 ---
 
@@ -66,18 +69,25 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 - If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
 
-2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor) based on your conversation history with the user and any access to issue tracking.
+2. **Determine Intent from the Diff (MANDATORY)**: Derive the purpose of the changes (e.g., fix, feature, refactor) strictly from the analyzed diff output produced by `get_changed_files` (staged; fall back to unstaged only if no staged files exist).
 
-3. **Assess AI Contribution**: Use your context and chat history to determine your level of contribution or the percentage of file edits made by AI. The specific attribution footer is detailed in the **Footer Rules** section below.
+- Do NOT rely on conversation history, prior edits, or memory to decide what changed. Conversation history may only be consulted to help with ambiguous attribution after the message content is fully derived from the diff.
+
+3. **Assess AI Contribution (DIFF-FIRST)**: Use the diff output as the primary evidence to estimate AI contribution. Compare the hunk-level changes to any known assistant-authored edits in the diff and estimate contribution from those results.
+
+- Only if the diff is ambiguous or missing contextual metadata should you consult conversation history to refine the estimate. Do NOT change the message content based on history—use history only for attribution clarification.
 
 - If the above tool call fails, you can retry using your chat history with the user to estimate your contribution level.
+
 - Default to the highest reasonable attribution if unsure.
 
 ***CRITICAL SAFETY***: NEVER run `git commit` or `git push` automatically.
 
+Before writing `commit.tmp`: immediately re-run the diff analysis (prefer `get_changed_files` with `staged`) and verify the staged index matches the diff you used to draft the message. If the index changed, abort the save, re-analyze the new diff, and draft a fresh message. If you cannot re-run the diff because a required tool is unavailable, warn the user that the message may be stale and continue with best-effort output.
+
 - Always write the commit message to `commit.tmp`, display it, and wait for explicit user approval before staging, signing, or committing.
 - If the user asks you to prepare a commit, stop after creating `commit.tmp` and explicitly ask for confirmation to perform the commit.
-- You are not allowed under any circunstances to execute a `git add` or `git commit` command.
+- You are not allowed under any circumstances to execute a `git add` or `git commit` command.
 
 4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
 

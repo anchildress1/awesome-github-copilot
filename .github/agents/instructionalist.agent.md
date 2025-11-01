@@ -5,7 +5,16 @@ tools: [
   "semantic_search",
   "file_search",
   "github_repo",
-  "apply_patch"
+  "apply_patch",
+  "search",
+  "problems",
+  "usages",
+  "edit",
+  "changes",
+  "fetch",
+  // Context7
+  "get-library-docs",
+  "resolve-library-id"
 ]
 
 ---

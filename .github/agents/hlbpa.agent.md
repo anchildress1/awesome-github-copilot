@@ -17,11 +17,17 @@ tools: [
   "add_issue_comment",
   "create_issue",
   "update_issue",
-  "context7/*",
   "mcp-mermaid",
   "runCommands",
   "runTasks",
-  "todos"
+  "todos",
+  "edit",
+  "fetch",
+  "githubRepo",
+  "problems",
+  // Context7
+  "get-library-docs",
+  "resolve-library-id"
 ]
 
 ---

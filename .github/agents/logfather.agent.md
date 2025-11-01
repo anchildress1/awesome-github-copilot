@@ -8,7 +8,17 @@ tools: [
   "runInTerminal",
   "runTests",
   "findTestFiles",
-  "context7/*"
+  "search/*",
+  "changes",
+  "edit",
+  "fetch",
+  "githubRepo",
+  "problems",
+  "testFailure",
+  "usages",
+  // Context7
+  "get-library-docs",
+  "resolve-library-id"
 ]
 ---
 

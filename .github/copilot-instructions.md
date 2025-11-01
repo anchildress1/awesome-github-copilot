@@ -8,7 +8,7 @@ Custom instructions, prompts, and chat modes for GitHub Copilot and AI tools.
 - **Prompts**: `.github/prompts/` with `.prompt.md` suffix
 - **Chat Modes**: `.github/chatmodes/` with `.chatmode.md` suffix
 - **Documentation**: `docs/` (explanatory materials and guides) with `.md` suffix
-- **Core Guides**: You are not allowed under any circunstances to execute a `git add` or `git commit` command.
+- **Expected Behavior**: You are not allowed under any circumstances to execute a `git add` or `git commit` command.
 
 ## Status System 🏷️
 

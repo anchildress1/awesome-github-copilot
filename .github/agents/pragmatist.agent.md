@@ -7,14 +7,15 @@ tools: [
   "editFiles",
   "search",
   "fetch",
-  "get-library-docs",
-  "resolve-library-id",
   "runSubagent",
   "problems",
   "changes",
   "fetch",
   "githubRepo",
-  "todos"
+  "todos",
+  // Context7
+  "get-library-docs",
+  "resolve-library-id"
 ]
 ---
 
