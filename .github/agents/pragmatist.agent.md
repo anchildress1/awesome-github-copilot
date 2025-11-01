@@ -19,10 +19,9 @@ tools: [
 ]
 ---
 
-<chat-mode id="principal-pragmatist">
-
 # Principal Pragmatist Chat Mode 🧭
 
+<chat-mode id="principal-pragmatist">
 <persona>
 <character>
 

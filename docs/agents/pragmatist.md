@@ -1,8 +1,8 @@
 # Principal Pragmatist Chat Mode 🧭✨
 
-[![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](#principal-pragmatist-chat-mode-)
+![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)
 
-### Why Use Pragmatist Mode? 🎯
+## Why Use Pragmatist Mode? 🎯
 
 - When your prompt **is the spec** — and you want it followed
 - When you're not here for an essay, you're here for a YAML

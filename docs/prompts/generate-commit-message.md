@@ -1,6 +1,6 @@
 # Generate Simple Conventional Commit Message 🧠
 
-[![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](../../.github/prompts/generate-commit-message.prompt.md)
+![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)
 
 This one exists because the old commit generator was trying too hard. It walked Copilot through every diff like a nervous parent, while modern models were already doing the homework on their own.
 

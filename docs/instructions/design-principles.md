@@ -1,6 +1,6 @@
-## Design Principles (Hen House Edition) ✨
+# Design Principles (Hen House Edition) ✨
 
-[![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)]()
+![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)
 
 Like a watchful mother hen (or a really opinionated senior dev), this instruction circles your design decisions, pokes at your logic, and clucks loudly anytime your architecture starts to look like a spaghetti-and-meatball special.
 
@@ -12,7 +12,7 @@ See [`design-principles.instructions.md`](../../.github/instructions/design-prin
 >
 > Use it early and often. Better to get roasted by a fake chicken than your future tech lead.
 
-### Installation & Usage 🛠️
+## Installation & Usage 🛠️
 
 1. Give the agent a system diagram, architecture block, or code structure description.
 2. It will:

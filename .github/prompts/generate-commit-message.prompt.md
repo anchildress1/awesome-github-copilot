@@ -11,10 +11,9 @@ tools: [
 ]
 ---
 
-<custom-prompt id="generate-commit-message">
-
 # Generate Conventional Commit Message 📝
 
+<custom-prompt id="generate-commit-message">
 <goal-definition>
 
 ## Task 🎯
@@ -215,7 +214,7 @@ This example violates multiple rules:
 - It fails to identify a breaking change.
 - It is missing the required `RAI` attribution footer.
 
-```
+```plaintext
 feat: update services
 
 I updated the user service to use the new authentication method. This was a big change that affects how users log in. I also renamed some files to make more sense.
@@ -242,7 +241,7 @@ This example follows all guidelines:
 - It correctly declares a `BREAKING CHANGE` in the footer.
 - Include the `Co-authored-by` RAI footer when AI contribution is estimated at 34–66% (attribution unverifiable without context).
 
-```
+```plaintext
 refactor(auth): Adopt new authentication client and align naming
 
  - Replace legacy auth client with `NewAuthClient` to improve security

@@ -1,6 +1,6 @@
 # Logging Best Practices — Instruction ReadMe 🧾
 
-[![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)]()
+![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)
 
 > "Whether you’re flying solo or under the protection of The Logfather, this one’s got your back."
 

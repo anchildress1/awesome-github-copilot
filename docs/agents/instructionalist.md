@@ -1,6 +1,6 @@
 # Instructionalist Chat Mode 🎩
 
-[![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](#instructionalist-chat-mode-)
+![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)
 
 > [!TIP]
 > This chat mode does **not** include an XML version like others. It’s designed to be interactive and adaptive.

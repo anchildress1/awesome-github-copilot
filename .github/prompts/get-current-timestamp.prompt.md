@@ -9,9 +9,9 @@ tools: [
 ]
 ---
 
-<prompt id="get-current-timestamp">
-
 # Get Current Timestamp for Reports
+
+<prompt id="get-current-timestamp">
 
 This document specifies the requirements for handling timestamps in AI implementation and review reports.
 
