@@ -47,16 +47,16 @@ HLBPA supports various artifact types, which can be specified in the prompt. Her
 | `systems` | System architecture diagrams | architecture |
 | `history` | Git commit history overview | gitGraph |
 
-> [!​TIP]
+> [!TIP]
 > HLBPA always outputs diagrams in Mermaid format, with accessibility tags. Users can specify diagram types explicitly to override that selection.
 
 **Diagram Placement**:
 
 - **Inline preferred**: When large complex diagrams can be broken into smaller, digestible chunks
 - **External files**: When a large diagram cannot be reasonably broken down, making it easier to view when loading the page instead of trying to decipher text the size of an ant
-**Accessibility**: Every Mermaid diagram provides alt text either via YAML front-matter (file mode) or accTitle: / accDescr: lines (inline).
+- **Accessibility**: Every Mermaid diagram provides alt text either via YAML front-matter (file mode) or accTitle: / accDescr: lines (inline).
 
-> [!​TIP]
+> [!TIP]
 > For best results enable the following Mermaid rendering tools:
 >
 > - `/hustcc/mcp-mermaid`
