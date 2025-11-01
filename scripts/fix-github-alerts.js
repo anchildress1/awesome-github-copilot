@@ -4,7 +4,7 @@
  * Post-processor to fix escaped GitHub alerts after remark formatting
  *
  * Usage: Run this after remark to fix escaped GitHub alert syntax
- * npm run format && node fix-github-alerts.js
+ * npm run format && node scripts/fix-github-alerts.js
  */
 
 import fs from 'fs';
@@ -13,8 +13,12 @@ import { glob } from 'glob';
 import ignore from 'ignore';
 
 function fixGitHubAlerts(content) {
-  // Fix escaped GitHub alert syntax - including INFO which is commonly used
-  return content.replace(/\\(\[!(?:IMPORTANT|NOTE|TIP|WARNING|CAUTION|INFO)\])/gi, '$1');
+  // Match common escape variants but avoid matching when the slash is part of
+  // a '//' pattern (e.g. protocol-relative URLs). We use negative lookbehind
+  // and lookahead to ensure a single '/' is not adjacent to another '/'.
+  const re = /(?:\\|(?<!\/)\/(?!\/)|&#92;)[\s\u200B\uFEFF]*\[![\s\u200B\uFEFF]*(IMPORTANT|NOTE|TIP|WARNING|CAUTION|INFO)\]/gi;
+  // Use replaceAll with the capture to rebuild canonical [!KEYWORD]
+  return content.replaceAll(re, '[!$1]');
 }
 
 async function processFiles() {

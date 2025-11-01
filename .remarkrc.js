@@ -3,7 +3,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 
 export default {
   settings: {
-    emphasis: '_',
+    emphasis: '*',
     bullet: '-',
     bulletOther: '*',
     listItemIndent: 'one',

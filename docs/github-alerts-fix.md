@@ -6,11 +6,11 @@ This directory contains a solution for preserving GitHub's special alert syntax 
 
 Remark was escaping GitHub alert syntax like:
 
-- `[!IMPORTANT]` → `/[!IMPORTANT]`
-- `[!NOTE]` → `/[!NOTE]`
-- `[!TIP]` → `/[!TIP]`
-- `[!WARNING]` → `/[!WARNING]`
-- `[!CAUTION]` → `/[!CAUTION]`
+- `[!IMPORTANT]` → `//[!IMPORTANT]`
+- `[!NOTE]` → `//[!NOTE]`
+- `[!TIP]` → `//[!TIP]`
+- `[!WARNING]` → `//[!WARNING]`
+- `[!CAUTION]` → `//[!CAUTION]`
 
 This broke the colored banner functionality in GitHub.
 
