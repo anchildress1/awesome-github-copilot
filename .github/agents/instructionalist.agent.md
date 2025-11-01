@@ -2,36 +2,12 @@
 status: "tweak"
 description: "Your repo's detail-obsessed detective and architectural advisor. Digs through your repo and your brain section-by-section, making sure every critical instruction is surfaced, clarified, and documented — no filler, no fluff, maximum context. Interactive and adaptive with optional fun detective persona."
 tools: [
-<<<<<<< Updated upstream:.github/chatmodes/instructionalist.chatmode.md
   "semantic_search",
   "file_search",
   "github_repo",
   "apply_patch"
-=======
-  "createFile",
-  "createDirectory",
-  "editFiles",
-  "search",
-  "fetch",
-  "getConfluencePage",
-  "getConfluencePageDescendants",
-  "getConfluencePageFooterComments",
-  "getConfluencePageInlineComments",
-  "getJiraIssue",
-  "getJiraIssueRemoteIssueLinks",
-  "search",
-  "searchConfluenceUsingCql",
-  "searchJiraIssuesUsingJql",
-  "get-library-docs",
-  "resolve-library-id",
-  "runSubagent",
-  "problems",
-  "changes",
-  "fetch",
-  "githubRepo",
-  "todos"
->>>>>>> Stashed changes:.github/agents/instructionalist.agent.md
 ]
+
 ---
 
 # Instructionalist – Copilot Chat Mode 🎩

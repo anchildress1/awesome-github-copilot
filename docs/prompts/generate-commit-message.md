@@ -1,12 +1,32 @@
 # Generate Simple Conventional Commit Message 🧠
 
-[![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)]()
+[![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](../../.github/prompts/generate-commit-message.prompt.md)
 
 This one exists because the old commit generator was trying too hard. It walked Copilot through every diff like a nervous parent, while modern models were already doing the homework on their own.
 
-So this version simplifies the job: read your staged changes, figure out what happened, and write a [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) to `./commit.tmp`.
+This generator creates a Conventional Commit message from your repository changes and writes it to `./commit.tmp` for review.
 
-No step-by-step rituals. No noise. Just intent, attribution, and accuracy.
+## How to use 📝
+
+- Stage the changes you want included in the commit (recommended). The generator prefers staged changes but can fall back to unstaged changes if needed.
+- Run the generator (via the repository's Copilot workflow). It will attempt to collect changed files and draft a conventional commit message for you.
+
+## What the generator does ⚙️
+
+- It checks that two helper capabilities are available: `runInTerminal` (for running shell checks) and `get_changed_files` (to enumerate changed files).
+- If either helper is unavailable, you'll receive a brief chat warning listing only the missing helper(s). This is informational — the generator will continue and produce best-effort output.
+- The generator analyzes the changes, infers intent (fix/feat/refactor), estimates AI contribution for the RAI footer, and drafts a concise Conventional Commit message that respects repo lint rules when present.
+- The final message is written to `commit.tmp` and also shown in chat so you can copy or edit it before committing.
+
+## Troubleshooting & notes 🛠️
+
+- If file collection fails (for example, `get_changed_files` produces an error), the generator will stop and report the problem — fix the error and try again.
+- The RAI attribution footer is required. If a diff-analysis tool is unavailable, the generator will include a short disclaimer that attribution is an estimate based on conversation context.
+- If your project enforces commit linting, the generator will try to follow discovered lint rules; you should still verify the message meets your linter before committing.
+
+## Note on Commit Linting 📏
+
+The AI will search for any existing commit lint rules in the repository. If found, it will suggest to the user adding a reference to the relevant instructions (e.g., design principles or logging best practices) to ensure compliance.
 
 > Good commits tell the truth about what changed and who helped.
 
@@ -39,15 +59,13 @@ If you haven’t read it yet, the [RAI section of my blog post](https://dev.to/a
 
 ## Issue References 🔗
 
-When your changes relate to an issue or ticket, you can add a footer to show the connection. Different footers indicate different types of relationships:
+When your changes relate to an issue or ticket that AI can see, then it will add a footer to show the connection. Different footers indicate different types of relationships:
 
 **`Fixes #123`** - This commit completely solves the issue. The problem is gone, the root cause is addressed, and the issue can be closed.
 
 **`Resolves #456`** - Same as Fixes, but some projects prefer this word. It means the issue is fully resolved.
 
 **`Refs #789`** - This work is related to the issue but doesn't close it. Maybe it's a partial fix, adds tests, or provides context for future work.
-
-**The Safe Choice**: When you're not sure which to use, go with `Refs`. It keeps issues open and provides helpful context without accidentally closing anything.
 
 ---
 
@@ -80,19 +98,10 @@ AI doesn’t erase authorship — it complicates it. So this little generator ex
 
 > Because if we’re going to build with AI, we should at least have the decency to leave our names on the door.
 
-<<<<<<< Updated upstream
-And if you want to go one better — use a **GPG key** to sign your commits and include your own `Signed-off-by` footer. That extra signature isn’t performative; it’s proof. It says, **this was reviewed, this was intentional, *and this is mine*.**
-
----
-
-# 🛡️ *Generated with the help of ChatGPT as directed by Ashley Childress*
-
 And if you want to go one better — use a **GPG key** to sign your commits and include your own `Signed-off-by` footer. That extra signature isn’t performative; it’s proof. It says, **this was reviewed, this was intentional, *and it is mine*.**
 
 > 🦄 If you haven't read it yet, I wrote a post about [RAI and commit attribution](https://dev.to/anchildress1/did-ai-erase-attribution-your-git-history-is-missing-a-co-author-1m2l) that walks through why it matters—it's not about permission, *it's about provenance.*
 
 ---
 
-🛡️ *Generated with the help of ChatGPT and GitHub Copilot as directed by Ashley Childress*
-
-> > > > > > > Stashed changes
+<small>🛡️ Generated initially with the help of ChatGPT and GitHub Copilot as directed by Ashley Childress</small>

@@ -1,11 +1,10 @@
 ---
-status: "polish"
+status: "check"
 mode: "agent"
 description: "Generate a conventional commit message from staged changes and save to ./commit.tmp"
 tools: [
   "runInTerminal",
-  "get_changed_files",
-  "edit_diff_history"
+  "get_changed_files"
 ]
 ---
 
@@ -57,6 +56,10 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 ## Workflow 📋
 
+0. **Check Tool Availability (REQUIRED)**: Before any other step, check which of the required tools (`get_changed_files`, `runInTerminal`) are missing or inaccessible.
+
+- If any required tool is unavailable or inaccessible, display a chat warning listing only the missing tools at the end of your turn. Do not stop execution; continue the workflow and return best effort results.
+
 1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`).
 
 - If the previous tool call fails for any reason, you may retry the command using the `runInTerminal` command and `git diff --cached` (or `git diff` if no staged).
@@ -65,7 +68,7 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor) based on your conversation history with the user and any access to issue tracking.
 
-3. **Assess AI Contribution**: Use the `edit_diff_history` tool to determine your level of contribution or the percentage of file edits made by AI. The specific attribution footer is detailed in the **Footer Rules** section below.
+3. **Assess AI Contribution**: Use your context and chat history to determine your level of contribution or the percentage of file edits made by AI. The specific attribution footer is detailed in the **Footer Rules** section below.
 
 - If the above tool call fails, you can retry using your chat history with the user to estimate your contribution level.
 - Default to the highest reasonable attribution if unsure.
@@ -157,13 +160,25 @@ Choose one per referenced issue:
 
 ### RAI Attribution (REQUIRED) 🖋️
 
-- Choose exactly one footer from this list; higher entries override lower ones.
+<rules-for-attribution-determination>
+
+#### Rules for Attribution Determination
+
+When assessing AI contribution, you are expected to use your context and chat history. The commit message itself should serve as your baseline. Do NOT determine attribution based on history and context alone, because commits may have been made after that point. Use the diff tool to understand what changed and then compare that to your available history to determine if it was a change you made or a change identified as a user edit. There is no exact math involved, but you should make a best effort estimate based on your knowledge of the changes made.
+
+</rules-for-attribution-determination>
+<attribution-rules>
+
+Choose exactly one footer from this list; higher entries override lower ones.
+
 - **Generated-by**: Most/all lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (AI wrote all modified/added code, even if refactoring existing logic).
 - **Co-authored-by**: Significant portion of lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (substantial AI contribution to refactoring or new features).
 - **Assisted-by**: Few lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (minor AI edits or fixes).
 - **Commit-generated-by**: Only message generation (0% logic changes, but some trivial changes may exist) or trivial change other than direct manipulation of code (e.g., whitespace, comments, renames).
-- Format: `<type>: <AI_NAME> <ai.email@example.com>`
 
+Format: `<attribution-footer>: <AI_NAME> <ai.email@example.com>`
+
+</attribution-rules>
 </rai-attribution>
 <prohibited-actions>
 
