@@ -15,15 +15,13 @@ Technical setup details for this repository.
 .github/
   ├── instructions/     # VS Code compatible instructions
   ├── prompts/          # Agent Mode prompts
-  └── chatmodes/        # Chat mode definitions
+  └── agents/           # Chat mode definitions
 docs/
   ├── instructions/     # Instruction documentation
   ├── prompts/          # Prompt documentation
-  └── chatmodes/        # Chat mode documentation
+  └── agents/           # Chat mode documentation
 ```
 
 ## Status System
 
 All artifacts use status badges in frontmatter. See [status-badge-lifecycle.md](./docs/status-badge-lifecycle.md).
-
-Valid values: `draft`, `tweak`, `polish`, `check`, `ready`, `deprecated`

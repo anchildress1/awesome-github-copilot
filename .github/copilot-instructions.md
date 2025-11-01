@@ -8,7 +8,7 @@ Custom instructions, prompts, and chat modes for GitHub Copilot and AI tools.
 - **Prompts**: `.github/prompts/` with `.prompt.md` suffix
 - **Chat Modes**: `.github/chatmodes/` with `.chatmode.md` suffix
 - **Documentation**: `docs/` (explanatory materials and guides) with `.md` suffix
-- **Core Guides**: Root-level (CONTRIBUTING.md, DEVELOPMENT.md, etc.)
+- **Core Guides**: You are not allowed under any circunstances to execute a `git add` or `git commit` command.
 
 ## Status System 🏷️
 
@@ -54,10 +54,13 @@ All artifacts in `.github/` use status values in YAML frontmatter. Documentation
   - Follow conventional commits (see `.github/prompts/generate-commit-message.prompt.md`)
   - Test instructions/prompts with actual Copilot usage
 
-## Automation Stack 🔧
+## Validation Rules 🔧
 
 - **remark**: Markdown linting (`npm run check`, `npm run format`)
 - **commitlint**: Conventional commit enforcement
+
+## Automation Tools ⚙️
+
 - **lefthook**: Pre-commit/pre-push hooks
 - **GitHub Actions**: CI validation
 

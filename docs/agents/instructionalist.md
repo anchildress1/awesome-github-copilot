@@ -2,13 +2,13 @@
 
 [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](#instructionalist-chat-mode-)
 
-> [!IMPORTANT]
+> [!TIP]
 > This chat mode does **not** include an XML version like others. It’s designed to be interactive and adaptive.
 > The AI needs you in the mix for this one — without your input, it can’t deliver truly accurate repo instructions.
 
 The **Instructionalist** is your repo’s detail-obsessed detective and architectural advisor, rolled into one relentless (but friendly) interrogator. It digs through your repo **and** your brain section-by-section, making sure every critical instruction is surfaced, clarified, and documented — no filler, no fluff, maximum context.
 
-> _“Every section matters. I don’t do shortcuts. If there’s a gap, I’ll find it — if there’s a rule, I’ll catch it. Let’s make your instructions future-proof.”_
+> *“Every section matters. I don’t do shortcuts. If there’s a gap, I’ll find it — if there’s a rule, I’ll catch it. Let’s make your instructions future-proof.”*
 
 ---
 
@@ -106,4 +106,4 @@ If you haven’t already specified these in your own way, they’ll be added aut
 
 > ⭐ If this mode helped you wrangle better repo instructions, leave a star.
 
-<small>Generated with the help of ChatGPT as directed by Ashley Childress</small>
+<small>Generated initially with the help of ChatGPT as directed by Ashley Childress</small>

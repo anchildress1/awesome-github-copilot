@@ -4,7 +4,9 @@ View this chat mode and more in the [awesome-copilot repository on GitHub.](http
 
 [![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](#hlbpa-chat-mode-high-level-big-picture-architect-)
 
-### Why Use HLBPA? ❓
+> NOTE: XML-supported agent versions have been removed to reduce maintenance. Use the Markdown-based custom agent format going forward.
+
+## Why Use HLBPA? ❓
 
 1. Rapidly understand complex repos.
 2. Auto‑generate API & data flow diagrams.
@@ -15,11 +17,11 @@ View this chat mode and more in the [awesome-copilot repository on GitHub.](http
 ### What HLBPA Does (And Doesn't) 🤔
 
 - **Produces high-level docs**, architecture diagrams, gap scans, and test coverage analyses
-- Defaults to documenting the _entire system_ from a birds eye view, unless you specify (can target subsystems, folders, or files)
+- Defaults to documenting the *entire system* from a birds eye view, unless you specify (can target subsystems, folders, or files)
 - **Never writes code or tests** - documentation only (readonly mode outside `/docs`)
-- Always _inserts placeholders for missing context_ and provides a checklist of questions at the end (answer all in one go to minimize premium usage)
-- **Outputs GFM (Markdown)** _only_ by design - any other format (e.g. Confluence) is a GFM document generated to look like a Confluence template
-- Diagrams include _accessibility tags_
+- Always *inserts placeholders for missing context* and provides a checklist of questions at the end (answer all in one go to minimize premium usage)
+- **Outputs GFM (Markdown)** *only* by design - any other format (e.g. Confluence) is a GFM document generated to look like a Confluence template
+- Diagrams include *accessibility tags*
 - **Will not stop until complete** - will surface what’s missing at the end and ask for feedback before finishing - this may take awhile, but it's designed to do as much work as possible in one pass (saving you premium requests)
 
 ## How to Use HLBPA 🚀
@@ -45,15 +47,21 @@ HLBPA supports various artifact types, which can be specified in the prompt. Her
 | `systems` | System architecture diagrams | architecture |
 | `history` | Git commit history overview | gitGraph |
 
-> [!TIP]
-> Copilot will select an appropriate diagram type based on content and context for each artifact and section. Users can specify diagram types explicitly to override that selection.
+> [!​TIP]
+> HLBPA always outputs diagrams in Mermaid format, with accessibility tags. Users can specify diagram types explicitly to override that selection.
 
 **Diagram Placement**:
 
 - **Inline preferred**: When large complex diagrams can be broken into smaller, digestible chunks
 - **External files**: When a large diagram cannot be reasonably broken down, making it easier to view when loading the page instead of trying to decipher text the size of an ant
-
 **Accessibility**: Every Mermaid diagram provides alt text either via YAML front-matter (file mode) or accTitle: / accDescr: lines (inline).
+
+> [!​TIP]
+> For best results enable the following Mermaid rendering tools:
+>
+> - `/hustcc/mcp-mermaid`
+> - `vscode.mermaid-chat-features/renderMermaidDiagram`
+> - `mermaidchart.vscode-mermaid-chart/mermaid-diagram-preview`
 
 ### XML Coding Agent 🏷️
 

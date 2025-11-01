@@ -33,7 +33,7 @@ Choose exactly one footer that best describes the AI's role. Higher-level attrib
 
 Format: `<type>: GitHub Copilot <github.copilot@github.com>`
 
-If you haven’t read it yet, the [RAI section of my blog post](https://dev.to/anchildress1/can-we-set-the-record-straight-ai-content-and-a-bit-of-sanity-1inj#5-ai-code-is-ai-content-writers-you-too) walks through why that matters and why I’m not budging on it. This isn’t about permission. _It’s about provenance._
+If you haven’t read it yet, the [RAI section of my blog post](https://dev.to/anchildress1/can-we-set-the-record-straight-ai-content-and-a-bit-of-sanity-1inj#5-ai-code-is-ai-content-writers-you-too) walks through why that matters and why I’m not budging on it. This isn’t about permission. *It’s about provenance.*
 
 ---
 
@@ -80,8 +80,19 @@ AI doesn’t erase authorship — it complicates it. So this little generator ex
 
 > Because if we’re going to build with AI, we should at least have the decency to leave our names on the door.
 
-And if you want to go one better — use a **GPG key** to sign your commits and include your own `Signed-off-by` footer. That extra signature isn’t performative; it’s proof. It says, **this was reviewed, this was intentional, _and this is mine_.**
+<<<<<<< Updated upstream
+And if you want to go one better — use a **GPG key** to sign your commits and include your own `Signed-off-by` footer. That extra signature isn’t performative; it’s proof. It says, **this was reviewed, this was intentional, *and this is mine*.**
 
 ---
 
-🛡️ _Generated with the help of ChatGPT as directed by Ashley Childress_
+# 🛡️ *Generated with the help of ChatGPT as directed by Ashley Childress*
+
+And if you want to go one better — use a **GPG key** to sign your commits and include your own `Signed-off-by` footer. That extra signature isn’t performative; it’s proof. It says, **this was reviewed, this was intentional, *and it is mine*.**
+
+> 🦄 If you haven't read it yet, I wrote a post about [RAI and commit attribution](https://dev.to/anchildress1/did-ai-erase-attribution-your-git-history-is-missing-a-co-author-1m2l) that walks through why it matters—it's not about permission, *it's about provenance.*
+
+---
+
+🛡️ *Generated with the help of ChatGPT and GitHub Copilot as directed by Ashley Childress*
+
+> > > > > > > Stashed changes

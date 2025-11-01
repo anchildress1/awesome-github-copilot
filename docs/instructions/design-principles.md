@@ -4,7 +4,7 @@
 
 Like a watchful mother hen (or a really opinionated senior dev), this instruction circles your design decisions, pokes at your logic, and clucks loudly anytime your architecture starts to look like a spaghetti-and-meatball special.
 
-Feed it your system diagram, component interface, or a block of core logic. It will return a structured list of opinions, critiques, and validation questions — always focused on scalability, clarity, testability, and _vibe_.
+Feed it your system diagram, component interface, or a block of core logic. It will return a structured list of opinions, critiques, and validation questions — always focused on scalability, clarity, testability, and *vibe*.
 
 See [`design-principles.instructions.md`](../../.github/instructions/design-principles.instructions.md) for full guidance.
 

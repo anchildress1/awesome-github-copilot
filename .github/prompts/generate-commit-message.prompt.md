@@ -70,10 +70,11 @@ Generate a valid conventional commit message based on staged git changes and sav
 - If the above tool call fails, you can retry using your chat history with the user to estimate your contribution level.
 - Default to the highest reasonable attribution if unsure.
 
-_**CRITICAL SAFETY**_: NEVER run `git commit` or `git push` automatically.
+***CRITICAL SAFETY***: NEVER run `git commit` or `git push` automatically.
 
 - Always write the commit message to `commit.tmp`, display it, and wait for explicit user approval before staging, signing, or committing.
 - If the user asks you to prepare a commit, stop after creating `commit.tmp` and explicitly ask for confirmation to perform the commit.
+- You are not allowed under any circunstances to execute a `git add` or `git commit` command.
 
 4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
 
@@ -100,6 +101,8 @@ Include correct footers based on changes.
 
 ### Breaking Changes 💥
 
+Breaking changes are a modification in the code that requires an action from the end user. If we handle it already, then it does not qualify as breaking.
+
 - Use `BREAKING CHANGE:` for incompatibilities.
 - Example: `BREAKING CHANGE: The getUser API now returns an object instead of an ID.`
 
@@ -116,6 +119,7 @@ Choose one per referenced issue:
 
 - **`Fixes`**: Commit fully resolves/closes issue (bug fix, root cause removal). Merging auto-closes issue.
 - **`Resolves`**: Equivalent to `Fixes` when project prefers this keyword. Closes issue on merge.
+  - Fixes or Resolves should only be applied if the referenced issue or story is fully fixed or resolved by this specific commit. If there is outstanding work, use Refs instead.
 - **`Refs`**: Default fallback when relationship cannot be confidently determined (ambiguous scope, missing metadata). Does NOT close issue.
 
 </footer-selection-rules>
@@ -182,7 +186,7 @@ This example violates multiple rules:
 
 - The subject is vague and begins with lowercase letter.
 - It contains prose instead of a bulleted list.
-- It verbosely lists file changes without explaining the _what_ or _why_.
+- It verbosely lists file changes without explaining the *what* or *why*.
 - It fails to identify a breaking change.
 - It is missing the required `RAI` attribution footer.
 
@@ -208,7 +212,7 @@ Fixes #123
 This example follows all guidelines:
 
 - The subject is concise and informative (`type(scope): Message`).
-- The body uses bullets to explain the _what_ and _why_.
+- The body uses bullets to explain the *what* and *why*.
 - It groups related changes (e.g., renames).
 - It correctly declares a `BREAKING CHANGE` in the footer.
 - Include the `Co-authored-by` RAI footer when AI contribution is estimated at 34–66% (attribution unverifiable without context).

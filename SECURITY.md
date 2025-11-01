@@ -58,5 +58,5 @@ Security researchers who responsibly disclose issues will be immortalized here w
 
 ---
 
-_Remember: With great prompts comes great responsibility.
-Also, Claude 4.5 wrote this for me with little supervision_ 😇
+*Remember: With great prompts comes great responsibility.
+Also, Claude 4.5 wrote this for me with little supervision* 😇
