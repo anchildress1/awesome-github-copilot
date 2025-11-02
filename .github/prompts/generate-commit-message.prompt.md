@@ -1,17 +1,11 @@
 ---
 status: "check"
 mode: "agent"
+title: "Generate Conventional Commit Message 📝"
 description: "Generate a conventional commit message from staged changes and save to ./commit.tmp"
-tools: [
-  "runInTerminal",
-  "get_changed_files"
-]
 ---
 
 <custom-prompt id="generate-commit-message">
-
-# Generate Conventional Commit Message 📝
-
 <goal-definition>
 
 ## Task 🎯
@@ -56,27 +50,35 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 ## Workflow 📋
 
-0. **Check Tool Availability (REQUIRED)**: Before any other step, check which of the required tools (`get_changed_files`, `runInTerminal`) are missing or inaccessible.
+0. **Check Tool Availability (REQUIRED)**: Before any other step, verify which tools are available in your environment.
 
 - If any required tool is unavailable or inaccessible, display a chat warning listing only the missing tools at the end of your turn. Do not stop execution; continue the workflow and return best effort results.
 
-1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`).
+1. **Analyze Changes**: Retrieve staged changes first; if none exist, retrieve all local changes.
 
-- If the previous tool call fails for any reason, you may retry the command using the `runInTerminal` command and `git diff --cached` (or `git diff` if no staged).
+- If the analysis fails for any reason, retry using the command line with `git --no-pager diff --cached`. If `--cached` returns no output, rerun with `git --no-pager diff` to capture all local changes.
 
-- If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
+- If both attempts return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
 
-2. **Determine Intent**: Understand the purpose of the changes (e.g., fix, feature, refactor) based on your conversation history with the user and any access to issue tracking.
+2. **Determine Intent from the Diff (MANDATORY)**: Derive the purpose of the changes (e.g., fix, feature, refactor) strictly from the analyzed diff output (staged; fall back to all local changes only if no staged changes exist).
 
-3. **Assess AI Contribution**: Use your context and chat history to determine your level of contribution or the percentage of file edits made by AI. The specific attribution footer is detailed in the **Footer Rules** section below.
+- Do NOT rely on conversation history, prior edits, or memory to decide what changed. Conversation history may only be consulted to help with ambiguous attribution after the message content is fully derived from the diff.
+
+3. **Assess AI Contribution (DIFF-FIRST)**: Use the diff output as the primary evidence to estimate AI contribution. Compare the hunk-level changes to any known assistant-authored edits in the diff and estimate contribution from those results.
+
+- Only if the diff is ambiguous or missing contextual metadata should you consult conversation history to refine the estimate. Do NOT change the message content based on history—use history only for attribution clarification.
 
 - If the above tool call fails, you can retry using your chat history with the user to estimate your contribution level.
+
 - Default to the highest reasonable attribution if unsure.
 
-_**CRITICAL SAFETY**_: NEVER run `git commit` or `git push` automatically.
+***CRITICAL SAFETY***: NEVER run `git commit` or `git push` automatically.
+
+Before writing `commit.tmp`: immediately re-run the diff analysis (staged first, then all local changes if needed) and verify the index matches the diff you used to draft the message. If the index changed, abort the save, re-analyze the new diff, and draft a fresh message. If you cannot re-run the diff, warn the user that the message may be stale and continue with best-effort output.
 
 - Always write the commit message to `commit.tmp`, display it, and wait for explicit user approval before staging, signing, or committing.
 - If the user asks you to prepare a commit, stop after creating `commit.tmp` and explicitly ask for confirmation to perform the commit.
+- You are not allowed under any circumstances to execute a `git add` or `git commit` command.
 
 4. **Draft Commit Message**: Write a commit message that follows the **Writing Guidelines** and **Footer Rules**.
 
@@ -103,6 +105,8 @@ Include correct footers based on changes.
 
 ### Breaking Changes 💥
 
+Breaking changes are a modification in the code that requires an action from the end user. If we handle it already, then it does not qualify as breaking.
+
 - Use `BREAKING CHANGE:` for incompatibilities.
 - Example: `BREAKING CHANGE: The getUser API now returns an object instead of an ID.`
 
@@ -119,6 +123,7 @@ Choose one per referenced issue:
 
 - **`Fixes`**: Commit fully resolves/closes issue (bug fix, root cause removal). Merging auto-closes issue.
 - **`Resolves`**: Equivalent to `Fixes` when project prefers this keyword. Closes issue on merge.
+  - Fixes or Resolves should only be applied if the referenced issue or story is fully fixed or resolved by this specific commit. If there is outstanding work, use Refs instead.
 - **`Refs`**: Default fallback when relationship cannot be confidently determined (ambiguous scope, missing metadata). Does NOT close issue.
 
 </footer-selection-rules>
@@ -197,11 +202,11 @@ This example violates multiple rules:
 
 - The subject is vague and begins with lowercase letter.
 - It contains prose instead of a bulleted list.
-- It verbosely lists file changes without explaining the _what_ or _why_.
+- It verbosely lists file changes without explaining the *what* or *why*.
 - It fails to identify a breaking change.
 - It is missing the required `RAI` attribution footer.
 
-```
+```plaintext
 feat: update services
 
 I updated the user service to use the new authentication method. This was a big change that affects how users log in. I also renamed some files to make more sense.
@@ -223,12 +228,12 @@ Fixes #123
 This example follows all guidelines:
 
 - The subject is concise and informative (`type(scope): Message`).
-- The body uses bullets to explain the _what_ and _why_.
+- The body uses bullets to explain the *what* and *why*.
 - It groups related changes (e.g., renames).
 - It correctly declares a `BREAKING CHANGE` in the footer.
 - Include the `Co-authored-by` RAI footer when AI contribution is estimated at 34–66% (attribution unverifiable without context).
 
-```
+```plaintext
 refactor(auth): Adopt new authentication client and align naming
 
  - Replace legacy auth client with `NewAuthClient` to improve security
@@ -244,8 +249,7 @@ Co-authored-by: GitHub Copilot <github.copilot@github.com>
 
 ## Output 📤
 
-1. Write the complete commit message to a temporary file named `commit.tmp` using a shell redirect.
-   - Example: `cat > commit.tmp << 'EOF'`
+1. Write the complete commit message to `commit.tmp`.
 2. Display the exact same commit message in a markdown code block for easy copy-pasting.
 
 </output-instructions>

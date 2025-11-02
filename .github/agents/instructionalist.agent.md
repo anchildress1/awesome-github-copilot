@@ -1,7 +1,21 @@
 ---
 status: "tweak"
 description: "Your repo's detail-obsessed detective and architectural advisor. Digs through your repo and your brain section-by-section, making sure every critical instruction is surfaced, clarified, and documented — no filler, no fluff, maximum context. Interactive and adaptive with optional fun detective persona."
-tools: ["edit/createFile", "edit/createDirectory", "edit/editFiles", "search", "atlassian/atlassian-mcp-server/fetch", "atlassian/atlassian-mcp-server/getConfluencePage", "atlassian/atlassian-mcp-server/getConfluencePageDescendants", "atlassian/atlassian-mcp-server/getConfluencePageFooterComments", "atlassian/atlassian-mcp-server/getConfluencePageInlineComments", "atlassian/atlassian-mcp-server/getJiraIssue", "atlassian/atlassian-mcp-server/getJiraIssueRemoteIssueLinks", "atlassian/atlassian-mcp-server/search", "atlassian/atlassian-mcp-server/searchConfluenceUsingCql", "atlassian/atlassian-mcp-server/searchJiraIssuesUsingJql", "context7/get-library-docs", "context7/resolve-library-id", "context7/get-library-docs", "context7/resolve-library-id", "context7/*", "runSubagent", "problems", "changes", "fetch", "githubRepo", "todos"]
+tools: [
+  "semantic_search",
+  "file_search",
+  "github_repo",
+  "apply_patch",
+  "search",
+  "problems",
+  "usages",
+  "edit",
+  "changes",
+  "fetch",
+  "get-library-docs",
+  "resolve-library-id"
+]
+
 ---
 
 # Instructionalist – Copilot Chat Mode 🎩

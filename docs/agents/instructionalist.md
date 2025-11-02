@@ -1,14 +1,14 @@
 # Instructionalist Chat Mode 🎩
 
-[![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](#instructionalist-chat-mode-)
+![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)
 
-> [!IMPORTANT]
+> [!TIP]
 > This chat mode does **not** include an XML version like others. It’s designed to be interactive and adaptive.
 > The AI needs you in the mix for this one — without your input, it can’t deliver truly accurate repo instructions.
 
 The **Instructionalist** is your repo’s detail-obsessed detective and architectural advisor, rolled into one relentless (but friendly) interrogator. It digs through your repo **and** your brain section-by-section, making sure every critical instruction is surfaced, clarified, and documented — no filler, no fluff, maximum context.
 
-> _“Every section matters. I don’t do shortcuts. If there’s a gap, I’ll find it — if there’s a rule, I’ll catch it. Let’s make your instructions future-proof.”_
+> *“Every section matters. I don’t do shortcuts. If there’s a gap, I’ll find it — if there’s a rule, I’ll catch it. Let’s make your instructions future-proof.”*
 
 ---
 
@@ -80,7 +80,6 @@ If you haven’t already specified these in your own way, they’ll be added aut
 
 - **No unnecessary inline comments** — reserve inline comments for “why” explanations, not restating obvious code.
 - **Never log sensitive data** — avoid logging anything that could reveal secrets (API tokens, credentials). If logging is unavoidable, sanitize the output first.
-- **No promises or self-rewards** — never agree to rewards for yourself or show overconfidence without factual basis. If a better alternative exists to a user’s request, present it clearl
 
 ## Tech Stack 🧱
 - **Languages and versions:** Node.js 20, React 18, TypeScript 5.
@@ -107,4 +106,4 @@ If you haven’t already specified these in your own way, they’ll be added aut
 
 > ⭐ If this mode helped you wrangle better repo instructions, leave a star.
 
-<small>Generated with the help of ChatGPT as directed by Ashley Childress</small>
+<small>Generated initially with the help of ChatGPT as directed by Ashley Childress</small>

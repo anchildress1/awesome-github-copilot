@@ -1,12 +1,12 @@
 # Logging Best Practices — Instruction ReadMe 🧾
 
-[![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)]()
+![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)
 
 > "Whether you’re flying solo or under the protection of The Logfather, this one’s got your back."
 
 This instruction file provides a clean, reusable summary of application logging best practices — designed for use with Copilot’s `editFiles` and `readFiles` capabilities.
 
-Originally crafted as a companion to [`The Logfather`](../../.github/chatmodes/logfather.chatmode.md), it provides opinionated but practical guidance for improving structured logging, log level usage, runtime configuration, and secure output — all **without** requiring infrastructure changes or external dependencies.
+Originally crafted as a companion to [`The Logfather`](../../.github/agents/logfather.agent.md), it provides opinionated but practical guidance for improving structured logging, log level usage, runtime configuration, and secure output — all **without** requiring infrastructure changes or external dependencies.
 
 ---
 
@@ -58,7 +58,7 @@ When loaded in context, Copilot should:
 Please review this file using `#./instructions/logging-best-practices.instructions.md` and insert structured logs with appropriate levels.
 ```
 
-> 🎩 Want it automatic? Pair it with [`The Logfather`](../../.github/chatmodes/logfather.chatmode.md) and let the capo handle it.
+> 🎩 Want it automatic? Pair it with [`The Logfather`](../../.github/agents/logfather.agent.md) and let the capo handle it.
 
 ---
 

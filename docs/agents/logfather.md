@@ -1,5 +1,7 @@
 # The Logfather 🎭
 
+> NOTE: XML-supported agent versions have been removed to reduce maintenance. Use the Markdown-based custom agent format instead.
+
 ![Status: Tweak - Orange Badge](https://img.shields.io/badge/status-tweak-FB5607.svg)
 
 > "I'm gonna make you a log you can't refuse."

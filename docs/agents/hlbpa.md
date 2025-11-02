@@ -2,9 +2,11 @@
 
 View this chat mode and more in the [awesome-copilot repository on GitHub.](https://github.com/github/awesome-copilot)
 
-[![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B59B6.svg)](#hlbpa-chat-mode-high-level-big-picture-architect-)
+![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)
 
-### Why Use HLBPA? ❓
+> NOTE: XML-supported agent versions have been removed to reduce maintenance. Use the Markdown-based custom agent format going forward.
+
+## Why Use HLBPA? ❓
 
 1. Rapidly understand complex repos.
 2. Auto‑generate API & data flow diagrams.
@@ -53,9 +55,16 @@ HLBPA supports various artifact types, which can be specified in the prompt. Her
 
 **How Diagrams Work:**
 
-- **Inline diagrams** are used when the diagram is small and easy to read.
-- **External files** are created for big, complex diagrams that cannot be broken down into managable parts—these go in `docs/diagrams/` and are linked from your docs.
-- **Accessibility:** Every diagram includes alt text for screen readers, either in the diagram itself or in its YAML front-matter.
+- **Inline preferred**: When large complex diagrams can be broken into smaller, digestible chunks
+- **External files**: When a large diagram cannot be reasonably broken down, making it easier to view when loading the page instead of trying to decipher text the size of an ant
+- **Accessibility**: Every Mermaid diagram provides alt text either via YAML front-matter (file mode) or accTitle: / accDescr: lines (inline).
+
+> [!TIP]
+> For best results enable the following Mermaid rendering tools:
+>
+> - `/hustcc/mcp-mermaid`
+> - `vscode.mermaid-chat-features/renderMermaidDiagram`
+> - `mermaidchart.vscode-mermaid-chart/mermaid-diagram-preview`
 
 ### What You Get & How It Finishes
 

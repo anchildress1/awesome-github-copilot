@@ -2,12 +2,22 @@
 status: "tweak"
 description: "Automates secure, structured, and centralized logging implementation and reviews across your codebase, wielding JSON like a switchblade and enforcing structured readability like a made man."
 tools: [
-  "search",
-  "editFiles",
-  "readFiles",
+  "search_code",
+  "get_file_contents",
+  "create_or_update_file",
   "runInTerminal",
   "runTests",
-  "findTestFiles"
+  "findTestFiles",
+  "search/*",
+  "changes",
+  "edit",
+  "fetch",
+  "githubRepo",
+  "problems",
+  "testFailure",
+  "usages",
+  "get-library-docs",
+  "resolve-library-id"
 ]
 ---
 

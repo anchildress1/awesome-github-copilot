@@ -1,6 +1,6 @@
 # Generate Simple Conventional Commit Message 🧠
 
-[![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](../../.github/prompts/generate-commit-message.prompt.md)
+![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)
 
 This one exists because the old commit generator was trying too hard. It walked Copilot through every diff like a nervous parent, while modern models were already doing the homework on their own.
 
@@ -8,19 +8,19 @@ This generator creates a Conventional Commit message from your repository change
 
 ## How to use 📝
 
-- Stage the changes you want included in the commit (recommended). The generator prefers staged changes but can fall back to unstaged changes if needed.
+- Stage the changes you want included in the commit (recommended). The generator prefers staged changes but can fall back to all local changes if needed.
 - Run the generator (via the repository's Copilot workflow). It will attempt to collect changed files and draft a conventional commit message for you.
 
 ## What the generator does ⚙️
 
-- It checks that two helper capabilities are available: `runInTerminal` (for running shell checks) and `get_changed_files` (to enumerate changed files).
-- If either helper is unavailable, you'll receive a brief chat warning listing only the missing helper(s). This is informational — the generator will continue and produce best-effort output.
+- It checks that required capabilities are available to analyze changes.
+- If any helper is unavailable, you'll receive a brief chat warning listing only the missing helper(s). This is informational — the generator will continue and produce best-effort output.
 - The generator analyzes the changes, infers intent (fix/feat/refactor), estimates AI contribution for the RAI footer, and drafts a concise Conventional Commit message that respects repo lint rules when present.
 - The final message is written to `commit.tmp` and also shown in chat so you can copy or edit it before committing.
 
 ## Troubleshooting & notes 🛠️
 
-- If file collection fails (for example, `get_changed_files` produces an error), the generator will stop and report the problem — fix the error and try again.
+- If file collection fails, the generator will stop and report the problem — fix the error and try again.
 - The RAI attribution footer is required. If a diff-analysis tool is unavailable, the generator will include a short disclaimer that attribution is an estimate based on conversation context.
 - If your project enforces commit linting, the generator will try to follow discovered lint rules; you should still verify the message meets your linter before committing.
 
@@ -52,6 +52,8 @@ Choose exactly one footer that best describes the AI's role. Higher-level attrib
 - **Commit-generated-by**: AI only wrote the commit message — no code changes, just the message itself
 
 Format: `<type>: GitHub Copilot <github.copilot@github.com>`
+
+If you haven’t read it yet, the [RAI section of my blog post](https://dev.to/anchildress1/can-we-set-the-record-straight-ai-content-and-a-bit-of-sanity-1inj#5-ai-code-is-ai-content-writers-you-too) walks through why that matters and why I’m not budging on it. This isn’t about permission. *It’s about provenance.*
 
 ---
 
@@ -96,10 +98,10 @@ AI doesn’t erase authorship — it complicates it. So this little generator ex
 
 > Because if we’re going to build with AI, we should at least have the decency to leave our names on the door.
 
-And if you want to go one better — use a **GPG key** to sign your commits and include your own `Signed-off-by` footer. That extra signature isn’t performative; it’s proof. It says, **this was reviewed, this was intentional, _and it is mine_.**
+And if you want to go one better — use a **GPG key** to sign your commits and include your own `Signed-off-by` footer. That extra signature isn’t performative; it’s proof. It says, **this was reviewed, this was intentional, *and it is mine*.**
 
-> 🦄 If you haven't read it yet, I wrote a post about [RAI and commit attribution](https://dev.to/anchildress1/did-ai-erase-attribution-your-git-history-is-missing-a-co-author-1m2l) that walks through why it matters—it's not about permission, _it's about provenance._
+> 🦄 If you haven't read it yet, I wrote a post about [RAI and commit attribution](https://dev.to/anchildress1/did-ai-erase-attribution-your-git-history-is-missing-a-co-author-1m2l) that walks through why it matters—it's not about permission, *it's about provenance.*
 
 ---
 
-🛡️ _Generated with the help of ChatGPT and GitHub Copilot as directed by Ashley Childress_
+<small>🛡️ Generated initially with the help of ChatGPT and GitHub Copilot as directed by Ashley Childress</small>

@@ -2,12 +2,16 @@
 status: "deprecated"
 mode: "ask"
 description: "Recent updates to Copilot's system instructions means it's now capable of handling this one on its own."
-tools: [ "runTasks" ]
+tools: [
+  "createAndRunTask",
+  "getTaskOutput" ,
+  "runTask"
+]
 ---
 
-<prompt id="get-current-timestamp">
-
 # Get Current Timestamp for Reports
+
+<prompt id="get-current-timestamp">
 
 This document specifies the requirements for handling timestamps in AI implementation and review reports.
 
