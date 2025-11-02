@@ -1,17 +1,9 @@
 ---
 status: "check"
 mode: "agent"
+title: "Generate Conventional Commit Message 📝"
 description: "Generate a conventional commit message from staged changes and save to ./commit.tmp"
-tools: [
-  "runInTerminal",
-  "get_changed_files",
-  "changes",
-  "createFile",
-  "editFiles"
-]
 ---
-
-# Generate Conventional Commit Message 📝
 
 <custom-prompt id="generate-commit-message">
 <goal-definition>
@@ -58,17 +50,17 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 ## Workflow 📋
 
-0. **Check Tool Availability (REQUIRED)**: Before any other step, check which of the required tools (`get_changed_files`, `runInTerminal`) are missing or inaccessible.
+0. **Check Tool Availability (REQUIRED)**: Before any other step, verify which tools are available in your environment.
 
 - If any required tool is unavailable or inaccessible, display a chat warning listing only the missing tools at the end of your turn. Do not stop execution; continue the workflow and return best effort results.
 
-1. **Analyze Changes**: Use `get_changed_files` (filter for `staged`; if none, use `unstaged`).
+1. **Analyze Changes**: Retrieve staged changes first; if none exist, retrieve all local changes.
 
-- If the previous tool call fails for any reason, you may retry the command using the `runInTerminal` command and `git diff --cached` (or `git diff` if no staged).
+- If the analysis fails for any reason, retry using the command line with `git --no-pager diff --cached`. If `--cached` returns no output, rerun with `git --no-pager diff` to capture all local changes.
 
-- If both commands return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
+- If both attempts return an error, no changes, or any other failure to analyze changes, you should stop immediately and alert the user of the problem preventing you from proceeding.
 
-2. **Determine Intent from the Diff (MANDATORY)**: Derive the purpose of the changes (e.g., fix, feature, refactor) strictly from the analyzed diff output produced by `get_changed_files` (staged; fall back to unstaged only if no staged files exist).
+2. **Determine Intent from the Diff (MANDATORY)**: Derive the purpose of the changes (e.g., fix, feature, refactor) strictly from the analyzed diff output (staged; fall back to all local changes only if no staged changes exist).
 
 - Do NOT rely on conversation history, prior edits, or memory to decide what changed. Conversation history may only be consulted to help with ambiguous attribution after the message content is fully derived from the diff.
 
@@ -82,7 +74,7 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 ***CRITICAL SAFETY***: NEVER run `git commit` or `git push` automatically.
 
-Before writing `commit.tmp`: immediately re-run the diff analysis (prefer `get_changed_files` with `staged`) and verify the staged index matches the diff you used to draft the message. If the index changed, abort the save, re-analyze the new diff, and draft a fresh message. If you cannot re-run the diff because a required tool is unavailable, warn the user that the message may be stale and continue with best-effort output.
+Before writing `commit.tmp`: immediately re-run the diff analysis (staged first, then all local changes if needed) and verify the index matches the diff you used to draft the message. If the index changed, abort the save, re-analyze the new diff, and draft a fresh message. If you cannot re-run the diff, warn the user that the message may be stale and continue with best-effort output.
 
 - Always write the commit message to `commit.tmp`, display it, and wait for explicit user approval before staging, signing, or committing.
 - If the user asks you to prepare a commit, stop after creating `commit.tmp` and explicitly ask for confirmation to perform the commit.
@@ -257,8 +249,7 @@ Co-authored-by: GitHub Copilot <github.copilot@github.com>
 
 ## Output 📤
 
-1. Write the complete commit message to a temporary file named `commit.tmp` using a shell redirect.
-   - Example: `cat > commit.tmp << 'EOF'`
+1. Write the complete commit message to `commit.tmp`.
 2. Display the exact same commit message in a markdown code block for easy copy-pasting.
 
 </output-instructions>

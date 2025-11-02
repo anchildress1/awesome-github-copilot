@@ -1,9 +1,8 @@
 ---
-name: New Developer Help
-about: Get help with setup, contribution guidelines, or understanding the repository
-title: '[HELP] '
-labels: ['help wanted', 'question']
-assignees: []
+name: "New Developer Help"
+about: "Get help with setup, contribution guidelines, or understanding the repository"
+title: "[HELP] "
+assignees: ["@Copilot"]
 ---
 
 ## What do you need help with? 📋
@@ -16,7 +15,6 @@ assignees: []
 
 - [ ] Read [REPO-SETUP.md](../../REPO-SETUP.md)
 - [ ] Read [CONTRIBUTING.md](../../CONTRIBUTING.md)
-- [ ] Checked [NEW-DEVELOPER-CHECKLIST.md](../../NEW-DEVELOPER-CHECKLIST.md)
 - [ ] Attempted the setup process
 
 ## Environment Information 💻

@@ -12,7 +12,6 @@ tools: [
   "edit",
   "changes",
   "fetch",
-  // Context7
   "get-library-docs",
   "resolve-library-id"
 ]

@@ -13,7 +13,6 @@ tools: [
   "fetch",
   "githubRepo",
   "todos",
-  // Context7
   "get-library-docs",
   "resolve-library-id"
 ]

@@ -25,7 +25,6 @@ tools: [
   "fetch",
   "githubRepo",
   "problems",
-  // Context7
   "get-library-docs",
   "resolve-library-id"
 ]

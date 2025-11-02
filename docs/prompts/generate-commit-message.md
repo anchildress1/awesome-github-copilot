@@ -8,19 +8,19 @@ This generator creates a Conventional Commit message from your repository change
 
 ## How to use 📝
 
-- Stage the changes you want included in the commit (recommended). The generator prefers staged changes but can fall back to unstaged changes if needed.
+- Stage the changes you want included in the commit (recommended). The generator prefers staged changes but can fall back to all local changes if needed.
 - Run the generator (via the repository's Copilot workflow). It will attempt to collect changed files and draft a conventional commit message for you.
 
 ## What the generator does ⚙️
 
-- It checks that two helper capabilities are available: `runInTerminal` (for running shell checks) and `get_changed_files` (to enumerate changed files).
-- If either helper is unavailable, you'll receive a brief chat warning listing only the missing helper(s). This is informational — the generator will continue and produce best-effort output.
+- It checks that required capabilities are available to analyze changes.
+- If any helper is unavailable, you'll receive a brief chat warning listing only the missing helper(s). This is informational — the generator will continue and produce best-effort output.
 - The generator analyzes the changes, infers intent (fix/feat/refactor), estimates AI contribution for the RAI footer, and drafts a concise Conventional Commit message that respects repo lint rules when present.
 - The final message is written to `commit.tmp` and also shown in chat so you can copy or edit it before committing.
 
 ## Troubleshooting & notes 🛠️
 
-- If file collection fails (for example, `get_changed_files` produces an error), the generator will stop and report the problem — fix the error and try again.
+- If file collection fails, the generator will stop and report the problem — fix the error and try again.
 - The RAI attribution footer is required. If a diff-analysis tool is unavailable, the generator will include a short disclaimer that attribution is an estimate based on conversation context.
 - If your project enforces commit linting, the generator will try to follow discovered lint rules; you should still verify the message meets your linter before committing.
 

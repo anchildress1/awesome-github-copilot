@@ -16,7 +16,6 @@ tools: [
   "problems",
   "testFailure",
   "usages",
-  // Context7
   "get-library-docs",
   "resolve-library-id"
 ]
