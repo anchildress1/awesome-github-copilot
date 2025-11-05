@@ -64,13 +64,14 @@ Generate a valid conventional commit message based on staged git changes and sav
 
 - Do NOT rely on conversation history, prior edits, or memory to decide what changed. Conversation history may only be consulted to help with ambiguous attribution after the message content is fully derived from the diff.
 
-3. **Assess AI Contribution (DIFF-FIRST)**: Use the diff output as the primary evidence to estimate AI contribution. Compare the hunk-level changes to any known assistant-authored edits in the diff and estimate contribution from those results.
+3. **Assess AI Contribution (Best-Guesstimate)**: Look only at the diff hunks and compare them to the work you remember doing. From that lightweight comparison, estimate your contribution level.
 
-- Only if the diff is ambiguous or missing contextual metadata should you consult conversation history to refine the estimate. Do NOT change the message content based on history—use history only for attribution clarification.
-
-- If the above tool call fails, you can retry using your chat history with the user to estimate your contribution level.
-
-- Default to the highest reasonable attribution if unsure.
+- **Goal**: Decide whether the AI wrote the majority, about half, some, or only a tiny bit of the changes.
+- **Method**: Treat this as a quick gut-check. Do **not** re-open full files, recompute line counts, or inspect unchanged code.
+- **Heuristic**:
+  - If the diff hunks match what you remember implementing, credit the AI.
+  - If the diff hunks diverge from your memory—or you are unsure—credit the user.
+- **Focus**: This estimate drives the diff report attribution only; no detailed reporting is required.
 
 ***CRITICAL SAFETY***: NEVER run `git commit` or `git push` automatically.
 
@@ -165,17 +166,22 @@ Choose one per referenced issue:
 
 #### Rules for Attribution Determination
 
-When assessing AI contribution, you are expected to use your context and chat history. The commit message itself should serve as your baseline. Do NOT determine attribution based on history and context alone, because commits may have been made after that point. Use the diff tool to understand what changed and then compare that to your available history to determine if it was a change you made or a change identified as a user edit. There is no exact math involved, but you should make a best effort estimate based on your knowledge of the changes made.
+1. **Analyze Diff Hunks**: Review only the staged diff hunks—ignore unchanged file content.
+2. **Compare to Memory**: Contrast those hunks with the work you remember doing during the session.
+3. **Estimate Contribution**: Make a best-guess tier (majority/half/some/tiny). If unsure, default to crediting the user.
+4. **Select Footer**: Choose the footer that best matches your estimate.
 
 </rules-for-attribution-determination>
 <attribution-rules>
 
-Choose exactly one footer from this list; higher entries override lower ones.
+#### Attribution Tiers
 
-- **Generated-by**: Most/all lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (AI wrote all modified/added code, even if refactoring existing logic).
-- **Co-authored-by**: Significant portion of lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (substantial AI contribution to refactoring or new features).
-- **Assisted-by**: Few lines changed were AI-written — estimate/guestimate the AI's contribution level and pick the best fit (minor AI edits or fixes).
-- **Commit-generated-by**: Only message generation (0% logic changes, but some trivial changes may exist) or trivial change other than direct manipulation of code (e.g., whitespace, comments, renames).
+Choose exactly one footer from this list based on your best-guess estimate.
+
+- **`Generated-by`**: **Majority**. AI is estimated to have authored the majority of the changes.
+- **`Co-authored-by`**: **Half**. Contribution is estimated to be roughly equal between AI and the user.
+- **`Assisted-by`**: **Some**. AI's contribution is estimated to be minor compared to the user's changes.
+- **`Commit-generated-by`**: **Tiny Bit**. AI's contribution was trivial (e.g., formatting, comments, renames).
 
 Format: `<attribution-footer>: <AI_NAME> <ai.email@example.com>`
 
