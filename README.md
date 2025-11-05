@@ -1,118 +1,110 @@
 # awesome-github-copilot 🔭
 
-[![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot) [![GitHub License](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
+[![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot) [![GitHub stars](https://img.shields.io/github/stars/anchildress1/awesome-github-copilot.svg?style=social\&label=Stars)](https://github.com/anchildress1/awesome-github-copilot/stargazers)
+[![Open Issues](https://img.shields.io/github/issues/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/issues) [![Last commit](https://img.shields.io/github/last-commit/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/commits/main)
+[![Node](https://img.shields.io/badge/node-25.x-green.svg)](https://nodejs.org/) [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE) [![Made with GitHub Copilot](https://img.shields.io/badge/Made%20with-GitHub%20Copilot-blue?logo=github-copilot\&logoColor=white)](https://github.com/features/copilot)
 
 > [!NOTE]
+> So my original idea of making all this directly accessible through a Copilot Extension hit a wall — a few walls, actually.
+> GitHub recently announced the **sunset of that functionality** in favor of **MCP**.
 >
-> So my initial idea to make these easily accessible with a Copilot Extension is impossible for a couple of reasons. Most recently, GitHub has announced a sunset notice for that entire functionality in favor of MCP.
-> The [awesome-copilot](http://github.com/github/awesome-copilot) repo already supports MCP functionality plus an install into VS Code or Visual Studio. So I've started moving some of the better tested versions into that repo, too. I'll try to note where, but this version will *probably* be more up-to-date anyway.
+> The [github/awesome-copilot](https://github.com/github/awesome-copilot) repo already supports MCP (plus installs into VS Code and Visual Studio), so I’ve started moving some of the more stable pieces there.
 >
-> Drop a line if you want to collaborate or have questions! Check my socials on my profile page. 🦄
+> This repo will still get the newest experiments first, but the “official” ones will live upstream.
+>
+> Got questions or ideas? Feel free to reach out — socials are on my profile. 🦄
 
 ---
 
-Welcome to my collection of **Custom Instructions, Prompts, and Chat Modes** — your go-to resource for uniquely crafted, obsessively refined GitHub Copilot personalities. These were built for creative chaos, workflow upgrades, and the occasional code emergency.
+Welcome to my collection of **Custom Instructions, Prompts, and Chat Modes** — your one-stop shop for uniquely crafted, slightly over-caffeinated GitHub Copilot personalities. Built for creative chaos, workflow upgrades, and the occasional emergency refactor.
 
-Every mode here is handwritten by me (with ChatGPT running background triage and GitHub Copilot chiming in like a never-silent backseat driver). I occasionally take inspiration from other sources (always crediting them), but I always put my own spin on things to make them truly unique.
+Each mode here is handcrafted by me, with ChatGPT running background triage and Copilot chiming in like a backseat developer who just learned linting. I borrow inspiration from others (and always credit), but every piece is reshaped with my own twist.
 
-Each entry is clearly labeled by status, so you’ll know if you’re about to deploy a seasoned attending... or an intern who thinks “merge conflict” is a new diagnosis. Use the badges to gauge readiness and stability, then dive into the docs for detailed usage.
+Each entry is labeled by **status**, so you’ll know if you’re deploying a seasoned attending or a rookie who still thinks “merge conflict” sounds medical. Badges tell you how stable something is; docs tell you how to use it.
 
-Some ideas aren’t fully baked yet — a few are wild concepts still in beta-brainstorm mode, while others are rock-solid and battle-tested in my daily workflow. Either way, everything’s clearly marked so you know exactly what you’re getting into. Check out the [Status Lifecycle & Badges](./docs/status-badge-lifecycle.md) for the full rundown.
+Some of these are fresh ideas in beta-brainstorm mode, others are daily-use veterans. You’ll find their full lifecycle explained in [Status Lifecycle & Badges](./docs/status-badge-lifecycle.md).
 
-> 🦄 If things start to feel a little wild, just remember: it’s not quite *The Pitt*... but I do like to keep you on your toes!
+> 🦄 If things start to feel a little wild, remember — it’s not quite *The Pitt*, but I do like to keep you on your toes.
 
 ---
 
 ## Sparked It. Shaped It. Shoutouts. 💥
 
-> 🦄 This project isn’t fully baked yet - it’s somewhere between “I might be onto something” and “what if I made it do *this* too?”
-> But from the beginning, a few people showed up, encouraged the madness, and gave me room to run wild just to test a theory.
->
-> **Thank you** for your ideas, your encouragement, your feedback, and for listening during all the times *I wouldn’t shut up about it!* These shoutouts are for you. 🥰
+> 🦄 This project sits somewhere between “I might be onto something” and “what if I made it do *this* too?”
+> It only exists because a couple brilliant people let me ramble about it endlessly and encouraged the madness anyway.
 
 ### Courtney 🕹️
 
-For jumping into early testing with zero hesitation, breaking everything in sight (in the best way), and somehow still being excited to tell others about it. I appreciate the feedback, the encouragement, and your willingness to *poke the bear* to make things better.
-Your early involvement helps shape what this will become - **thank you** for being part of the chaos.
+For fearlessly testing from day one, breaking *everything* (with love), and still telling others about it. Your feedback and curiosity shaped so much of this — thank you for jumping into the chaos and making it fun.
 
 ### Vijaya 🧨
 
-**Thank you** for planting the original idea that I immediately ran with, rewired, and reimagined into something you probably don’t even recognize - but it's still firmly rooted in your vision of what *useful* actually looks like.
-Your influence, clarity, and push for building things that scale across teams lit the fuse. This entire project is built on that spark and simply wouldn’t exist without you.
+You lit the fuse with a simple idea that I immediately overengineered into something unrecognizable.
+Your clarity, sense of scale, and focus on what’s *useful* still anchor this entire thing. None of it would exist without that spark.
 
 ---
 
 # The `.github/` Directory 📚
 
-Welcome to the heart of this repository’s GitHub automation, documentation, and creative workflow tools. This folder contains the essential resources and configuration files that power collaboration, automation, and custom Copilot experiences across the project.
+Welcome to the heart of the repo — automation, docs, and the creative wiring that powers every Copilot experiment. Inside you’ll find the core configuration files and templates that make collaboration (and a little mischief) possible.
 
-Whether you’re looking for unique Copilot personalities, reusable prompt templates, or detailed instructions for contributors and bots, you’ll find the entry points here. For the full library of modes, prompts, and instructions, see the [`docs/`](./docs/) folder.
+Looking for reusable prompts, custom agent personas, or fabulous instructions? They all live here. For the deep library, check out the [`docs/`](./docs/) folder.
 
-Each document is clearly labeled by status (see [Status Lifecycle & Badges](./docs/status-badge-lifecycle.md)), so you’ll know if you’re about to deploy a seasoned attending... or an intern who thinks “merge conflict” is a new diagnosis.
+Each file follows the same badge lifecycle — so you’ll know exactly what you’re getting into before you summon the intern AI again.
 
-> 🦄 This repo thrives on creative chaos and workflow upgrades. If you’re new, start here to get oriented!
-
-## Getting Started 🚀
-
-**New to this repository?** Start with these essential guides:
-
-- **[🎯 REPO-SETUP.md](./REPO-SETUP.md)** - Quick 5-minute setup for new developers
-- **[🤝 CONTRIBUTING.md](./CONTRIBUTING.md)** - Save time and check out [github/awesome-copilot](https://github.com/github/awesome-copilot)
-- **[🛠️ DEVELOPMENT.md](./DEVELOPMENT.md)** - Technical details and advanced workflows
-
-These guides ensure you understand our standards and can contribute effectively from day one.
+> 🦄 This repo thrives on creative chaos and helpful automation. Start here, and everything else starts to make sense.
 
 ---
 
 ## Custom Instructions 🤹
 
-This is where the magic lives — reusable, testable, sometimes over-engineered instructions for GitHub Copilot and other AI agents. These aren’t prompts you paste once and forget — they’re designed to behave like little command-line utilities for your agent.
+This is where the magic lives — reusable, testable instructions that behave like little command-line utilities for your AI agent.
 
-> [!NOTE]
-> If you're using VS Code, you can enable custom instructions for Copilot by setting the `⚙️ copilot.customInstructions`field in your settings. If you're *not* using VS Code... well, you probably know what you're doing and I trust you to handle it.
+> [!TIP]
+> The `applyTo` pattern for each of these should change to `'**/*'` if you want it to be picked up everywhere (or substitute for anything following the same syntax as your `.gitignore`). In VS Code, there's a setting named `copilot.customInstructions` that controls which files Copilot can access, but the `applyTo` determines when it should be considered.
+> If you’re not using VS Code... you already know what you’re doing. 😉
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`design-principles`](./docs/instructions/design-principles.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles.md) | Evaluates design decisions for clarity, stability, and future impact | Inspired by legacy code PTSD and late-night refactors |
-| [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Checklist of logging do's and don'ts with multi-language examples | Designed to power [`The Logfather`](./docs/agents/logfather.md) chat mode, but not actively used there anymore |
-| `format-conventional-commit` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | Modern models are capable of handling this natively. |
-| `analyze-git-diff` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | No longer necessary with modern models |
+| [`design-principles`](./docs/instructions/design-principles.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles.md) | Evaluates design choices for clarity, stability, and scalability | Inspired by legacy code PTSD and midnight refactors |
+| [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Multi-language logging do’s and don’ts | Originally built for [`The Logfather`](./docs/agents/logfather.md); now semi-retired |
+| `format-conventional-commit` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | Modern Copilot models handle this natively |
+| `analyze-git-diff` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | No longer needed with newer agents |
 
-> 🦄 If Athena helped you bring order to your chaos, leave a star. You know she’s not asking for it — but she earned it.
+> 🦄 If anything helps bring order to your chaos, leave a star!
 
 ---
 
 ## Prompts 🧑‍🚀
 
-These are your spectral conductors — high-level prompts designed for Agent Mode that don’t *do* the work, they summon the right specialists to do it for them. Think: “raise the Diff Philosopher, call in the Commit Surgeon, validate it all without lifting a mortal finger.”
+These are your spectral conductors — high-level prompts for Agent Mode. They don’t *do* the work — they call in the right specialists who do.
 
-Each one knows exactly which tools to use (`#changes`, `#editFiles`, `#runInTerminal`) and when to call them. You’re not just generating content — you’re performing a séance on your staging area with precision and a clipboard.
-
-| Name | Status | Purpose | Notes |
-| - | :-: | - | - |
-| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) (v2) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI annotation | Simple, responsible, zero orchestration. |
-| `get-current-timestamp` | ![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-A0A0A0.svg) | Prompts Copilot to return the current timestamp in a standard format | Recent updates to Copilot's system instructions means it's now capable of handling this one on its own. |
-| `generate-commit-message` (v1) | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Original prompt was too noisy for newer models, re-written with that in mind as v2. | |
-
----
-
-## Agents (Formerly Chat Modes) 👷‍♂️
-
-Welcome to my collection of custom Agents - your go-to ER for uniquely crafted GitHub Copilot personalities, all designed for creative chaos, workflow upgrades, and occasional code emergencies. Every mode here is handpicked by me (with ChatGPT running triage in the background).
-
-> 🦄 If things start to feel a little wild, just remember: it’s not quite The Pitt—but we do like to keep you on your toes.
+Each one knows which tools to summon (`#changes`, `#editFiles`, `#runInTerminal`) and how to orchestrate them. Think séance, but for build automation.
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](./docs/agents/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/agents/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review**. | Not designed to write code or tests. <br>**Note:** This also lives in [awesome-copilot](https://github.com/github/awesome-copilot) repo. |
-| [`logfather`](./docs/agents/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
-| [`instructionalist`](./docs/agents/instructionalist.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/agents/instructionalist.md) | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
-| [`Principal Pragmatist`](./docs/agents/pragmatist.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/pragmatist.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This works for most everything *except* what I wrote it for. \[WIP] |
-
-> 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
+| [`generate-commit-message`](./docs/prompts/generate-commit-message.md) (v2) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message.md) | One-shot commit message generator with RAI footer | Responsible automation, step one. Zero orchestration drama. |
+| `get-current-timestamp` | ![Deprecated - Gray](https://img.shields.io/badge/status-deprecated-A0A0A0.svg) | Returns a standard timestamp | Newer Copilot models handle this automatically |
+| `generate-commit-message` (v1) | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Too noisy for new models | Rewritten in v2 for sanity and silence |
 
 ---
 
-> ⭐️ If you tested any of the above modes and it helped you out, leave a star! If it failed spectacularly, let me know and I'll investigate. Check back soon for updates.
+## Agents (formerly Chat Modes) 👷‍♂️
 
-<small>Generated initially with the help of ChatGPT as directed by Ashley Childress</small>
+Custom AI "personalities with a purpose" for Copilot Chat and MCP. They’re all designed for creative chaos, workflow clarity, and the occasional existential debugging crisis.
+
+> 🦄 If it feels too wild, relax—it’s not exactly *The Pitt*. I'm just making sure you're awake.
+
+| Name | Status | Purpose | Notes |
+| - | :-: | - | - |
+| [`hlbpa`](./docs/agents/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/agents/hlbpa.md) | Configures Copilot Chat (or any MCP host) as a Principal Systems Architect — focused on documentation and review | Not meant to write code; also lives in [awesome-copilot](https://github.com/github/awesome-copilot) |
+| [`logfather`](./docs/agents/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/logfather.md) | Structured log enforcement with style and severity | Works solo or with `logging-best-practices` |
+| [`instructionalist`](./docs/agents/instructionalist.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/agents/instructionalist.md) | Section-driven repo wizard with detective flair | Metadata built in; fun optional |
+| [`Principal Pragmatist`](./docs/agents/pragmatist.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/pragmatist.md) | Senior-to-principal engineer persona 🧭: concise, witty, peer-level | Works for everything *except* what I built it for. \[WIP 🙄] |
+
+---
+
+> ⭐️ If one of these guys helped you, leave a star!
+> If it failed spectacularly, tell me. Either way, I’ll learn something — and so will the bot.
+
+<small>Generated with a highly suspicious amount of help from ChatGPT, directed by Ashley Childress.</small>
