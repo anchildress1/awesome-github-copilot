@@ -17,19 +17,15 @@ These tools quietly make sure everything looks intentional — even when it’s 
 
 ```markdown
 .github/
-  ├── instructions/     # VS Code–ready instruction files
-  ├── prompts/          # Agent Mode prompt definitions
-  └── ~~chatmodes/~~ agents/ # Custom agent blueprints
+  ├── instructions/     # VS Code compatible instructions
+  ├── prompts/          # Agent Mode prompts
+  └── agents/           # Chat mode definitions
 docs/
   ├── instructions/     # Instruction documentation
   ├── prompts/          # Prompt documentation
-  └── ~~chatmodes/~~ agents/ # Custom agent documentation
+  └── agents/           # Chat mode documentation
 ```
 
 > The folders mirror each other — one is supposed to be written for AI, and the other one for humans. That's the intent... but Copilot often confuses them and I'm not ready to part with my only hope at explaining this insanity. 🧚‍♀️
 
-## Status System 🚦
-
-All artifacts use **status badges** in their frontmatter — because nothing says “progress” like a tiny colorful rectangle! ChatGPT even came up with a pretty nice color palette just for this. It'd be a shame to waste it!
-
-See [status-badge-lifecycle.md](./docs/status-badge-lifecycle.md) for the full maturity map.
+All artifacts use status badges in frontmatter. See [status-badge-lifecycle.md](./docs/status-badge-lifecycle.md).

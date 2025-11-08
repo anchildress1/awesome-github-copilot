@@ -4,7 +4,7 @@
 [![Open Issues](https://img.shields.io/github/issues/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/issues) [![Last commit](https://img.shields.io/github/last-commit/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/commits/main)
 [![Node](https://img.shields.io/badge/node-25.x-green.svg)](https://nodejs.org/) [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE) [![Made with GitHub Copilot](https://img.shields.io/badge/Made%20with-GitHub%20Copilot-blue?logo=github-copilot\&logoColor=white)](https://github.com/features/copilot)
 
-> [!NOTE]
+> \[!NOTE]
 > So my original idea of making all this directly accessible through a Copilot Extension hit a wall — a few walls, actually.
 > GitHub recently announced the **sunset of that functionality** in favor of **MCP**.
 >
@@ -60,7 +60,7 @@ Each file follows the same badge lifecycle — so you’ll know exactly what you
 
 This is where the magic lives — reusable, testable instructions that behave like little command-line utilities for your AI agent.
 
-> [!TIP]
+> \[!TIP]
 > The `applyTo` pattern for each of these should change to `'**/*'` if you want it to be picked up everywhere (or substitute for anything following the same syntax as your `.gitignore`). In VS Code, there's a setting named `copilot.customInstructions` that controls which files Copilot can access, but the `applyTo` determines when it should be considered.
 > If you’re not using VS Code... you already know what you’re doing. 😉
 
@@ -97,10 +97,12 @@ Custom AI "personalities with a purpose" for Copilot Chat and MCP. They’re all
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](./docs/agents/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/agents/hlbpa.md) | Configures Copilot Chat (or any MCP host) as a Principal Systems Architect — focused on documentation and review | Not meant to write code; also lives in [awesome-copilot](https://github.com/github/awesome-copilot) |
-| [`logfather`](./docs/agents/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/logfather.md) | Structured log enforcement with style and severity | Works solo or with `logging-best-practices` |
-| [`instructionalist`](./docs/agents/instructionalist.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/agents/instructionalist.md) | Section-driven repo wizard with detective flair | Metadata built in; fun optional |
-| [`Principal Pragmatist`](./docs/agents/pragmatist.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/pragmatist.md) | Senior-to-principal engineer persona 🧭: concise, witty, peer-level | Works for everything *except* what I built it for. \[WIP 🙄] |
+| [`hlbpa`](./docs/agents/hlbpa.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/agents/hlbpa.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review**. | Not designed to write code or tests. <br>**Note:** This also lives in [awesome-copilot](https://github.com/github/awesome-copilot) repo. |
+| [`logfather`](./docs/agents/logfather.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/logfather.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
+| [`instructionalist`](./docs/agents/instructionalist.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/agents/instructionalist.md) | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
+| [`Principal Pragmatist`](./docs/agents/pragmatist.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/pragmatist.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This works for most everything *except* what I wrote it for. \[WIP] |
+
+> 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
 
 ---
 
