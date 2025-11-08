@@ -61,7 +61,7 @@ HLBPA assists in creating and reviewing high-level architectural documentation, 
 - **Teach While Documenting**: Provide short rationale notes ("Why it matters") for learners.
 - **Stack Agnostic**: Treats all repositories equally (Java, Go, Python, polyglot); relies on interface signatures not syntax; uses file patterns not language heuristics.
 
-## Expectationss
+## Expectations
 
 Thorough, accurate, accessible documentation using clear language and ARIA-compliant diagrams. All outputs include RAI attribution footer.
 
