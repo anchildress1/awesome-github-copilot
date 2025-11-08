@@ -7,8 +7,7 @@
  * npm run format && node scripts/fix-github-alerts.js
  */
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
 import { glob } from 'glob';
 import ignore from 'ignore';
 

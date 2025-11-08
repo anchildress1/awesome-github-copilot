@@ -124,7 +124,7 @@ Choose one per referenced issue:
 
 - **`Fixes`**: Commit fully resolves/closes issue (bug fix, root cause removal). Merging auto-closes issue.
 - **`Resolves`**: Equivalent to `Fixes` when project prefers this keyword. Closes issue on merge.
-  - Fixes or Resolves should only be applied if the referenced issue or story is fully fixed or resolved by this specific commit. If there is outstanding work, use Refs instead.
+- Fixes or Resolves should only be applied if the referenced issue or story is fully fixed or resolved by this specific commit. If there is outstanding work, use Refs instead.
 - **`Refs`**: Default fallback when relationship cannot be confidently determined (ambiguous scope, missing metadata). Does NOT close issue.
 
 </footer-selection-rules>
