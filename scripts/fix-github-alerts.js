@@ -7,25 +7,15 @@
  * npm run format && node scripts/fix-github-alerts.js
  */
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
 import { glob } from 'glob';
 import ignore from 'ignore';
 
 function fixGitHubAlerts(content) {
-  // --- Regex component breakdown for readability and maintainability ---
-  // Matches a backslash, a single forward slash not part of a double slash, or the HTML entity for backslash.
-  const ESCAPE_VARIANTS = String.raw`(?:\\\\|(?<!\/)\/(?!\/)|&#92;)`; // \\, / (not //), or &#92;
-  // Matches any whitespace or Unicode zero-width characters (U+200B, U+FEFF)
-  const OPTIONAL_WS_OR_ZERO_WIDTH = String.raw`[\s\u200B\uFEFF]*`;
-  // Matches the GitHub alert keywords (case-insensitive)
-  const ALERT_KEYWORDS = String.raw`(IMPORTANT|NOTE|TIP|WARNING|CAUTION|INFO)`;
-  // Full pattern: escape variant + optional whitespace/zero-width + [! + optional whitespace/zero-width + keyword + ]
-  // The pattern is case-insensitive and global.
-  const re = new RegExp(
-    `${ESCAPE_VARIANTS}${OPTIONAL_WS_OR_ZERO_WIDTH}\\[!${OPTIONAL_WS_OR_ZERO_WIDTH}${ALERT_KEYWORDS}\\]`,
-    'gi'
-  );
+  // Match common escape variants but avoid matching when the slash is part of
+  // a '//' pattern (e.g. protocol-relative URLs). We use negative lookbehind
+  // and lookahead to ensure a single '/' is not adjacent to another '/'.
+  const re = /(?:\\|(?<!\/)\/(?!\/)|&#92;)[\s\u200B\uFEFF]*\[![\s\u200B\uFEFF]*(IMPORTANT|NOTE|TIP|WARNING|CAUTION|INFO)\]/gi;
   // Use replaceAll with the capture to rebuild canonical [!KEYWORD]
   return content.replaceAll(re, '[!$1]');
 }
