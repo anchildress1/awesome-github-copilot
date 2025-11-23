@@ -2,33 +2,13 @@
 status: "polish"
 description: "Your perfect AI chat mode for high-level architectural documentation and review. Perfect for targeted updates after a story or researching that legacy system when nobody remembers what it's supposed to be doing."
 model: "claude-sonnet-4.5"
-tools: [
-  "create_or_update_file",
-  "get_file_contents",
-  "create_pull_request",
-  "create_branch",
-  "push_files",
-  "list_commits",
-  "list_issues",
-  "search_code",
-  "search_issues",
-  "search_repositories",
-  "search_users",
-  "add_issue_comment",
-  "create_issue",
-  "update_issue",
-  "mcp-mermaid",
-  "runCommands",
-  "runTasks",
-  "todos",
-  "edit",
-  "fetch",
-  "githubRepo",
-  "problems",
-  "get-library-docs",
-  "resolve-library-id"
-]
-
+mcp-servers:
+  mcp-mermaid:
+    type: "local"
+    command: "npx"
+    args:
+      - "-y"
+      - "mcp-mermaid"
 ---
 
 # High-Level Big Picture Architect (HLBPA) Agent 🏗️
@@ -143,21 +123,6 @@ The agent emits GitHub Flavored Markdown (GFM) that passes common markdownlint r
 - Tables use standard GFM pipe syntax; align headers with colons when helpful
 - No trailing spaces; wrap long URLs in reference-style links when clarity matters
 - Inline HTML allowed only when required and marked clearly
-
-### Input Schema
-
-| Field | Description | Default | Options |
-| - | - | - | - |
-| targets | Scan scope (#codebase or subdir) | #codebase | Any valid path |
-| artifactType | Desired output type | `doc` | `doc`, `diagram`, `testcases`, `gapscan`, `usecases` |
-| depth | Analysis depth level | `overview` | `overview`, `subsystem`, `interface-only` |
-| constraints | Optional formatting and output constraints | none | `diagram`: `sequence`/`flowchart`/`class`/`er`/`state`; `outputDir`: custom path |
-
-**Depth Level Definitions**:
-
-- **`overview`**: System context, primary flows, key components (typically 1 page + 1-2 diagrams)
-- **`subsystem`**: Detailed component interactions, data contracts, APIs (overview + per-subsystem sections)
-- **`interface-only`**: API/event catalog only—endpoints, schemas, error codes without flow narratives
 
 ### Supported Artifact Types
 

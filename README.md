@@ -1,10 +1,8 @@
 # awesome-github-copilot 🔭
 
-[![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot) [![GitHub stars](https://img.shields.io/github/stars/anchildress1/awesome-github-copilot.svg?style=social\&label=Stars)](https://github.com/anchildress1/awesome-github-copilot/stargazers)
-[![Open Issues](https://img.shields.io/github/issues/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/issues) [![Last commit](https://img.shields.io/github/last-commit/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/commits/main)
-[![Node](https://img.shields.io/badge/node-25.x-green.svg)](https://nodejs.org/) [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE) [![Made with GitHub Copilot](https://img.shields.io/badge/Made%20with-GitHub%20Copilot-blue?logo=github-copilot\&logoColor=white)](https://github.com/features/copilot)
+[![wakatime](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot.svg)](https://wakatime.com/badge/github/anchildress1/awesome-github-copilot) [![GitHub stars](https://img.shields.io/github/stars/anchildress1/awesome-github-copilot.svg?style=social\&label=Stars)](https://github.com/anchildress1/awesome-github-copilot/stargazers) [![Open Issues](https://img.shields.io/github/issues/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/issues) [![Last commit](https://img.shields.io/github/last-commit/anchildress1/awesome-github-copilot.svg)](https://github.com/anchildress1/awesome-github-copilot/commits/main) [![Node](https://img.shields.io/badge/node-25.x-green.svg)](https://nodejs.org/) [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE) [![Made with GitHub Copilot](https://img.shields.io/badge/Made%20with-GitHub%20Copilot-blue?logo=github-copilot\&logoColor=white)](https://github.com/features/copilot)
 
-> \[!NOTE]
+> [!NOTE]
 > So my original idea of making all this directly accessible through a Copilot Extension hit a wall — a few walls, actually.
 > GitHub recently announced the **sunset of that functionality** in favor of **MCP**.
 >
@@ -60,7 +58,7 @@ Each file follows the same badge lifecycle — so you’ll know exactly what you
 
 This is where the magic lives — reusable, testable instructions that behave like little command-line utilities for your AI agent.
 
-> \[!TIP]
+> [!TIP]
 > The `applyTo` pattern for each of these should change to `'**/*'` if you want it to be picked up everywhere (or substitute for anything following the same syntax as your `.gitignore`). In VS Code, there's a setting named `copilot.customInstructions` that controls which files Copilot can access, but the `applyTo` determines when it should be considered.
 > If you’re not using VS Code... you already know what you’re doing. 😉
 
