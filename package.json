@@ -29,7 +29,7 @@
     "commitlint": "npx commitlint --verbose --edit"
   },
   "volta": {
-    "node": "25.1.0"
+    "node": "24.12.0"
   },
   "engines": {
     "node": "25.x.x"

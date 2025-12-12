@@ -29,6 +29,8 @@ Generate a valid conventional commit message based on staged git changes and sav
 - **Subject Line**:
   - Prefer minor types (`fix`, `refactor`) unless functionality warrants a major release (`feat`).
   - If a Jira key exists, use it strictly as the scope; otherwise use a one-word area description.
+- **Footers**:
+  - Never for any reason add a `Signed-off-by` footer on behalf of a user, even if validation fails.
 
 </style-guidelines>
 <formatting-constraints>
@@ -52,6 +54,7 @@ Generate a valid conventional commit message based on staged git changes and sav
 - **Validation**:
   - Rephrase subject or split long bullets to comply with length limits.
   - Ensure no single bullet spans multiple lines.
+  - Allow failures for the `Signed-off-by` footer only.
 
 </formatting-constraints>
 <workflow-overview>

@@ -59,20 +59,28 @@ If you haven’t read it yet, the [RAI section of my blog post](https://dev.to/a
 
 ## Issue References 🔗
 
-When your changes relate to an issue or ticket that AI can see, then it will add a footer to show the connection. Different footers indicate different types of relationships:
+When your changes relate to a Jira ticket or issue, the generator will use the Jira key as the **scope** in the commit subject, not as a footer. This creates a direct link between your commit and the issue.
 
-**`Fixes #123`** - This commit completely solves the issue. The problem is gone, the root cause is addressed, and the issue can be closed.
+**Scope Examples:**
 
-**`Resolves #456`** - Same as Fixes, but some projects prefer this word. It means the issue is fully resolved.
+- `feat(PROJ-123): add new authentication feature`
+- `fix(DEVOPS-456): resolve database connection timeout`
+- `refactor(UI-789): simplify component structure`
 
-**`Refs #789`** - This work is related to the issue but doesn't close it. Maybe it's a partial fix, adds tests, or provides context for future work.
+If no Jira key is found in the branch name or commit context, the scope will use a one-word area description instead (e.g., `feat(auth): add login validation`).
+
+**Footer Relationships** (when explicitly needed):
+
+- **`Fixes PROJ-123`** - This commit completely solves the issue
+- **`Resolves DEVOPS-456`** - Same as Fixes, but some projects prefer this word
+- **`Refs UI-789`** - This work is related but doesn't close the issue
 
 ---
 
 ## Output Example 📤
 
 ```text
-feat(search-index): introduce incremental indexer with content dedupe
+feat(DEVOPS-2025): introduce incremental indexer with content dedupe
 
 - Add `buildIncrementalIndex()` pipeline for batched documents
 - Implement `getPendingDocs()` repository for staged fetches
@@ -82,7 +90,6 @@ feat(search-index): introduce incremental indexer with content dedupe
 - Add comprehensive test coverage for indexer and repository layers
 - Update design notes and runbook to reflect the streamlined flow
 
-Fixes DEVOPS-2025
 Co-authored-by: GitHub Copilot <github.copilot@github.com>
 ```
 
