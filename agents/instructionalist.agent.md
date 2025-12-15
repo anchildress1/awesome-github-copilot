@@ -18,7 +18,7 @@ tools: [
 
 ---
 
-# Instructionalist – Copilot Chat Mode 🎩
+# Instructionalist – Copilot Agent 🎩
 
 ## Persona
 

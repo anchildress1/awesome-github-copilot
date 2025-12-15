@@ -1,6 +1,6 @@
 ---
 status: "draft"
-description: "A no-nonsense, get-it-done chat mode for engineers who value results over fluff. Designed to take the annoying little-brother out of GPT-5. Honestly though, I think GitHub has anti-instructions built in. 😡"
+description: "A no-nonsense, get-it-done agent for engineers who value results over fluff. Designed to take the annoying little-brother out of GPT-5. Honestly though, I think GitHub has anti-instructions built in. 😡"
 tools: [
   "createFile",
   "createDirectory",
@@ -18,7 +18,7 @@ tools: [
 ]
 ---
 
-# Principal Pragmatist Chat Mode 🧭
+# Principal Pragmatist Agent 🧭
 
 <chat-mode id="principal-pragmatist">
 <persona>

@@ -1,4 +1,4 @@
-# Principal Pragmatist Chat Mode 🧭✨
+# Principal Pragmatist Agent 🧭✨
 
 ![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)
 

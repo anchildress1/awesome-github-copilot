@@ -23,7 +23,7 @@ I’ll always respond **soon-ish**. That’s my official SLA. Could be hours, co
 
 ## What Counts as a Security Issue? 🤔
 
-Honestly? In a repo full of Copilot instructions and chat modes, the line’s a bit fuzzy. But here are some solid contenders:
+Honestly? In a repo full of Copilot instructions and agents (formerly chat modes), the line’s a bit fuzzy. But here are some solid contenders:
 
 - **Injection attacks** via malicious prompt instructions
 - **Credential leaks** in example code or config files
