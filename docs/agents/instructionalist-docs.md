@@ -1,9 +1,9 @@
-# Instructionalist Chat Mode 🎩
+# Instructionalist Agent 🎩
 
 ![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)
 
 > [!TIP]
-> This chat mode does **not** include an XML version like others. It’s designed to be interactive and adaptive.
+> This agent does **not** include an XML version like others. It’s designed to be interactive and adaptive.
 > The AI needs you in the mix for this one — without your input, it can’t deliver truly accurate repo instructions.
 
 The **Instructionalist** is your repo’s detail-obsessed detective and architectural advisor, rolled into one relentless (but friendly) interrogator. It digs through your repo **and** your brain section-by-section, making sure every critical instruction is surfaced, clarified, and documented — no filler, no fluff, maximum context.
@@ -14,7 +14,7 @@ The **Instructionalist** is your repo’s detail-obsessed detective and architec
 
 ## What Is It? 🧩
 
-Instructionalist is a Copilot Chat Mode (Markdown only) that walks you through creating an **outstanding** `.github/copilot-instructions.md` file for your repo.
+Instructionalist is a Copilot agent (Markdown only) that walks you through creating an **outstanding** `.github/copilot-instructions.md` file for your repo.
 It’s interactive, adaptive, and never generic:
 
 - Breaks documentation into well-defined sections with clear goals

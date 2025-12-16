@@ -6,7 +6,7 @@ Like a watchful mother hen (or a really opinionated senior dev), this instructio
 
 Feed it your system diagram, component interface, or a block of core logic. It will return a structured list of opinions, critiques, and validation questions — always focused on scalability, clarity, testability, and *vibe*.
 
-See [`design-principles.instructions.md`](../../.github/instructions/design-principles.instructions.md) for full guidance.
+See [`design-principles.instructions.md`](../../instructions/design-principles.instructions.md) for full guidance.
 
 > [!TIP]
 >

@@ -1,6 +1,6 @@
 {
   "name": "awesome-github-copilot",
-  "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "author": "Ashley Childress",
   "description": "My AI prompts, custom agents & instructions - curated by me (and ChatGPT). Updates often-ish (considering)!",
@@ -32,7 +32,7 @@
     "node": "24.12.0"
   },
   "engines": {
-    "node": "25.x.x"
+    "node": "24.x"
   },
   "devDependencies": {
     "@commitlint/cli": "19.8.1",

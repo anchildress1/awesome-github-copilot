@@ -14,4 +14,4 @@ Each mode, prompt, or instruction earns a status badge (find the badge legend ri
 
 > [!Note]
 >
-> Badges always live in the README, never in the actual chat mode or instruction file. If you find a stray badge in the code... you’ve probably entered the Upside Down.
+> Badges always live in the README, never in the actual ~~chat mode~~ agent or instruction file. If you find a stray badge in the code... you’ve probably entered the Upside Down.

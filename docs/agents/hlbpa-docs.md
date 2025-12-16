@@ -1,8 +1,8 @@
-# HLBPA Chat Mode (High-Level Big-Picture Architect) ✨
+# HLBPA Agent (High-Level Big-Picture Architect) ✨
 
-View this chat mode and more in the [awesome-copilot repository on GitHub.](https://github.com/github/awesome-copilot)
+View this agent and more in the [awesome-copilot repository on GitHub.](https://github.com/github/awesome-copilot)
 
-![Status: HLBPA Chat Mode — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)
+![Status: HLBPA Agent — Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)
 
 > NOTE: XML-supported agent versions have been removed to reduce maintenance. Use the Markdown-based custom agent format going forward.
 
@@ -34,7 +34,7 @@ HLBPA is your AI-powered architectural documentation assistant. It helps you qui
 **Example Prompt:**
 
 ```markdown
-Please generate high-level documentation for this repo using the provided HLBPA chat mode. My name is Jane Doe. Artifact: architecture diagram and the test coverage gap report.
+Please generate high-level documentation for this repo using the provided HLBPA agent. My name is Jane Doe. Artifact: architecture diagram and the test coverage gap report.
 ```
 
 ### Artifact Types 🧩

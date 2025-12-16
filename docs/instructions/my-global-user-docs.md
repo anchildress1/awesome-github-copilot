@@ -3,7 +3,7 @@
 ![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg)
 
 > [!IMPORTANT]
-> Grab the instructions file from [.github/instructions/my-global-user.instructions.md](../../.github/instructions/my-global-user.instructions.md)
+> Grab the instructions file from [./instructions/my-global-user.instructions.md](../../instructions/my-global-user.instructions.md)
 
 ## Quick FYI 📌
 
