@@ -128,13 +128,14 @@ Fallback (last resort):
 
 1. Determine evidence source using priority rules (staged preferred when available)
 2. Analyze diff for intent and affected areas
-3. If multiple unrelated areas are detected:
+3. Check branch name for ticket ID (e.g., PROJ-123) and use as scope if found
+4. If multiple unrelated areas are detected:
    - Emit a recommendation to split the changes into multiple commits (outside the commit message)
-4. Choose minimal valid type and scope
-5. Apply breaking change rule (requires prior real release + required user action)
-6. Choose exactly one AI attribution footer using deterministic rules
-7. Write message to `commit.tmp`
-8. Output the identical commit message in a single code block (chat output or stdout)
+5. Choose minimal valid type and scope
+6. Apply breaking change rule (requires prior real release + required user action)
+7. Choose exactly one AI attribution footer using deterministic rules
+8. Write message to `commit.tmp`
+9. Output the identical commit message in a single code block (chat output or stdout)
 
 ---
 
