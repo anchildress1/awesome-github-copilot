@@ -64,8 +64,9 @@ This is where the magic lives — reusable, testable instructions that behave li
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`design-principles`](./docs/instructions/design-principles-docs.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles-docs.md) | Evaluates design choices for clarity, stability, and scalability | Inspired by legacy code PTSD and midnight refactors |
-| [`logging-best-practices`](./docs/instructions/logging-best-practices-docs.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices-docs.md) | Multi-language logging do’s and don’ts | Originally built for [`The Logfather`](./docs/agents/logfather-docs.md); now semi-retired |
+| [`Copilot Behavior Modification System`](./instructions/my-global-user.instructions.md) <br /> aka My Personal User Instructions | [![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/my-global-user-docs.md) | My custom Copilot leash to help prevent unwarranted side quests | Bonus personality adjustment! |
+| [`design-principles`](./instructions/design-principles.instructions.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles-docs.md) | Evaluates design choices for clarity, stability, and scalability | Inspired by legacy code PTSD and midnight refactors |
+| [`logging-best-practices`](./instructions/logging-best-practices.instructions.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices-docs.md) | Multi-language logging do’s and don’ts | Originally built for [`The Logfather`](./agents/logfather.agent.md); now semi-retired |
 | `format-conventional-commit` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | Modern Copilot models handle this natively |
 | `analyze-git-diff` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | | No longer needed with newer agents |
 
@@ -81,7 +82,7 @@ Each one knows which tools to summon (`#changes`, `#editFiles`, `#runInTerminal`
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`generate-commit-message`](./docs/prompts/generate-commit-message-docs.md) (v3) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message-docs.md) | One-shot commit message generator with RAI footer | Responsible automation, step one. Zero orchestration drama. |
+| [`generate-commit-message`](./prompts/generate-commit-message.prompt.md) (v3) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/prompts/generate-commit-message-docs.md) | One-shot commit message generator with RAI footer | Responsible automation, step one. Zero orchestration drama. |
 | `get-current-timestamp` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Returns a standard timestamp | Newer Copilot models handle this automatically |
 | `generate-commit-message` (v1) | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Too noisy for new models | Rewritten in v2 for sanity and silence |
 
@@ -95,10 +96,10 @@ Custom AI "personalities with a purpose" for Copilot Chat and MCP. They’re all
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`hlbpa`](./docs/agents/hlbpa-docs.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/agents/hlbpa-docs.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review**. | Not designed to write code or tests. <br>**Note:** This also lives in [awesome-copilot](https://github.com/github/awesome-copilot) repo. |
-| [`logfather`](./docs/agents/logfather-docs.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/logfather-docs.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
-| [`instructionalist`](./docs/agents/instructionalist-docs.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/agents/instructionalist-docs.md) | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
-| [`Principal Pragmatist`](./docs/agents/pragmatist-docs.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/pragmatist-docs.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This works for most everything *except* what I wrote it for. \[WIP] |
+| [`hlbpa`](./agents/hlbpa.agent.md) (High-Level Big-Picture Architect) | [![Status: Polish (purple badge)](https://img.shields.io/badge/status-polish-9B5DE5.svg)](./docs/agents/hlbpa-docs.md) | Configure Copilot Chat (or any AI/MCP extension host) to act as a Principal Systems Architect focused on high-level, architectural **documentation and review**. | Not designed to write code or tests. <br>**Note:** This also lives in [awesome-copilot](https://github.com/github/awesome-copilot) repo. |
+| [`logfather`](./agents/logfather.agent.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/logfather-docs.md) | Secure, structured log enforcement with swagger and severity | Works alone or paired with `logging-best-practices` |
+| [`instructionalist`](./agents/instructionalist.agent.md) | [![Status: Tweak (orange badge)](https://img.shields.io/badge/status-tweak-FB5607.svg)](./docs/agents/instructionalist-docs.md) | Interactive, section-driven repo instructions wizard with a detective vibe | Section metadata built-in; fun mode available |
+| [`Principal Pragmatist`](./agents/pragmatist.agent.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/agents/pragmatist-docs.md) | Configure Copilot Chat to act as a senior-to-principal engineer 🧭: concise, pragmatic, humorous, and peer-level. Always considers all options 🔍, challenges when needed 🤝, and obeys instructions to the letter 🛠️. | This works for most everything *except* what I wrote it for. \[WIP] |
 
 > 🦄 Request several artifacts in one go to maximize each run. It may use extra GitHub Actions minutes, but you'll save on premium requests by reducing the total number of prompts.
 
