@@ -64,7 +64,7 @@ This is where the magic lives — reusable, testable instructions that behave li
 
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
-| [`Copilot Behavior Modification System`](.github/instructions/my-global-user.instructions.md) <br /> aka My Personal User Instructions | [![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/my-global-user-docs.md) | My custom Copilot leash to help prevent unwarrented side quests | Bonus personality adjustment! |
+| [`Copilot Behavior Modification System`](.github/instructions/my-global-user.instructions.md) <br /> aka My Personal User Instructions | [![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/instructions/my-global-user-docs.md) | My custom Copilot leash to help prevent unwarranted side quests | Bonus personality adjustment! |
 | [`design-principles`](./docs/instructions/design-principles.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/instructions/design-principles.md) | Evaluates design choices for clarity, stability, and scalability | Inspired by legacy code PTSD and midnight refactors |
 | [`logging-best-practices`](./docs/instructions/logging-best-practices.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/instructions/logging-best-practices.md) | Multi-language logging do’s and don’ts | Originally built for [`The Logfather`](./docs/agents/logfather.md); now semi-retired |
 | `format-conventional-commit` | ![Removed - Dark Gray](https://img.shields.io/badge/status-removed-4B4B4B.svg) | Modern Copilot models handle this natively | |

@@ -29,7 +29,7 @@ Translation: it teaches AI how to behave around *me* and my repos and is not des
 
 AI should assume:
 
-- there are **no  global dependencies**
+- there are **no global dependencies**
 - `uv` handles Python, `volta` has Node, `sdkman` for Java-y things
 - repeatability beats vibes
 

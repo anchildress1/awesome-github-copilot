@@ -1,5 +1,7 @@
 ---
-applyTo: '**'
+status: "check"
+description:  "My personal Copilot rules so the AI behaves, doesn’t touch git, validates its work, and stops inventing vibes."
+applyTo: "**"
 ---
 
 # Custom AI Instructions From Your User
