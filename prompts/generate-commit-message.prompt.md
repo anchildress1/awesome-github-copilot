@@ -124,6 +124,21 @@ Fallback (last resort):
 
 ---
 
+## AI Attribution Signing
+
+Use this guide when choosing the appropriate AI attribution signature:
+
+| AI Name | Expected Attribution Signature |
+| - | - |
+| GitHub Copilot | `GitHub Copilot <copilot@github.com>` |
+| Verdent AI | `Verdent AI <noreply@verdent.ai>` |
+| Claude | `Claude <claude@anthropic.com>` |
+| Gemini | `Gemini <gemini@google.com>` |
+| Codex | `Codex <codex@openai.com>` |
+| ChatGPT | `ChatGPT <chatgpt@openai.com>` |
+
+---
+
 ## Workflow
 
 1. Determine evidence source using priority rules (staged preferred when available)

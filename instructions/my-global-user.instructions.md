@@ -123,6 +123,7 @@ applyTo: "**"
 - Update **existing documentation** whenever possible.
 - ADRs are historical artifacts and must not be rewritten.
 - All documentation lives under `./docs`, using logical subfolders.
+- Prioritize concise, high-value documentation that maximizes utility for developers and end-users without unnecessary verbosity.
 
 ---
 
@@ -136,8 +137,6 @@ Apply these rules only in repositories that contain Python code:
 - Never invoke `pip` directly.
 - Assume `uv` for installs, execution, and environment management.
 
----
-
 ### Node.js Constraints
 
 Apply these rules only in repositories that contain Node/JS/TS:
@@ -148,8 +147,6 @@ Apply these rules only in repositories that contain Node/JS/TS:
   - CommonJS patterns
   - legacy loaders
   - compatibility shims
-
----
 
 ### Java Management
 
@@ -170,8 +167,8 @@ Apply these rules only in repositories that contain Java or JVM-based builds:
   - This applies to files that **control or maintain the repo itself**.
   - This does **not** include code or documentation the repo is designed to provide.
 - You **must** surface recommended config changes clearly in chat when they would improve correctness, safety, or consistency.
-- Suggestions are expected.
-- Silent edits are forbidden.
+  - Suggestions are expected.
+  - Silent edits are forbidden.
 
 ---
 
