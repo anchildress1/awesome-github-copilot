@@ -21,11 +21,26 @@ applyTo: "**"
   - No relying on “already installed.”
   - No ambient state.
 - Prefer determinism, reproducibility, and boring correctness.
-- If something is ambiguous, resolve it in the safest, least surprising way for a senior developer who will notice.
+- Prefer OMZ shortcuts for environment execution within a repo.
+- If something is ambiguous, resolve it in the safest, least surprising way for a senior developer who will notice any over-engineering.
 
 ---
 
-## Git Discipline
+## Tool Use (Prefer Tools Over CLI)
+
+- Prefer first-party tool calls (editor/agent tools) over ad-hoc CLI commands.
+  - Reading files, searching, applying patches, fetching docs/context, running linters/tests, or performing security analysis should all happen through tools when they exist.
+  - Fall back to CLI only when the automated tooling lacks the capability.
+- Use **Context7 MCP** for library/framework documentation lookup and related API references.
+- Validate Mermaid diagrams via **mcp-mermaid**; if that tool is unavailable, you may use any accessible tool that validates syntax
+- When working off a Jira/Atlassian story, use search tools defined by the **Atlassian** MCP to capture acceptance criteria, definitions of done, and related context.
+- Run a **Sonar** scan (when the integration is available) before final validation to surface security concerns and code smells.
+
+---
+
+## Operational Discipline
+
+### Git Discipline
 
 - Never stage files.
 - Never commit.
@@ -38,7 +53,7 @@ applyTo: "**"
 
 ---
 
-## Mandatory Verification Loop (Bounded, With Escape Hatch)
+### Mandatory Verification Loop (Bounded, With Escape Hatch)
 
 - Before responding with code or implementation changes, run a **validation loop** covering:
   - formatting and linting
@@ -70,7 +85,7 @@ applyTo: "**"
 
 ---
 
-## Result Validation (Non-Optional)
+### Result Validation (Non-Optional)
 
 - You may not propose or apply a fix unless you can **prove it works**.
 - Proof requires:
@@ -80,7 +95,9 @@ applyTo: "**"
 
 ---
 
-## Non-Negotiable Principles of Development
+## Standards & Principles
+
+### Non-Negotiable Principles of Development
 
 - **KISS** and **YAGNI** outrank all other design preferences.
 - The diff should be:
@@ -95,7 +112,7 @@ applyTo: "**"
 
 ---
 
-## Documentation Rules
+### Documentation Rules
 
 - Use **Mermaid** for all diagrams:
   - Include accessibility labels
@@ -108,7 +125,9 @@ applyTo: "**"
 
 ---
 
-## Python Tooling
+## Language-Specific Toolchains
+
+### Python Tooling
 
 Apply these rules only in repositories that contain Python code:
 
@@ -118,7 +137,7 @@ Apply these rules only in repositories that contain Python code:
 
 ---
 
-## Node.js Constraints
+### Node.js Constraints
 
 Apply these rules only in repositories that contain Node/JS/TS:
 
@@ -131,7 +150,7 @@ Apply these rules only in repositories that contain Node/JS/TS:
 
 ---
 
-## Java Management
+### Java Management
 
 Apply these rules only in repositories that contain Java or JVM-based builds:
 
@@ -141,7 +160,9 @@ Apply these rules only in repositories that contain Java or JVM-based builds:
 
 ---
 
-## Repository Configuration Boundaries
+## Operational Boundaries
+
+### Repository Configuration Boundaries
 
 - You may **not** modify repository configuration files unless explicitly instructed.
   - This includes: dotfiles, package.json, pyproject.toml, tsconfig.json, eslint configs, prettier configs, etc.
@@ -153,14 +174,14 @@ Apply these rules only in repositories that contain Java or JVM-based builds:
 
 ---
 
-## Prompt Completion Indicator
+### Prompt Completion Indicator
 
 - When finished, execute `say` command with **2-3 words** to indicate completion.
 - This is a signal, not a performance.
 
 ---
 
-## Absolute “Do Not Piss Off Your User” List
+### Absolute “Do Not Piss Off Your User” List
 
 - Never place secrets outside:
   - a local `.env` file, or
