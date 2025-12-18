@@ -12,7 +12,7 @@ tools: [
 
 ## Goal
 
-Generate a conventional commit message from the best available evidence and write it to `commit.tmp`.
+Produce a conventional commit message from the highest-priority diff evidence and write it to `commit.tmp` exactly once per run.
 
 ---
 
@@ -22,38 +22,40 @@ Generate a conventional commit message from the best available evidence and writ
 2. CLI git diff (`--cached`, then working tree)
 3. Chat memory only if no diff can be obtained by any method
 
-If memory is used, treat all conclusions as estimated and select attribution via fallback rules.
+If memory must be used, treat every conclusion as estimated and fallback to rules for attribution.
 
 ---
 
 ## Commit Structure
 
-- Format: `type(scope): Subject`
-- Scope selection:
-  1. Ticket/issue ID if clearly relevant (preferred when present)
-  2. Area/module keyword (short, specific)
-  3. Omit scope if neither applies
+1. Format: `type(scope): Subject`
+2. Scope selection priority:
 
-Multi-area rule:
+- Use ticket/issue ID when present. The branch name check already handles this; reuse it.
+- Otherwise use a short area/module keyword.
+- If no scope applies, omit it.
 
-- If changes span multiple unrelated areas with no clear dominant area:
-  - The commit message must NOT encode this ambiguity
-  - The AI should recommend splitting the changes into multiple commits
-  - This recommendation must be emitted outside the commit message (chat/stdout), not written to `commit.tmp`
+Multi-area rule (strict):
+
+- Do not encode ambiguity by writing a catch-all subject.
+- Instead emit a split recommendation outside of `commit.tmp` when unrelated areas are touched.
+- Keep `commit.tmp` clean; the subject/body must describe a single cohesive intent.
 
 ---
 
 ## Type Selection (Canonical)
 
-Core policy: choose the lowest-impact valid type consistent with the diff.
-
-Use standard conventional commit types (`fix`, `feat`, `refactor`, `chore`, `docs`, `test`, `ci`, `build`, `perf`, `style`, `revert`).
+Core policy: choose the lowest-impact valid type consistent with the diff. Standard types are: `fix`, `feat`, `refactor`, `chore`, `docs`, `test`, `ci`, `build`, `perf`, `style`, `revert`.
 
 Semver impact is implicit:
 
 - PATCH: default for fixes, refactors, chores, docs, tests, CI, build, style, perf
+
 - MINOR: `feat` only when adding new user-facing capability
+
 - MAJOR: only when breaking change criteria are met (see rule below)
+
+- Prefer `PATCH` unless clear evidence of a finished feature truly exists.
 
 ---
 
@@ -67,8 +69,8 @@ A change is breaking only if ALL are true:
 
 If breaking:
 
-- Add `!` to the subject: `type(scope)!: Subject`
-- Add footer: `BREAKING CHANGE: <required user action in one line>`
+- Add `!` to the subject (`type(scope)!: Subject`).
+- Add footer: `BREAKING CHANGE: <required user action>`.
 
 If no prior release exists, do not mark breaking and do not use `!`.
 
@@ -93,9 +95,8 @@ Select exactly one attribution footer based primarily on evidence from the diff.
 
 Primary signal: approximate share of modified/added lines authored by AI in this change.
 
-- Estimate using the diff and any available authorship context.
-- Do not use chat memory to change commit content.
-- Chat memory may be consulted only to refine attribution when the diff does not reveal authorship signal.
+1. Estimate attribution strictly from the diff and any metadata you can obtain.
+2. Never change commit content based on chat memory; only use memory to resolve attribution when evidence is missing.
 
 Quantitative brackets (apply top-down, first match wins):
 
@@ -128,7 +129,7 @@ Fallback (last resort):
 
 Use this guide when choosing the appropriate AI attribution signature:
 
-| AI Name | Expected Attribution Signature |
+| AI Name | Attribution Signature |
 | - | - |
 | GitHub Copilot | `GitHub Copilot <copilot@github.com>` |
 | Verdent AI | `Verdent AI <noreply@verdent.ai>` |
@@ -146,11 +147,11 @@ Use this guide when choosing the appropriate AI attribution signature:
 3. Check branch name for ticket ID (e.g., PROJ-123) and use as scope if found
 4. If multiple unrelated areas are detected:
    - Emit a recommendation to split the changes into multiple commits (outside the commit message)
-5. Choose minimal valid type and scope
-6. Apply breaking change rule (requires prior real release + required user action)
-7. Choose exactly one AI attribution footer using deterministic rules
-8. Write message to `commit.tmp`
-9. Output the identical commit message in a single code block (chat output or stdout)
+5. Choose the minimal valid type and scope (scope may already be set via branch ID)
+6. Apply breaking change rule if a prior non-draft release exists and user action is required.
+7. Choose exactly one AI attribution footer based on the deterministic rules.
+8. Write the final message to `commit.tmp`.
+9. Output the identical message in a code block without edits.
 
 ---
 
