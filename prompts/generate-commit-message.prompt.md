@@ -150,7 +150,12 @@ Use this guide when choosing the appropriate AI attribution signature:
 5. Choose the minimal valid type and scope (scope may already be set via branch ID)
 6. Apply breaking change rule if a prior non-draft release exists and user action is required.
 7. Choose exactly one AI attribution footer based on the deterministic rules.
-8. Write the final message to `commit.tmp`.
+8. Write the final message to `commit.tmp`:
+   - Subject line
+   - Blank line
+   - Bullets only (no prose paragraphs)
+   - Blank line
+   - Footers
 9. Output the identical message in a code block without edits.
 
 ---
