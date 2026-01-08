@@ -156,6 +156,26 @@ Apply these rules only in repositories that contain Java or JVM-based builds:
 - If any pinned version is unavailable on the host, bump to the nearest available patch of the same major/minor and update `.sdkmanrc` accordingly.
 - Run Maven/Gradle only via the SDKMAN!-provided binaries—no ambient system Java.
 
+### GitHub Actions Workflows
+
+Apply these rules when working with any GHA workflow file:
+
+- Prefer permissions at a job level over file level permissions
+- Use the default GITHUB\_TOKEN unless a PAT is explicitly requested by the user
+- Never output raw secrets to a log of any kind. Use `::add-mask::VALUE` when logging any sensitive info.
+- Prefer to pass secrets via `secrets` or `env` whenever possible
+- Every job should define a timeout
+- Every workflow file should define concurrency (eg `group: ${{ github.workflow }}-${{ github.ref }}`)
+- Use `paths` / `paths-ignore` whenever possible
+- Prefer verified reusable workflows whenever possible
+- If referencing an action with path `actions/` then you may pin to the latest version tag (eg `uses: actions/github-action-name@v1`)
+- If the action does not use `actions/` then you should pin to the latest version using a SHA
+  - The corresponding version should immediately follow on the same line (eg `uses: custom-action/some-action-name@randomGitCommitSha # v1.0.0`)
+- If triggered by `pull_request` the job should explicitly exclude any draft PRs
+- Encourage setup of `actionlint` via brew and configure in hooks and `ai-checks`
+- Configure Dependabot for actions and all relevant languages
+  - Prefer max open PR limit of 2 unless explicitly requested otherwise
+
 ---
 
 ## Operational Boundaries
