@@ -66,6 +66,11 @@ HLBPA supports various artifact types, which can be specified in the prompt. Her
 > - `vscode.mermaid-chat-features/renderMermaidDiagram`
 > - `mermaidchart.vscode-mermaid-chart/mermaid-diagram-preview`
 
+> [!IMPORTANT]
+> **GitHub scope gotcha:** The “MCP server in agent metadata” setup only wires itself up when the agent is stored at the **org** or **enterprise** level.
+> If you’re using a **personal** agent, you’ll need to hook the MCP server up the old-fashioned way — configure it directly in your IDE settings, or in your repo’s Coding Agent config.
+> Think of it as: *org/enterprise agents get valet parking; personal agents park it yourself.*
+
 ### What You Get & How It Finishes
 
 - You’ll get at least one document and the diagrams you asked for (or that HLBPA thinks you need).

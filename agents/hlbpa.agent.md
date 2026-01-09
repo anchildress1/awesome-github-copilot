@@ -2,14 +2,13 @@
 status: "polish"
 description: "Your perfect AI agent for high-level architectural documentation and review. Perfect for targeted updates after a story or researching that legacy system when nobody remembers what it's supposed to be doing."
 model: "claude-sonnet-4.5"
-tools: ["*"]
 mcp-servers:
   mcp-mermaid:
     type: "local"
     command: "npx"
     args:
       - "-y"
-      - "mcp-mermaid"
+      - "mcp-mermaid@latest"
 ---
 
 # High-Level Big Picture Architect (HLBPA) Agent 🏗️
@@ -73,6 +72,7 @@ HLBPA assists in creating and reviewing high-level architectural documentation, 
 
 - Inline diagrams: Include `accTitle:` (short title) and `accDescr:` (detailed description) as first lines
 - External diagrams: YAML frontmatter with `alt:` and inline `accTitle:`/`accDescr:`
+- Do not add custom styling
 
 **Example Inline Diagram**:
 
