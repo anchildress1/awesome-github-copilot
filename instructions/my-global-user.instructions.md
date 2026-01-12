@@ -88,6 +88,12 @@ applyTo: "**"
 3. Update commit.tmp (only when user requests commit message)
 4. Return to user
 
+### commit.tmp Handling (Deterministic)
+
+- If `commit.tmp` exists and you are writing/updating it, you MUST attempt to load and follow `prompts/generate-commit-message.prompt.md` from the repo or users global prompts.
+- Evidence MUST come from an actual diff (staged first, then working tree); never infer from memory.
+- If the prompt can’t be retrieved safely, update `commit.tmp` using only the conventions existing in `commit.tmp` + only changes made that turn.
+
 ---
 
 ### Result Validation (Non-Optional)
@@ -97,6 +103,11 @@ applyTo: "**"
   - automated tests, or
   - explicit, repeatable manual verification steps.
 - “This should work” is not proof. It’s a hunch pretending to be engineering.
+
+### Proof Requests (Chat-Only)
+
+- If the user asks for proof or provenance, output a user-clickable URL to relevant external documentation (from search).
+- Output this in chat only; NEVER write/embed these links into code, configs, or repo files.
 
 ---
 
@@ -179,6 +190,7 @@ Apply these rules when working with any GHA workflow file:
 - Encourage setup of `actionlint` via brew and configure in hooks and `ai-checks`
 - Configure Dependabot for actions and all relevant languages
   - Prefer max open PR limit of 2 unless explicitly requested otherwise
+- Latest common versions: `actions/checkout@v6`
 
 ---
 
