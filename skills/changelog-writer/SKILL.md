@@ -6,7 +6,7 @@ description: Rewrites changelog entries with cheeky, narrative flair following p
 
 # Changelog Rewriter Skill
 
-This skill rewrites changelog entries to match the project's established tone: cheeky, pragmatic, humorous, and narrative-driven. No commit-by-commit archaeology, no corporate sanitization, just honest summaries that explain *why* something changed.
+This skill rewrites changelog entries to contain tone: cheeky, pragmatic, humorous, and narrative-driven. No commit-by-commit archaeology, no corporate sanitization, just honest summaries that explain *why* something changed.
 
 ## Core Formatting Rules
 
@@ -63,6 +63,25 @@ No user-facing rule behavior changes in either package. If you linted commits ye
 - **Security + supply chain posture got a tune-up.** The security audit workflow was improved, and the `astral-sh/setup-uv` action was bumped so the Python toolchain setup stays aligned with the ecosystem.
 ```
 
+## Breaking Changes
+
+**Stable releases (≥ v1.0.0, excluding prereleases):**
+
+Surface breaking changes with bold, unmissable formatting and humorous framing. This is not the time for subtlety.
+
+- Use emphatic headers: `**🚨 Breaking Changes (Yes, Really):**`, `**⚠️ The Part Where Things Break:**`
+- State *what* broke, *why* it broke, and *what* users must do
+- Make the section visually distinct—readers should trip over it
+- Example tone: "The config schema grew opinions. If you're still using `old_field`, it's time to say goodbye."
+
+**Prerelease or pre-v1 releases:**
+
+Still document breaking changes, but with sardonic acknowledgment that instability is the entire point.
+
+- Use sarcastic headers: `**Breaking Changes (Shocking, I Know):**`, `**Things That Changed Because v0.x Means 'Surprise Mechanics':**`
+- Keep the same structural clarity (what/why/action), just adjust the tone
+- Example: "Yes, the API changed again. That's what happens when the version number starts with zero."
+
 ## Tone & Style Guide
 
 ### ✅ Do This:
@@ -78,7 +97,6 @@ No user-facing rule behavior changes in either package. If you linted commits ye
 - Don't enumerate commits: ❌ `* commit abc123`
 - Don't use corporate tone: ❌ "We're excited to announce..."
 - Don't link individual PRs in content bullets
-- Don't write "breaking changes" sections (prerelease = no breaking changes)
 - Don't sanitize personality out of prose
 
 ## Emoji Selection
@@ -92,25 +110,26 @@ Think laterally: what symbol represents this particular change in a way that has
 When invoked to rewrite a changelog entry:
 
 1. **Read CHANGELOG.md** to extract existing tone/structure patterns
-2. **Identify release type:**
+2. **Identify release type and breaking changes:**
    - Single-fix patch → quote + narrative paragraph
    - Multi-change release → quote + highlights + summary
-3. **Select appropriate emoji(s)** matching release theme
+   - Breaking changes present → add Breaking Changes section with appropriate tone (stable vs prerelease/pre-v1)
+3. **Select emoji(s)** matching release theme (be creative, avoid clichés)
 4. **Craft italicized opening quote** explaining the "why" or "mood"
 5. **Write body content:**
    - Patches: 1-2 sentence narrative
-   - Releases: Highlights section + closing summary
+   - Releases: Breaking Changes (if applicable) + Highlights section + closing summary
 6. **Validate:**
    - Version header links to GitHub compare view
-   - Date matches ISO format
-   - Quote is italicized
-   - No bullet lists for single-patch releases
+   - Date in ISO format
+   - Quote italicized
+   - Breaking changes unmissable if present
    - No PR/commit links in body bullets
 
 ## Important Constraints
 
-- **No commit SHAs** in body content
-- **No PR numbers** in bullets (only in version header if needed)
-- **Focus on user/developer impact**, not implementation details
+- **No commit SHAs or PR numbers** in body content (version header only if needed)
+- **Focus on impact**, not implementation archaeology
 - **Preserve existing CHANGELOG.md content** below the section being rewritten
 - **Match the existing narrative voice** rather than imposing external conventions
+- **Breaking changes must be surfaced** with appropriate tone for version maturity
