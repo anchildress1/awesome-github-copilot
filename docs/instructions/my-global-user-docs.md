@@ -1,57 +1,91 @@
-# My Copilot Behavior Modification System 🤖
+# Universal AI Behavior Rules 🤖
 
 ![Check - Blue](https://img.shields.io/badge/status-check-3A86FF.svg)
 
 > [!IMPORTANT]
-> Grab the instructions file from [./instructions/my-global-user.instructions.md](../../instructions/my-global-user.instructions.md)
+> Source file: [./instructions/my-global-user.instructions.md](../../instructions/my-global-user.instructions.md)
 
-## Quick FYI 📌
+## What this is ✅
 
-This file is **personal-level Copilot behavior** configured as a global user instructions file in VS Code.
+A universal set of AI operating rules. Works with any tool that consumes instruction files—Copilot, Codex, Claude, whatever.
 
-Translation: it teaches AI how to behave around *me* and my repos and is not designed as a starter pack for your new religion.
+- Consistent baseline for **tone**, **output format**, **git discipline**, and **validation**
+- Stops re-litigating the same "no, don't do that" rules across every chat and every tool
+- Applies globally to all repos unless explicitly overridden
 
-## What this instructions file *is* ✅
+## What this isn't 🚫
 
-- A consistent baseline for **tone**, **assumptions**, and **boundaries**
-- A way to stop repeating the same “no, don’t do that” rules in every chat
-- A set of defaults for **isolated environments**, **validation**, and **minimal diffs**
+- A repo-specific config
+- A replacement for linters, tests, or thinking
+- A guarantee the AI behaves (it tries; results vary)
 
-## What this instructions file *isn’t* 🚫
+---
 
-- A repo-friendly Copilot guide
-- A replacement for linters, tests, or personal brain function
-- A promise the AI will always be right (it won’t be) or polite (also no)
+## Rule Summary 🧭
 
-## Defaults you’re opting into 🧭
+### Output Format
 
-### Isolation first 🧪
+- ND-friendly output required at all times
+- Bullets, headers, white space—no prose walls
+- One idea per line
 
-AI should assume:
+### Tone
 
-- there are **no global dependencies**
-- `uv` handles Python, `volta` has Node, `sdkman` for Java-y things
-- repeatability beats vibes
+- Dry, pragmatic, blunt, witty
+- Never apologizes, never hedges
+- Loud when right, explicit when wrong
 
-### Git boundaries 🔒
+### Git Boundaries 🔒
 
-- AI does **not** stage, commit, or push
-- all git commands must use `--no-pager` (so the diff stops sticking)
+- AI never stages, commits, or pushes—user owns git
+- All git reads use `--no-pager`
+- All commits: GPG-signed, atomic, never directly on `main`
+- All AI-authored commits: `Generated-by` footer required
+- Port kills: `kill <pid>` only—no blind xargs kills
 
-### Validation expectations 🧪
+### Toolchain Assumptions 🧪
 
-Before calling something “done,” the AI should validate what it changed (format, lint, tests, docs/security when relevant).
+- Python: `uv` only, never `pip`
+- Node: ≥24, ESM only, no CJS
+- Java: SDKMAN! with checked-in `.sdkmanrc`
+- No ambient state, no "already installed" assumptions
 
-If the repo has `make ai-checks`, that’s the preferred path.
+### Validation Loop
 
-### Diff and design rules ✂️
+- Format → lint → tests → coverage → docs → security → simplicity
+- Prefer `make ai-checks` when it exists
+- Max 3 attempts; hard stop with exact errors after 5 consecutive failures
+- "This should work" is not proof
 
-- **KISS** and **YAGNI** win above all others
-- diffs should be minimal and intentional
-- no stealth edits to repo config (dotfiles, package metadata, lint configs, etc.) unless explicitly told
+### Standards
 
-## Why it’s in this repo at all 🧠
+- KISS and YAGNI outrank all design preferences
+- No backward compatibility unless explicitly requested
+- All warnings are errors—do not ship with warnings
+- Prefer frameworks over vanilla (get user approval for vanilla first)
+- Web search before implementing—training data is assumed stale
 
-Because I use these defaults everywhere, and I’d rather ship one file than re-litigate the same expectations forever.
+### Documentation Tiers 📄
 
-> 🦄 If you don’t like it, remove it. If you do like it, steal it. Either way, everyone survives.
+| Layer | Purpose | Rule |
+| - | - | - |
+| Inline comments | `why` only | Hidden constraints, surprises, workarounds—never what the code does |
+| JavaDoc / JSDoc | `how` and `what` | Public surface area only; one-line summaries; skip the obvious |
+| `docs/*.md` | Human catch-up | Architecture, setup, decisions, onboarding |
+
+No over-documentation. If it doesn't answer a real question, it doesn't belong.
+
+### Repo Setup Convention
+
+- Initial commit on `main`: README + LICENSE + `.gitignore` only
+- All scaffolding goes on a branch, opened as PR against bare `main`
+
+### Security
+
+- No secrets outside `.env` or user-chosen vault
+- Sonar + Semgrep scan before final validation
+- No raw secrets in logs; use `::add-mask::VALUE`
+
+---
+
+> 🦄 If you don't like it, remove it. If you do like it, steal it. Either way, everyone survives.

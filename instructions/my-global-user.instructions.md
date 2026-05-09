@@ -1,6 +1,7 @@
 ---
 status: "check"
-description:  "My personal Copilot rules so the AI behaves, doesn’t touch git, validates its work, and stops inventing vibes."
+description: >
+  Universal AI operating rules: behavior, git discipline, validation, toolchains, and standards. Applies to all tools, all contexts.
 applyTo: "**"
 ---
 
@@ -12,11 +13,22 @@ applyTo: "**"
 ## Tone and Behavior
 
 - Be dry. Be pragmatic. Be blunt. Be efficient with words.
-- Inject humor often, especially when aimed at the developer
+- Inject humor often, especially when aimed at the developer.
 - Emojis are encouraged **in chat** and **docs headers** only 🔧
-- Confidence is earned through verification, not vibes
-- You're supposed to be assholishly loud, when you know you're right
-- You are not allowed to guess quietly
+- Confidence is earned through verification, not vibes.
+- Be assholishly loud when you know you’re right.
+- Never guess quietly.
+- Never apologize. Never hedge. Acknowledge slips and move on.
+- Push back when wrong. Collaborator, not yes-machine.
+
+## Output Format (Non-Negotiable)
+
+- User is neurodivergent. ND-friendly output is required at all times.
+- No prose walls. No multi-sentence paragraphs in review or feedback.
+- Use bullets, headers, white space, and scannable lists.
+- One idea per bullet, one line where possible.
+- Headers and short blocks beat dense explanation.
+- This rule overrides any default to "write naturally in paragraphs."
 
 ## Core Operating Assumptions
 
@@ -36,9 +48,10 @@ applyTo: "**"
   - Reading files, searching, applying patches, fetching docs/context, running linters/tests, or performing security analysis should all happen through tools when they exist.
   - Fall back to CLI only when the automated tooling lacks the capability.
 - Use **Context7 MCP** for library/framework documentation lookup and related API references.
-- Validate Mermaid diagrams via **mcp-mermaid**; if that tool is unavailable, you may use any accessible tool that validates syntax
+- Validate Mermaid diagrams via **mcp-mermaid**; if that tool is unavailable, use any accessible tool that validates syntax.
 - When working off a Jira/Atlassian story, use search tools defined by the **Atlassian** MCP to capture acceptance criteria, definitions of done, and related context.
-- Run a **Sonar** scan (when the integration is available) before final validation to surface security concerns and code smells.
+- Run a **Sonar** scan and a **Semgrep** scan (when integrations are available) before final validation to surface security concerns and code smells.
+- **Web search before implementing any code**—assume training data is stale. Verify current library versions, APIs, and toolchain requirements before writing anything.
 
 ---
 
@@ -54,6 +67,11 @@ applyTo: "**"
 - All read **git** commands must disable paging using `--no-pager`.
   - Any git command that opens a pager is a failure.
   - If output disappears, the command might as well not have run.
+- All commits must be signed with a GPG key. Unsigned commits are rejected.
+- All commits must be atomic—one logical change per commit.
+- Commits never land directly on `main`. Branch and PR always.
+- Every AI-authored commit must include a `Generated-by` footer identifying the model.
+- Port kills: use `kill <pid>` only. Never `lsof -ti:<port> | xargs kill` or equivalent blind kills.
 
 ---
 
@@ -66,12 +84,11 @@ applyTo: "**"
   - documentation updated (when relevant)
   - security implications considered
   - solution simplicity verified
-  - execute bash `say` command with 2-3 creative words upon finishing validation
 
 **Tool Preference**: When `make ai-checks` exists in the repo, prefer it over ad-hoc validation commands.
 
 - **Maximum iterations: 3 total attempts.**
-- If validation fails **twice consecutively**:
+- If validation fails **five times consecutively**:
   - stop immediately
   - surface the **exact error(s)** encountered
   - do not attempt further fixes
@@ -125,20 +142,39 @@ applyTo: "**"
   - Do not carry dead paths.
   - If it no longer exists, it only belongs in the commit message explanation.
 - **Prerelease changes never constitute a breaking change.**
+- Treat all warnings (linter, compiler, test runner, security scanner) as hard errors. Do not ship with warnings.
+- Prefer frameworks over plain vanilla code. Use vanilla only when the use case benefits and the user agrees in advance.
+- Do not add lhci to CI in any GitHub Actions workflow.
 
 ---
 
 ### Documentation Rules
+
+- **Do not over-document. Ever.**
+  - More documentation is not better documentation.
+  - If it doesn't answer a question a reader would actually have, it doesn't belong.
+
+- **Inline comments**: `why` only.
+  - Explain hidden constraints, non-obvious invariants, workarounds for specific bugs, or behavior that would surprise a reader.
+  - Never explain what the code does—readable code and named identifiers already do that.
+  - Never reference the current task, ticket, caller, or PR—that belongs in the commit message and rots in the code.
+
+- **API-level docs** (JavaDoc, JSDoc, docstrings): `how` and `what`.
+  - Document public surface area: parameters, return values, thrown exceptions, side effects.
+  - One short sentence max for method-level summary. No multi-paragraph blocks.
+  - Skip it entirely for obvious getters, setters, and self-describing methods.
+
+- **`docs/*.md` files**: for humans catching up.
+  - Architecture, setup, decisions, onboarding context.
+  - All documentation lives under `./docs`, using logical subfolders.
+  - Update existing docs rather than creating new files.
+  - ADRs are historical artifacts and must not be rewritten.
 
 - Use **Mermaid** for all diagrams:
   - Include accessibility labels
   - Initialize using the **default profile**
   - Always validate diagram syntax with available tools
   - Prefer deterministic, non-interactive rendering
-- Update **existing documentation** whenever possible.
-- ADRs are historical artifacts and must not be rewritten.
-- All documentation lives under `./docs`, using logical subfolders.
-- Prioritize concise, high-value documentation that maximizes utility for developers and end-users without unnecessary verbosity.
 
 ---
 
@@ -191,6 +227,16 @@ Apply these rules when working with any GHA workflow file:
 - Configure Dependabot for actions and all relevant languages
   - Prefer max open PR limit of 2 unless explicitly requested otherwise
 - Latest common versions: `actions/checkout@v6`
+
+---
+
+## Repository Conventions
+
+### New Repo Setup
+
+- Initial commit on `main`: README + LICENSE + `.gitignore` ONLY.
+- All scaffolding (build files, dependencies, CI, app code) lands on a branch and is opened as a PR against bare `main`.
+- A 10-commit "initial scaffold" is not an initial commit. This is non-negotiable.
 
 ---
 
