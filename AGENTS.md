@@ -22,6 +22,7 @@ All artifacts above use status values in YAML frontmatter. Documentation files i
 - No frontmatter required (documentation for humans, not AI artifacts)
 - Explains the purpose and usage of artifacts to end users with examples where appropriate
 - Contains status badge for visual indicator of status
+- Prefer existing patterns over introducing new format
 
 ## Development Standards 🛠️
 
