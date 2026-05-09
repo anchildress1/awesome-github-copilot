@@ -112,6 +112,7 @@ Skills are small, reusable playbooks you can hand to an agent when you want cons
 | Name | Status | Purpose | Notes |
 | - | :-: | - | - |
 | [`changelog-rewriter`](./skills/changelog-writer/SKILL.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/skills/changelog-rewriter-docs.md) | Rewrite `CHANGELOG.md` entries into the repo’s dry, narrative style (with formatting guardrails) | No commit/PR archaeology. No corporate tone. Just readable history. |
+| [`generate-commit-message`](./skills/generate-commit-message/SKILL.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/skills/generate-commit-message-docs.md) | Generate a single Conventional Commit message from diff evidence | Deterministic formatting, no git history mutation, AI attribution included. |
 | [`eslint-plugin-configuring`](./skills/eslint-plugin-configuring/SKILL.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/skills/eslint-plugin-configuring-docs.md) | Generate or update ESLint plugins with dual config support (v8 legacy and v9 flat) | I needed to throw one together anyway, so why not do this first? |
 
 > ⭐️ If one of these guys helped you, leave a star!
