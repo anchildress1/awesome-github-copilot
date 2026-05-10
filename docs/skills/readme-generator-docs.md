@@ -6,7 +6,7 @@ Generate, audit, or improve a project README following a 15-section structure �
 
 Skill source: [`skills/readme-generator/SKILL.md`](../../skills/readme-generator/SKILL.md)
 
-> 📖 **Why this exists:** a README is a project's front door. Most of them leave visitors standing on the porch wondering if anyone's home. This skill follows the 15-section structure from [George Kobaidze's "15 Essential Sections Every README Needs"](https://dev.to/georgekobaidze/15-essential-sections-every-readme-needs-give-your-project-what-it-deserves-fie) (dev.to, 2025), with two opinionated additions: Mermaid for diagrams, and intent-driven section selection instead of a checklist.
+> 📖 **Why this exists:** a README is a project's front door. Most of them leave visitors standing on the porch wondering if anyone's home. This skill follows the 15-section structure from [Giorgi Kobaidze's "15 Essential Sections Every README Needs"](https://dev.to/georgekobaidze/15-essential-sections-every-readme-needs-give-your-project-what-it-deserves-fie) (dev.to, 2026), with two opinionated additions: Mermaid for diagrams, and intent-driven section selection instead of a checklist.
 
 ---
 

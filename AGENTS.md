@@ -1,34 +1,49 @@
-# awesome-github-copilot Repository Instructions 🚀
+# awesome-github-copilot — Agent Instructions
 
-Custom instructions, prompts, and chat modes for GitHub Copilot and AI tools.
+## Repository purpose
 
-## File Organization 📁
+Collection of custom instructions, prompts, agents, and skills for GitHub Copilot and other AI tools.
 
-- **Instructions**: `instructions/` with `.instructions.md` suffix
-- **Prompts**: `prompts/` with `.prompt.md` suffix
-- **Agents (formerly Chat Modes)**: `agents/` with `.agent.md` suffix
-- **Skills**: `skills/<skill-name>/SKILL.md` — reusable playbooks with YAML frontmatter; companion reference docs and assets live in `skills/<skill-name>/references/` and `skills/<skill-name>/assets/`
+## File layout
 
-## Status System 🏷️
+| Artifact type | Location | File suffix/name |
+| - | - | - |
+| Instructions | `instructions/` | `.instructions.md` |
+| Prompts | `prompts/` | `.prompt.md` |
+| Agents (formerly Chat Modes) | `agents/` | `.agent.md` |
+| Skills | `skills/<skill-name>/` | `SKILL.md` |
 
-All artifacts above use status values in YAML frontmatter. Documentation files in `docs/` are user-facing and don't require frontmatter. See [status-badge-lifecycle.md](./docs/status-badge-lifecycle.md) for definitions.
+Skills may include:
 
-## Content Standards 📝
+- `skills/<skill-name>/references/` — reference docs consumed by the skill
+- `skills/<skill-name>/assets/` — templates and examples consumed by the skill
 
-- Emojis in headers MUST come **after** the text for accessibility. Screen readers announce emojis first when they appear at the start, which disrupts comprehension.
+## Status system
 
-### Documentation (docs/)
+All artifact files (instructions, prompts, agents, skills) use a `status` field in YAML frontmatter. Documentation files in `docs/` do not require frontmatter. Status definitions: `docs/status-badge-lifecycle.md`.
 
-- User-facing explanations, guides, examples
-- No frontmatter required (documentation for humans, not AI artifacts)
-- Explains the purpose and usage of artifacts to end users with examples where appropriate
-- Contains status badge for visual indicator of status
-- Prefer existing patterns over introducing new format
+## Content rules
 
-## Development Standards 🛠️
+### Emojis
 
-- **Writing**: Active voice, concise language, minimal jargon
-- **Formatting**: Consistent emoji placement, markdown structure
-  - **remark**: Markdown linting (`npm run check`, `npm run format`)
-  - **commitlint**: Conventional commit enforcement with custom plugin
-- **lefthook**: Pre-commit/pre-push hooks
+Emojis in Markdown headers MUST appear after the header text, never before. Reason: screen readers announce emojis first when they lead, disrupting comprehension.
+
+### Documentation (`docs/`)
+
+- Audience: human readers (contributors, users)
+- No frontmatter required
+- Must contain a status badge
+- Explains purpose, usage, and examples for the corresponding artifact
+- Extend existing files; do not create new formats
+
+### Artifact files (instructions, prompts, agents, skills)
+
+- Audience: AI agents
+- YAML frontmatter required with at minimum a `status` field
+- Follow existing file patterns in each directory
+
+## Toolchain
+
+- **remark**: Markdown linting and formatting — `npm run check` / `npm run format`
+- **commitlint**: Conventional Commits enforcement via custom plugin
+- **lefthook**: Runs remark and commitlint as pre-commit and commit-msg hooks

@@ -7,7 +7,7 @@ description: Generate, audit, or improve a project README following a 15-section
 
 A README is a project's front door. The goal of this skill is to help produce a README that is structured, scannable, useful to a stranger reading it for the first time, and useful to the author six months later.
 
-This skill follows the 15-section structure from George Kobaidze's "15 Essential Sections Every README Needs" (dev.to, 2025), adapted with two opinionated choices:
+This skill follows the 15-section structure from Giorgi Kobaidze's "15 Essential Sections Every README Needs" (dev.to, 2026), adapted with two opinionated choices:
 
 1. **Mermaid for diagrams**, not draw\.io / Lucidchart screenshots. Mermaid renders natively in GitHub/GitLab Markdown, lives in version control alongside the code, and is easy to update.
 2. **Section selection is intent-driven, not checklist-driven**. A "hello world" demo doesn't need an Architecture diagram. A new private monorepo probably doesn't need an Acknowledgements section. Use judgment.
