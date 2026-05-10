@@ -31,6 +31,10 @@ Some of these are fresh ideas in beta-brainstorm mode, others are daily-use vete
 > 🦄 This project sits somewhere between “I might be onto something” and “what if I made it do *this* too?”
 > It only exists because a couple brilliant people let me ramble about it endlessly and encouraged the madness anyway.
 
+### Giorgi 📖
+
+[@georgekobaidze](https://github.com/georgekobaidze) wrote [“15 Essential Sections Every README Needs”](https://dev.to/georgekobaidze/15-essential-sections-every-readme-needs-give-your-project-what-it-deserves-fie) — the article that became the backbone of the `readme-generator` skill. Solid structure, clear rationale, zero fluff. The skill wouldn't exist without it.
+
 ### Courtney 🕹️
 
 For fearlessly testing from day one, breaking *everything* (with love), and still telling others about it. Your feedback and curiosity shaped so much of this — thank you for jumping into the chaos and making it fun.
@@ -115,6 +119,7 @@ Skills are small, reusable playbooks you can hand to an agent when you want cons
 | [`generate-commit-message`](./skills/generate-commit-message/SKILL.md) | [![Status: Check (blue badge)](https://img.shields.io/badge/status-check-3A86FF.svg)](./docs/skills/generate-commit-message-docs.md) | Generate a single Conventional Commit message from diff evidence | Deterministic formatting, no git history mutation, AI attribution included. |
 | [`eslint-plugin-configuring`](./skills/eslint-plugin-configuring/SKILL.md) | [![Status: Draft (pink badge)](https://img.shields.io/badge/status-draft-F72585.svg)](./docs/skills/eslint-plugin-configuring-docs.md) | Generate or update ESLint plugins with dual config support (v8 legacy and v9 flat) | I needed to throw one together anyway, so why not do this first? |
 | [`test-writer`](./skills/test-writer/SKILL.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/skills/test-writer-docs.md) | Write, extend, or audit tests in any language, any framework, any repo | No `.skip`, no lowered thresholds, no copy-paste bodies. Every path, every time. |
+| [`readme-generator`](./skills/readme-generator/SKILL.md) | [![Status: Ready (green badge)](https://img.shields.io/badge/status-ready-007F5F.svg)](./docs/skills/readme-generator-docs.md) | Generate, audit, or improve a project README following a 15-section structure with Mermaid diagrams | Intent-driven section selection. No generic filler. No badge decoration. |
 
 > ⭐️ If one of these guys helped you, leave a star!
 > If it failed spectacularly, tell me. Either way, I’ll learn something — and so will the bot.
