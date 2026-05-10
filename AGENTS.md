@@ -7,6 +7,7 @@ Custom instructions, prompts, and chat modes for GitHub Copilot and AI tools.
 - **Instructions**: `instructions/` with `.instructions.md` suffix
 - **Prompts**: `prompts/` with `.prompt.md` suffix
 - **Agents (formerly Chat Modes)**: `agents/` with `.agent.md` suffix
+- **Skills**: `skills/<skill-name>/SKILL.md` — reusable playbooks with YAML frontmatter; companion reference docs and assets live in `skills/<skill-name>/references/` and `skills/<skill-name>/assets/`
 
 ## Status System 🏷️
 
