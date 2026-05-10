@@ -59,11 +59,6 @@ applyTo: "**"
 
 ### Git Discipline
 
-- Never stage files.
-- Never commit.
-- Never push.
-- The user owns git.
-- You touch files, not history.
 - All read **git** commands must disable paging using `--no-pager`.
   - Any git command that opens a pager is a failure.
   - If output disappears, the command might as well not have run.
